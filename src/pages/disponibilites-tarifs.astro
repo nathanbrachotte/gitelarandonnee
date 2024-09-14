@@ -1,0 +1,59 @@
+---
+import Card from "@/components/Card.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="Disponibilités et tarifs">
+  <p class="uppercase">Nos tarifs à la semaine</p>
+
+  <p>Pour les locations au week-end ou mid week, nous contacter directement.</p>
+  <div class="container grid grid-cols-3 gap-2">
+    <Card title="Vacances Scolaires Automne/Hiver">
+      <span class="font-bold">Vacances de Toussaint</span>
+      <p>- 10 personnes: 650 €</p>
+      <p>- 14 personnes: 750 €</p>
+      <p><span class="font-bold">Vacances de Noël :</span> 1600€</p>
+      <p><span class="font-bold">Vacances de Février :</span> 1600€</p>
+    </Card>
+    <Card title="Vacances Scolaires - Été/Printemps">
+      <span class="font-bold">Pâques :</span>
+      <p>- 10 personnes: 650 €</p>
+      <p>- 14 personnes: 750 €</p>
+      <p><span class="font-bold">Vacances d'été:</span> 1000€</p>
+    </Card>
+    <Card title="Hors saison - Mai, Juin et Septembre">
+      <p>- 10 personnes: 650 € - 14 personnes: 750 €</p>
+    </Card>
+    <Card
+      title="Hors saison - Janvier, Février, Mars, Octobre, November, Décembre"
+    >
+      <p>- 10 personnes: 800 €/850€ - 14 personnes: 980 €/1000€</p>
+    </Card>
+    <Card title="Options et taxes">
+      <p>
+        <span class="font-bold">Charges et location de draps:</span> Compris dans
+        le prix
+      </p>
+      <p>
+        <span class="font-bold">Taxe de séjour :</span> 1,10 € par nuit par adulte
+        Forfait Ménage : 125€ Salle de bain supplémentaire : 70€ par semaine
+      </p>
+      <p>
+        <span class="font-bold">Forfait Ménage :</span>125€ Salle de bain
+        supplémentaire : 70€ par semaine
+      </p>
+      <p>
+        <span class="font-bold">Salle de bain supplémentaire :</span>70€ par
+        semaine
+      </p>
+    </Card>
+  </div>
+  <div class="container grid grid-cols-1">
+    <p>
+      ARRIVÉE ET DÉPART - Pour les locations à la semaine: Arrivée le samedi à
+      16h au plus tôt, départ à 10h au plus tard. - Pour les locations au
+      week-end: Arrivée à le vendredi à 16h au plus tôt, départ le dimanche à
+      17h au plus tard.
+    </p>
+  </div>
+</Layout>

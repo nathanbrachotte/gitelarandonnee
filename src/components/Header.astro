@@ -1,26 +1,57 @@
-<header class="bg-white shadow-md">
-  <div class="container mx-auto px-4 py-6 flex justify-between items-center">
-    <div class="flex items-center">
-      <!-- Add your logo SVG here -->
-      <h1 class="text-2xl font-bold text-gray-800 ml-2">Gîte La Randonnée</h1>
+---
+import { GiteLogo } from "@/components/logo";
+import { H2 } from "@/components/Typography";
+import {
+  AccueilLink,
+  PlanLink,
+  RegionLink,
+  DispoLink,
+} from "@/components/Buttons";
+import { NAME } from "@/data";
+import { Image } from "astro:assets";
+---
+
+<header class="bg-white shadow-md w-full py-6">
+  <div
+    class="container mx-auto flex justify-center md:justify-between items-center flex-wrap gap-4"
+  >
+    <div class="flex flex-wrap gap-4">
+      <div class="flex items-center justify-center flex-1 gap-2">
+        <GiteLogo className="w-12 h-12" />
+        <H2 className="whitespace-nowrap">
+          {NAME}
+        </H2>
+      </div>
+      <div class="flex flex-row flex-1 min-w-40 justify-center gap-2">
+        <Image
+          src="/meuble-de-tourisme.webp"
+          alt="Meublé de tourisme"
+          class="w-12 md:w-16 h-auto object-contain shrink-0"
+          width={180}
+          height={132}
+        />
+        <Image
+          src="/trois-epis.webp"
+          alt="Gite 3 épis"
+          class="w-20 md:w-24 h-auto object-contain shrink-0"
+          width={232}
+          height={120}
+        />
+      </div>
     </div>
-    <nav>
-      <ul class="flex space-x-4">
+    <nav class="flex-1">
+      <ul class="flex flex-row flex-wrap justify-center md:justify-end">
         <li>
-          <a href="#" class="text-gray-600 hover:text-gray-800">Accueil</a>
+          <AccueilLink client:load />
         </li>
         <li>
-          <a
-            href="#"
-            class="text-gray-600 hover:text-gray-800"
-            >Disponibilités et Tarifs</a
-          >
+          <DispoLink client:load />
         </li>
         <li>
-          <a href="#" class="text-gray-600 hover:text-gray-800">Plan du Gîte</a>
+          <PlanLink client:load />
         </li>
         <li>
-          <a href="#" class="text-gray-600 hover:text-gray-800">Notre Région</a>
+          <RegionLink client:load />
         </li>
       </ul>
     </nav>

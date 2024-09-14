@@ -1,0 +1,18 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { H1 } from "@/components/Typography";
+import { Image } from "astro:assets";
+
+const LABEL = "Plan du Gîte";
+---
+
+<Layout title={LABEL}>
+  <H1>{LABEL}</H1>
+  <Image
+    src="/plan.webp"
+    alt="Plan du gîte"
+    class={"w-3/5 h-full"}
+    height="664"
+    width="349"
+  /></Layout
+>

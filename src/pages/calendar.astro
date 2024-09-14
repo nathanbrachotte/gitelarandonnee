@@ -1,11 +1,9 @@
 ---
-import Layout from "../layouts/Layout.astro";
-
 const ingenieCode = import.meta.env.PUBLIC_INGENIE_CODE;
 const siteUrl = import.meta.env.PUBLIC_SITE_URL;
 ---
 
-<Layout title="Welcome to Astro.">
+<>
   <main>
     <h1>Calendrier</h1>
     <div id="widget-fiche-ingenie"></div>
@@ -44,4 +42,4 @@ const siteUrl = import.meta.env.PUBLIC_SITE_URL;
       widget_dispo_resa.init();
     </script>
   </main>
-</Layout>
+</>
