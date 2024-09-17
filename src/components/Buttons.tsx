@@ -5,7 +5,7 @@ import { ADDRESS, EMAIL, PHONE_NUMBER } from "@/data";
 export const CGLButton = () => {
   return (
     <Button asChild variant={"link"}>
-      <a href="/conditions">CGLds </a>
+      <a href="/cgl">CGLds </a>
     </Button>
   );
 };
