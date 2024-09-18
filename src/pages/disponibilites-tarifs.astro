@@ -1,59 +1,73 @@
 ---
 import Card from "@/components/Card.astro";
+import { H1, H2 } from "@/components/Typography";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import Layout from "@/layouts/Layout.astro";
+import { InfoCircledIcon } from "@radix-ui/react-icons";
+import { MidWeekAlert } from "@/components/Alerts";
 ---
 
 <Layout title="Disponibilités et tarifs">
-  <p class="uppercase">Nos tarifs à la semaine</p>
-
-  <p>Pour les locations au week-end ou mid week, nous contacter directement.</p>
-  <div class="container grid grid-cols-3 gap-2">
-    <Card title="Vacances Scolaires Automne/Hiver">
-      <span class="font-bold">Vacances de Toussaint</span>
-      <p>- 10 personnes: 650 €</p>
-      <p>- 14 personnes: 750 €</p>
-      <p><span class="font-bold">Vacances de Noël :</span> 1600€</p>
-      <p><span class="font-bold">Vacances de Février :</span> 1600€</p>
+  <H1 className="text-center">Nos tarifs à la semaine</H1>
+  <div class="container grid grid-cols-1 md:grid-cols-3 gap-2 mt-4">
+    <Card title="Vacances Scolaire">
+      <div class="flex flex-col">
+        <span class="font-bold mt-2">Pâques :</span>
+        <li>10 personnes: 650€</li>
+        <li>14 personnes: 750€</li>
+        <p class="mt-2">
+          <span class="font-bold">Vacances d'été:</span> 1000€
+        </p>
+        <span class="font-bold mt-2">Vacances de Toussaint</span>
+        <li>10 personnes: 650€</li>
+        <li>14 personnes: 750€</li>
+        <p class="mt-2">
+          <span class="font-bold">Vacances de Noël :</span> 1600€
+        </p>
+        <p class="mt-2">
+          <span class="font-bold">Vacances de Février :</span> 1600€
+        </p>
+      </div>
     </Card>
-    <Card title="Vacances Scolaires - Été/Printemps">
-      <span class="font-bold">Pâques :</span>
-      <p>- 10 personnes: 650 €</p>
-      <p>- 14 personnes: 750 €</p>
-      <p><span class="font-bold">Vacances d'été:</span> 1000€</p>
-    </Card>
-    <Card title="Hors saison - Mai, Juin et Septembre">
-      <p>- 10 personnes: 650 € - 14 personnes: 750 €</p>
-    </Card>
-    <Card
-      title="Hors saison - Janvier, Février, Mars, Octobre, November, Décembre"
-    >
-      <p>- 10 personnes: 800 €/850€ - 14 personnes: 980 €/1000€</p>
+    <Card title="Hors saison">
+      <div class="flex flex-col">
+        <span class="font-bold mt-2">Janvier, Février, Mars</span>
+        <li>10 personnes: 800€ / 850€</li>
+        <li>14 personnes: 980€ / 1000€</li>
+        <span class="font-bold mt-2">Mai, Juin et Septembre:</span>
+        <li>10 personnes: 650€</li>
+        <li>14 personnes: 750€</li>
+        <span class="font-bold mt-2">Octobre, November, Décembre:</span>
+        <li>10 personnes: 800€ / 850€</li>
+        <li>14 personnes: 980€ / 1000€</li>
+      </div>
     </Card>
     <Card title="Options et taxes">
-      <p>
-        <span class="font-bold">Charges et location de draps:</span> Compris dans
-        le prix
-      </p>
-      <p>
-        <span class="font-bold">Taxe de séjour :</span> 1,10 € par nuit par adulte
-        Forfait Ménage : 125€ Salle de bain supplémentaire : 70€ par semaine
-      </p>
-      <p>
-        <span class="font-bold">Forfait Ménage :</span>125€ Salle de bain
-        supplémentaire : 70€ par semaine
-      </p>
-      <p>
-        <span class="font-bold">Salle de bain supplémentaire :</span>70€ par
-        semaine
-      </p>
+      <div class="flex flex-col">
+        <p class="font-bold mt-2">Charges et location de draps :</p>
+        <li>Compris dans le prix</li>
+        <p class="font-bold mt-2">Taxe de séjour :</p>
+        <li>1,10 € par nuit par adulte</li>
+        <p class="font-bold mt-2">Forfait Ménage :</p>
+        <li>125€</li>
+        <p class="font-bold mt-2">Salle de bain supplémentaire :</p>
+        <li>70€ par semaine</li>
+      </div>
     </Card>
-  </div>
-  <div class="container grid grid-cols-1">
-    <p>
-      ARRIVÉE ET DÉPART - Pour les locations à la semaine: Arrivée le samedi à
-      16h au plus tôt, départ à 10h au plus tard. - Pour les locations au
-      week-end: Arrivée à le vendredi à 16h au plus tôt, départ le dimanche à
-      17h au plus tard.
-    </p>
+    <MidWeekAlert />
+    <Alert className="col-span-3 mt-4">
+      <InfoCircledIcon className="h-4 w-4 stroke-primary" />
+      <AlertTitle>HEURES D'ARRIVÉE ET DÉPART</AlertTitle>
+      <AlertDescription>
+        <li>
+          Pour les locations à la semaine: Arrivée le samedi à 16h au plus tôt,
+          départ à 10h au plus tard.
+        </li>
+        <li>
+          Pour les locations au week-end: Arrivée à le vendredi à 16h au plus
+          tôt, départ le dimanche à 17h au plus tard.
+        </li>
+      </AlertDescription>
+    </Alert>
   </div>
 </Layout>

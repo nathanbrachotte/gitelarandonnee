@@ -6,32 +6,52 @@ import { Image } from "astro:assets";
 ---
 
 <Layout title="Notre région">
-  <H1 className="uppercase">LES FOURGS</H1>
+  <H1 className="uppercase text-center">Notre région</H1>
 
-  <ul>
-    <li>
-      Ski alpin: La station des Fourgs possède 7 remontées mécaniques et des
-      pistes pour tous les niveaux, allant des pistes baby/vertes aux pistes
-      rouges. Certaines pistes sont équipées de canons à neige.
-    </li>
-    <li>
-      Ski de fond: discipline populaire dans la région, avec plus de 100
-      kilomètres de pistes dans des espaces naturels entre les collines et les
-      forêts. Vous pouvez choisir entre le style skating ou classique. Une piste
-      de ski nocturne ouverte le mardi et jeudi existe aussi à la Coupe.
-    </li>
-    <li>
-      Raquettes: Vous pouvez aussi randonner en raquettes sur des pistes
-      balisées dans les forêts de sapins.
-    </li>
-  </ul>
-  <Image
-    src="/les-fourgs-plan.webp"
-    alt="Plan des Fourgs"
-    width={1100}
-    height={776}
-  />
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+  <div class="flex flex-col gap-4 mt-4">
+    <Image
+      src="/les-fourgs-plan.webp"
+      alt="Plan des Fourgs"
+      width={1100}
+      height={776}
+    />
+    <div>
+      <li>
+        <span class="font-bold">Ski alpin:</span> 7 remontées mécaniques et des pistes
+        pour tous les niveaux, allant des pistes baby/vertes aux pistes rouges. Certaines
+        pistes sont équipées de canons à neige.
+      </li>
+      <li>
+        <span class="font-bold">Ski de fond:</span> discipline populaire dans la
+        région, avec plus de 100 kilomètres de pistes dans des espaces naturels entre
+        les collines et les forêts. Vous pouvez choisir entre le style skating ou
+        classique. Une piste de ski nocturne ouverte le mardi et jeudi existe aussi
+        à la Coupe.
+      </li>
+      <li>
+        <span class="font-bold">Raquettes:</span> Vous pouvez aussi randonner en
+        raquettes sur des pistes balisées dans les forêts de sapins.
+      </li>
+    </div>
+  </div>
+  <!-- <DirectionAwareHover client:load>
+    <div slot="img">
+      <Image
+        src="/meta-plan.webp"
+        class={"w-full h-full object-cover"}
+        alt="Plan de Métabief"
+        width={800}
+        height={732}
+      />
+    </div>
+    <p class="font-bold text-xl">Métabief</p>
+    <p>
+      En seulement 10 minutes en voiture, vous pourrez également accéder à
+      Métabief et skier sur ses 35 pistes allant de la verte à la noire.
+    </p>
+    <p>Une école de ski est également disponible sur place.</p>
+  </DirectionAwareHover> -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mt-4 gap-4">
     <Card title="Métabief">
       <Image
         src="/meta-plan.webp"

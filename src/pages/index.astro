@@ -1,8 +1,72 @@
 ---
-import { H1 } from "@/components/Typography";
+import { H1, H2, H3 } from "@/components/Typography";
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import { AddressLink, MailLink, PhoneNumberLink } from "@/components/Buttons";
+import { ZoomedImage } from "@/components/ZoomedImage";
+import { BlurFadeDemo } from "@/components/Gallery";
 ---
 
-<Layout title="Welcome to Astro.">
-  <H1 className="uppercase">LES FOURGS</H1>
+<Layout title="Bienvenue au gîte La Randonnée des Fourgs">
+  <div class="relative w-full h-80">
+    <Image
+      src="/forest.webp"
+      alt="Gite exterior"
+      width={980}
+      height={855}
+      class="w-full h-full object-cover"
+    />
+    <div
+      class="w-1/2 bg-background absolute inset-0 flex flex-col justify-center self-center justify-self-center p-6 px-8 text-center"
+    >
+      <H1 className="uppercase">Bienvenue</H1>
+      <p class="my-2">
+        Venez découvrir les charmes de la montagne dans notre gîte dans le Doubs
+        situé à 1200m d'altitude, au cœur du village de Les Fourgs. Idéal pour
+        les vacances en famille ou entre amis, notre grand gîte peut accueillir
+        jusqu'à 14 personnes.
+      </p>
+      <div>
+        <PhoneNumberLink />
+        <MailLink />
+        <AddressLink />
+      </div>
+    </div>
+  </div>
+  <H2>Au coeur des montagnes du Jura</H2>
+  <H3>Pour groupe jusqu'à 14 personnes. </H3>
+  <ZoomedImage client:load>
+    <Image
+      src="/outside-snow.webp"
+      alt="Gîte de l'extérieur dans la neige"
+      width={911}
+      height={684}
+    />
+  </ZoomedImage>
+  <BlurFadeDemo client:load />
+  <p>
+    Entouré de sapins, de prairies et de lacs, il est à proximité de la
+    frontière suisse, de la station de ski de Métabief et de la ville de
+    Pontarlier. Le village lui-même possède plusieurs pistes de ski alpins, un
+    très grand domaine de ski de fond pistes de raquettes, des magasins, des
+    restaurants et des fromageries. Le gîte dispose d'un jardin clôturé avec une
+    table extérieure, un barbecue, une balançoire pour enfants et un espace de
+    détente.
+  </p>
+  <p>
+    En hiver, les skieurs de fond et les raquetteurs peuvent accéder aux pistes
+    depuis le jardin, et la station de ski familiale du village se trouve à
+    seulement 3 minutes.
+  </p>
+  <p>
+    En été, des sentiers de randonnée et de VTT passent juste devant la maison,
+    notamment le GTJ, la Via Francigena et le GR5. Parmi les autres activités à
+    proximité, citons les sports nautiques au lac de Saint Point/Malbuisson, la
+    visite du Château de Joux, les visites de fromageries, les caves de
+    vieillissement du Comté et les sports d'aventure comme l'accrobranche et le
+    disc golf, la pêche.
+  </p>
+  <H2>Gite intérieur et extérieur</H2>
+  <!-- TODO: Add photo gallery here -->
+  <!-- TODO: Add Map here -->
 </Layout>

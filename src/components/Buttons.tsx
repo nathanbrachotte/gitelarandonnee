@@ -17,21 +17,33 @@ export const MentionLegalesButton = () => {
   );
 };
 
-export const PhoneNumberLink = () => {
+export const PhoneNumberLink = ({
+  withLabel = false,
+}: {
+  withLabel?: boolean;
+}) => {
   return (
-    <Button asChild variant={"link"}>
+    <Button
+      asChild
+      variant={withLabel ? "link" : "ghost"}
+      size={withLabel ? "default" : "icon"}
+    >
       <a className="flex flex-row gap-2" href={"tel:" + PHONE_NUMBER}>
         <PhoneIcon />
 
-        {PHONE_NUMBER}
+        {withLabel ? PHONE_NUMBER : ""}
       </a>
     </Button>
   );
 };
 
-export const AddressLink = () => {
+export const AddressLink = ({ withLabel = false }: { withLabel?: boolean }) => {
   return (
-    <Button asChild variant={"link"}>
+    <Button
+      asChild
+      variant={withLabel ? "link" : "ghost"}
+      size={withLabel ? "default" : "icon"}
+    >
       <a
         className="flex flex-row gap-2"
         target="_blank"
@@ -39,22 +51,26 @@ export const AddressLink = () => {
         href="https://goo.gl/maps/AsjZTatf1GT9vk4a6"
       >
         <LocationIcon />
-        {ADDRESS}
+        {withLabel ? ADDRESS : ""}
       </a>
     </Button>
   );
 };
 
-export const MailLink = () => {
+export const MailLink = ({ withLabel = false }: { withLabel?: boolean }) => {
   return (
-    <Button asChild variant={"link"}>
+    <Button
+      asChild
+      variant={withLabel ? "link" : "ghost"}
+      size={withLabel ? "default" : "icon"}
+    >
       <a
         className="flex flex-row gap-2"
         href="mailto:gite.larandonnee25@gmail.com"
         target="_self"
       >
         <MailIcon />
-        {EMAIL}
+        {withLabel ? EMAIL : ""}
       </a>
     </Button>
   );
