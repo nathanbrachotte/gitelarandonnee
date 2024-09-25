@@ -1,0 +1,117 @@
+---
+import Card from "@/components/Card.astro";
+import { H1 } from "@/components/Typography";
+import { ZoomedImage } from "@/components/ZoomedImage";
+import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets";
+---
+
+<Layout title="Notre région">
+  <H1 className="text-center">Aux Fourgs</H1>
+
+  <Card className="mt-4">
+    <div class="flex flex-col gap-4 md:flex-row justify-center items-center">
+      <div class="flex-1">
+        <ZoomedImage client:load>
+          <Image
+            src="/les-fourgs-plan.webp"
+            alt="Plan des Fourgs"
+            width={1100}
+            height={776}
+          /></ZoomedImage
+        >
+      </div>
+      <div class="flex-1 flex">
+        <ul class="space-y-4 flex flex-col">
+          <li>
+            <span class="font-bold">Ski alpin:</span> 7 remontées mécaniques et des
+            pistes pour tous les niveaux, allant des pistes baby/vertes aux pistes
+            rouges. Certaines pistes sont équipées de canons à neige.
+          </li>
+          <li>
+            <span class="font-bold">Ski de fond:</span> discipline populaire dans
+            la région, avec plus de 100 kilomètres de pistes dans des espaces naturels
+            entre les collines et les forêts. La piste multi-activté passe directement
+            derrière le jardin! Une piste de ski nocturne est ouverte le mardi et
+            jeudi à <a
+              class="cursor-pointer text-secondary underline decoration-secondary decoration-[0.1em] underline-offset-2 transition-all visited:text-blue-500 visited:decoration-blue-500 hover:decoration-blue-500 hover:text-blue-500"
+              href="https://maps.app.goo.gl/B2TySGZj9FmrR8828">la Coupe</a
+            >.
+          </li>
+          <li>
+            <span class="font-bold">Raquettes:</span> Vous pouvez aussi randonner
+            en raquettes sur des pistes balisées dans les forêts de sapins.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </Card>
+  <!-- <DirectionAwareHover client:load>
+    <div slot="img">
+      <Image
+      src="/meta-plan.webp"
+      class={"w-full h-full object-cover"}
+      alt="Plan de Métabief"
+      width={800}
+      height={732}
+      />
+      </div>
+      <p class="font-bold text-xl">Métabief</p>
+      <p>
+        En seulement 10 minutes en voiture, vous pourrez également accéder à
+        Métabief et skier sur ses 35 pistes allant de la verte à la noire.
+        </p>
+        <p>Une école de ski est également disponible sur place.</p>
+        </DirectionAwareHover> -->
+  <H1 className="text-center mt-8">Dans la région</H1>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+    <Card title="Métabief">
+      <Image
+        src="/meta-plan.webp"
+        alt="Plan de Métabief"
+        width={800}
+        height={732}
+      />
+      En seulement 10 minutes en voiture, vous pourrez également accéder à Métabief
+      et skier sur ses 35 pistes allant de la verte à la noire. Une école de ski
+      est également disponible sur place.
+    </Card>
+    <Card title="Le Lac de Saint Point">
+      <Image
+        src="/st-point.webp"
+        alt="Photo du lac Saint-Point"
+        width={800}
+        height={732}
+      />
+      Le lac de Saint-Point offre un magnifique panorama entouré de forêts de sapins.
+      Il est possible de pratiquer la baignade, la pêche, la randonnée, le vélo,
+      les activités nautiques comme la voile ou le canoë. Il y a aussi des aires
+      de pique- nique et des terrains de jeux pour les entants. Il est également
+      connu pour être un spot populaire pour les activités nautiques comme le pédalo,
+      le kayak et le stand-up paddle.
+    </Card>
+    <Card title="Château de Joux">
+      <Image
+        src="/joux.webp"
+        alt="Photo du Château de Joux"
+        width={800}
+        height={732}
+      />
+      Le château de Joux est un incontournable pour les amateurs d'histoire et de
+      culture. Il est situé sur une colline dominant la vallée du Doubs, il est un
+      témoin de l'histoire mouvementée de la région. il est ouvert au public pour
+      des visites guidées et offre une vue imprenable sur la vallée environnante.
+    </Card>
+    <Card title="Autres activités">
+      <Image
+        src="/office-de-tourisme.webp"
+        alt="Photo du Château de Joux"
+        width={504}
+        height={461}
+      />
+      Chien de traineaux, caves d'affinage, grottes, pêche, accro-branches, disc
+      golf... Pour découvrir toutes les autres activités et les site touristiques
+      qu'offre la région, n'hésitez pas à vous rendre à l'office de tourisme du village.
+    </Card>
+  </div>
+</Layout>

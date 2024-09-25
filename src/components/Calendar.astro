@@ -1,0 +1,42 @@
+---
+const ingenieCode = import.meta.env.PUBLIC_INGENIE_CODE;
+const siteUrl = import.meta.env.PUBLIC_SITE_URL;
+---
+
+<div class="relative h-[307px] flex justify-center">
+  <div class="max-w-full absolute" id="widget-fiche-ingenie"></div>
+</div>
+<script
+  src="https://static.ingenie.fr/js/ScriptsLoader.js"
+  type="text/javascript"></script>
+<script
+  src="https://static.ingenie.fr/widgets/dispo_resa/Client.js"
+  type="text/javascript"></script>
+<script define:vars={{ ingenieCode, siteUrl }}>
+  // Créer un widget de dispo et/ou resa
+  const widget_dispo_resa = new window.IngenieWidgetDispoResa.Client({
+    code: ingenieCode, // Code de la prestation
+    url: siteUrl, //(string) Url du site (dynamique)
+    elementHtml: "widget-fiche-ingenie", //(string) Identifiant destination HTML du widget
+    enable_dispo: true, // Active dispo
+    enable_resa: false, // Active résa
+    styles: {
+      direction: "horizontal",
+      responsiveAt: "900",
+      inlineLabels: true,
+    },
+    dispo: {
+      options: {
+        templates: {
+          Week: "semaineLigne",
+          Days: "jourSemaineLigne",
+        },
+      },
+    },
+    resa: {
+      typeWidget: "OBJET",
+    },
+  });
+
+  widget_dispo_resa.init();
+</script>

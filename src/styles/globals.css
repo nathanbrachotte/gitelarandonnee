@@ -24,6 +24,10 @@
     --input: 300 30% 18%;
     --ring: 300 36% 34.3%;
     --radius: 0.5rem;
+
+    --pastel-blue: 216 100% 83%; /* #A6CAFF */
+    --pastel-green: 157 100% 71%; /* #6AFFC7 */
+    --pastel-yellow: 56 100% 77%; /* #FFF78A */
   }
   .dark {
     --background: 300 37% 5%;

@@ -9,24 +9,38 @@ const LABEL = "Plan du Gîte";
 
 <Layout title={LABEL}>
   <H1 className="text-center">{LABEL}</H1>
-  <div class="flex flex-col justify-center mt-4">
-    <ZoomedImage client:idle>
-      <Image
-        src="/plan.webp"
-        alt="Plan du gîte"
-        class={"w-full h-full object-cover"}
-        height="664"
-        width="349"
-      /></ZoomedImage
-    >
-    <div class="mt-4">
-      <li>Pour les groupes jusqu'à 10 personnes : pièces bleues</li>
-      <li>
-        Pour les groupes jusqu'à 14 personnes: toutes les pièces à disposition
+  <div class="flex flex-col justify-center mt-4 md:flex-row">
+    <div class="md:w-2/3">
+      <ZoomedImage client:idle>
+        <!-- TODO: use webp -->
+        <Image
+          src="/plan.png"
+          alt="Plan du gîte"
+          class={"w-full h-full object-cover"}
+          height="664"
+          width="349"
+        />
+      </ZoomedImage>
+    </div>
+    <div class="mt-4 flex-1 flex flex-col justify-center gap-2">
+      <li class="flex gap-2 items-center">
+        Pour les groupes jusqu'à 10 personnes : <div
+          class="h-6 w-6 border bg-pastel-blue shrink-0"
+        >
+        </div>
       </li>
-      <li>
-        La petite salle de bain est en option. (espace bébé : table à langer,
-        baignoire
+      <li class="flex gap-2 items-center">
+        Pour les groupes jusqu'à 14 personnes: <div
+          class="h-6 w-6 border bg-pastel-blue shrink-0"
+        >
+        </div>
+        + <div class="h-6 w-6 border bg-pastel-green shrink-0"></div>
+      </li>
+      <li class="flex gap-2 items-center">
+        Petite salle de bain en option (table à langer, baignoire): <div
+          class="h-6 w-6 border bg-pastel-yellow shrink-0"
+        >
+        </div>
       </li>
     </div>
   </div></Layout

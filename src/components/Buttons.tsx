@@ -100,10 +100,10 @@ export const PlanLink = () => {
   );
 };
 
-export const RegionLink = () => {
+export const ActivitésLink = () => {
   return (
     <Button asChild variant={"link"}>
-      <a href="/notre-region">Notre Région</a>
+      <a href="/notre-region">Activités</a>
     </Button>
   );
 };
