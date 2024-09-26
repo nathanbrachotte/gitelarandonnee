@@ -1,59 +1,44 @@
 ---
-import { GiteLogo } from "@/components/logo";
-import { H2 } from "@/components/Typography";
 import {
   AccueilLink,
   PlanLink,
   ActivitésLink,
   DispoLink,
 } from "@/components/Buttons";
-import { NAME } from "@/data";
 import { Image } from "astro:assets";
+import { MobileMenu } from "@/components/MobileMenu";
+import { GiteLogoWrapper } from "@/components/GiteLogoWrapper";
+
+const activePath = Astro.url.pathname;
 ---
 
-<header class="bg-white shadow-md w-full py-6">
-  <div
-    class="container mx-auto flex justify-center md:justify-between items-center flex-wrap gap-4"
-  >
-    <div class="flex flex-wrap gap-4">
-      <div class="flex items-center justify-center flex-1 gap-2">
-        <GiteLogo className="w-12 h-12" />
-        <H2 className="whitespace-nowrap">
-          {NAME}
-        </H2>
-      </div>
+<header class="bg-white shadow-md w-full p-6">
+  <div class="container mx-auto flex justify-between items-center gap-4">
+    <div class="flex flex-wrap">
+      <GiteLogoWrapper />
       <div class="flex flex-row flex-1 min-w-40 justify-center gap-2">
         <Image
           src="/meuble-de-tourisme.webp"
           alt="Meublé de tourisme"
-          class="w-12 md:w-16 h-auto object-contain shrink-0"
+          class="w-10 sm:w-12 md:w-16 h-auto object-contain shrink-0"
           width={180}
           height={132}
         />
         <Image
           src="/trois-epis.webp"
           alt="Gite 3 épis"
-          class="w-20 md:w-24 h-auto object-contain shrink-0"
+          class="w-10 sm:w-12 md:w-20 h-auto object-contain shrink-0"
           width={232}
           height={120}
         />
       </div>
     </div>
-    <nav class="flex-1">
-      <ul class="flex flex-row flex-wrap justify-center md:justify-end">
-        <li>
-          <AccueilLink client:load />
-        </li>
-        <li>
-          <DispoLink client:load />
-        </li>
-        <li>
-          <PlanLink client:load />
-        </li>
-        <li>
-          <ActivitésLink client:load />
-        </li>
-      </ul>
+    <MobileMenu activePath={activePath} client:load />
+    <nav class="hidden lg:flex flex-1 justify-end">
+      <AccueilLink activePath={activePath} client:load />
+      <DispoLink activePath={activePath} client:load />
+      <PlanLink activePath={activePath} client:load />
+      <ActivitésLink activePath={activePath} client:load />
     </nav>
   </div>
 </header>

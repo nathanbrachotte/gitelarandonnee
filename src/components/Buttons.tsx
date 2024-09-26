@@ -1,6 +1,8 @@
 import { LocationIcon, MailIcon, PhoneIcon } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { ADDRESS, EMAIL, PHONE_NUMBER } from "@/data";
+import { cn } from "@/lib/utils";
+import { ROUTES } from "@/routes";
 
 export const CGLButton = () => {
   return (
@@ -76,34 +78,70 @@ export const MailLink = ({ withLabel = false }: { withLabel?: boolean }) => {
   );
 };
 
-export const AccueilLink = () => {
+export const AccueilLink = ({ activePath }: { activePath: string }) => {
+  const link = ROUTES.ACCUEIL.getPath({});
+  const isActive = activePath === link;
+
   return (
-    <Button asChild variant={"link"}>
-      <a href="/">Accueil</a>
+    <Button
+      asChild
+      variant={"link"}
+      className={cn({
+        "underline text-purple-950": isActive,
+      })}
+    >
+      <a href={link}>Accueil</a>
     </Button>
   );
 };
 
-export const DispoLink = () => {
+export const DispoLink = ({ activePath }: { activePath: string }) => {
+  const link = ROUTES.DISPO_TARIFS.getPath({});
+  const isActive = activePath === link;
+
   return (
-    <Button asChild variant={"link"}>
-      <a href="/disponibilites-tarifs">Disponibilités et Tarifs</a>
+    <Button
+      asChild
+      variant={"link"}
+      className={cn({
+        "underline text-purple-950": isActive,
+      })}
+    >
+      <a href={link}>Disponibilités et Tarifs</a>
     </Button>
   );
 };
 
-export const PlanLink = () => {
+export const PlanLink = ({ activePath }: { activePath: string }) => {
+  const link = ROUTES.PLAN_DU_GITE.getPath({});
+  const isActive = activePath === link;
+
   return (
-    <Button asChild variant={"link"}>
-      <a href="/plan-du-gite">Plan du Gîte</a>
+    <Button
+      asChild
+      variant={"link"}
+      className={cn({
+        "underline text-purple-950": isActive,
+      })}
+    >
+      <a href={link}>Plan du Gîte</a>
     </Button>
   );
 };
 
-export const ActivitésLink = () => {
+export const ActivitésLink = ({ activePath }: { activePath: string }) => {
+  const link = ROUTES.ACTIVITES.getPath({});
+  const isActive = activePath === link;
+
   return (
-    <Button asChild variant={"link"}>
-      <a href="/notre-region">Activités</a>
+    <Button
+      asChild
+      variant={"link"}
+      className={cn({
+        "underline text-purple-950": isActive,
+      })}
+    >
+      <a href={link}>Activités</a>
     </Button>
   );
 };
