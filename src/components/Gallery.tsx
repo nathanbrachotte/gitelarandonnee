@@ -8,9 +8,9 @@ const images = Array.from({ length: 9 }, (_, i) => {
   return `https://picsum.photos/seed/${i + 1}/${width}/${height}`;
 });
 
-export function BlurFadeDemo() {
+export function Gallery() {
   return (
-    <section id="photos" className="bg-black">
+    <section id="photos">
       <div className="columns-2 gap-4 sm:columns-3">
         {images.map((imageUrl, idx) => (
           <BlurFade key={imageUrl} delay={0.25 + idx * 0.05} inView>

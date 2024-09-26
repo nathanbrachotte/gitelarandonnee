@@ -117,3 +117,22 @@ export const FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
+
+export const FlowerBullet = (props: React.SVGProps<SVGSVGElement>) => {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <circle cx="10" cy="10" r="5" fill="currentColor" />
+      <circle cx="10" cy="5" r="2.5" fill="currentColor" />
+      <circle cx="15" cy="10" r="2.5" fill="currentColor" />
+      <circle cx="10" cy="15" r="2.5" fill="currentColor" />
+      <circle cx="5" cy="10" r="2.5" fill="currentColor" />
+    </svg>
+  );
+};
