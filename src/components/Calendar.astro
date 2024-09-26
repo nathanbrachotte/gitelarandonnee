@@ -7,12 +7,14 @@ const siteUrl = import.meta.env.PUBLIC_SITE_URL;
   <div class="max-w-full absolute" id="widget-fiche-ingenie"></div>
 </div>
 <script
+  is:inline
   src="https://static.ingenie.fr/js/ScriptsLoader.js"
   type="text/javascript"></script>
 <script
+  is:inline
   src="https://static.ingenie.fr/widgets/dispo_resa/Client.js"
   type="text/javascript"></script>
-<script define:vars={{ ingenieCode, siteUrl }}>
+<script is:inline define:vars={{ ingenieCode, siteUrl }}>
   // Créer un widget de dispo et/ou resa
   const widget_dispo_resa = new window.IngenieWidgetDispoResa.Client({
     code: ingenieCode, // Code de la prestation
