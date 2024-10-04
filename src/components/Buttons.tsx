@@ -86,6 +86,7 @@ export const AccueilLink = ({ activePath }: { activePath: string }) => {
     <Button
       asChild
       variant={"link"}
+      size={"lg"}
       className={cn({
         "underline text-purple-950": isActive,
       })}
@@ -103,6 +104,7 @@ export const DispoLink = ({ activePath }: { activePath: string }) => {
     <Button
       asChild
       variant={"link"}
+      size={"lg"}
       className={cn({
         "underline text-purple-950": isActive,
       })}
@@ -120,6 +122,7 @@ export const PlanLink = ({ activePath }: { activePath: string }) => {
     <Button
       asChild
       variant={"link"}
+      size={"lg"}
       className={cn({
         "underline text-purple-950": isActive,
       })}
@@ -137,6 +140,7 @@ export const ActivitésLink = ({ activePath }: { activePath: string }) => {
     <Button
       asChild
       variant={"link"}
+      size={"lg"}
       className={cn({
         "underline text-purple-950": isActive,
       })}

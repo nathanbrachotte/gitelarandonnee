@@ -1,6 +1,7 @@
 import Zoom from "react-medium-image-zoom";
 import "./zoomedImage.css";
 import { type PropsWithChildren } from "react";
+import { cn } from "@/lib/utils";
 
 export function ZoomedImage({
   children,
@@ -8,7 +9,7 @@ export function ZoomedImage({
 }: PropsWithChildren<{ wrapperClassName?: string }>) {
   return (
     <Zoom>
-      <div className={wrapperClassName}>{children}</div>
+      <div className={cn("", wrapperClassName)}>{children}</div>
     </Zoom>
   );
 }
