@@ -1,6 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { H1 } from "@/components/Typography";
+import { H1, LandingH2 } from "@/components/Typography";
 import { Image } from "astro:assets";
 import { ZoomedImage } from "@/components/ZoomedImage";
 
@@ -8,8 +8,8 @@ const LABEL = "Plan du Gîte";
 ---
 
 <Layout title={LABEL}>
-  <H1 className="text-center">{LABEL}</H1>
-  <div class="flex flex-col justify-center mt-4 md:flex-row">
+  <LandingH2 className="text-center mt-12">{LABEL}</LandingH2>
+  <div class="flex flex-col justify-center md:flex-row">
     <div class="md:w-2/3">
       <ZoomedImage client:idle>
         <!-- TODO: use webp -->

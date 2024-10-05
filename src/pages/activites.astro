@@ -1,14 +1,15 @@
 ---
 import Card from "@/components/Card.astro";
-import { H1 } from "@/components/Typography";
+import Link from "@/components/Link.astro";
+import { H1, LandingH2 } from "@/components/Typography";
 import { ZoomedImage } from "@/components/ZoomedImage";
+import { LINKS } from "@/data";
 import Layout from "@/layouts/Layout.astro";
 import { Image } from "astro:assets";
 ---
 
 <Layout title="Notre région">
-  <H1 className="text-center">Aux Fourgs</H1>
-
+  <LandingH2 className="text-center">Aux Fourgs</LandingH2>
   <Card className="mt-4">
     <div class="flex flex-col gap-4 md:flex-row justify-center items-center">
       <div class="flex-1">
@@ -33,10 +34,7 @@ import { Image } from "astro:assets";
             la région, avec plus de 100 kilomètres de pistes dans des espaces naturels
             entre les collines et les forêts. La piste multi-activté passe directement
             derrière le jardin! Une piste de ski nocturne est ouverte le mardi et
-            jeudi à <a
-              class="cursor-pointer text-secondary underline decoration-secondary decoration-[0.1em] underline-offset-2 transition-all visited:text-blue-500 visited:decoration-blue-500 hover:decoration-blue-500 hover:text-blue-500"
-              href="https://maps.app.goo.gl/B2TySGZj9FmrR8828">la Coupe</a
-            >.
+            jeudi à <Link href={LINKS.LA_COUPE.url}>la Coupe</Link>.
           </li>
           <li>
             <span class="font-bold">Raquettes:</span> Vous pouvez aussi randonner
@@ -63,7 +61,7 @@ import { Image } from "astro:assets";
         </p>
         <p>Une école de ski est également disponible sur place.</p>
         </DirectionAwareHover> -->
-  <H1 className="text-center mt-8">Dans la région</H1>
+  <LandingH2 className="text-center mt-8">Dans les environs</LandingH2>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-4">
     <Card title="Métabief">
       <Image

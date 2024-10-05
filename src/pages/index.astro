@@ -1,11 +1,12 @@
 ---
-import { H2, H3, LandingH1 } from "@/components/Typography";
+import { H3, LandingH1, LandingH2 } from "@/components/Typography";
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import { AddressLink, MailLink, PhoneNumberLink } from "@/components/Buttons";
 import { ZoomedImage } from "@/components/ZoomedImage";
 import { Gallery } from "@/components/Gallery";
 import { FlowerBullet } from "@/components/icons";
+import { IMAGES } from "@/data";
 import { cn } from "@/lib/utils";
 ---
 
@@ -39,102 +40,119 @@ import { cn } from "@/lib/utils";
       </div>
     </div>
   </section>
-  <section id="presentation" class="flex flex-col md:flex-row mt-12">
-    <div class="flex-1 w-full md:w-1/2">
-      <ZoomedImage client:load>
-        <Image
-          src="/outside-snow.webp"
-          alt="Gîte de l'extérieur dans la neige"
-          width={911}
-          height={684}
-          class="rounded-r-lg"
-        />
-      </ZoomedImage>
-    </div>
-    <div class="flex-1 p-8 w-full md:w-1/2">
-      <H2 className="pb-0">Au coeur des montagnes du Jura</H2>
-      <H3>Pour groupe jusqu'à 14 personnes. </H3>
-      <ul class="mt-4">
-        <li class="flex items-start space-x-1 mt-2">
-          <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
-            <FlowerBullet className="text-primary" />
-          </div>
-          Le village est entouré de sapins, de prairies et de lacs. Il est à proximité
-          de la frontière suisse 🇨🇭, de la station de ski de Métabief et de la ville
-          de Pontarlier.
-        </li>
-        <li class="flex items-start space-x-1 mt-2">
-          <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
-            <FlowerBullet className="text-primary" />
-          </div>
-          Le village lui-même possède des magasins, des restaurants et des fromageries.
-        </li>
-        <li class="flex items-start space-x-1 mt-2">
-          <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
-            <FlowerBullet className="text-primary" />
-          </div>
-          Le gîte dispose d'un jardin clôturé avec une table extérieure, un barbecue,
-          une balançoire pour enfants et un espace de détente.
-        </li>
-        <H3 className="mt-4">En hiver</H3>
-        <li class="flex items-start space-x-1 mt-2">
-          <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
-            <FlowerBullet className="text-primary" />
-          </div>
-          Les skieurs de fond et les raquetteurs peuvent accéder aux centaines de
-          kilomètres de pistes depuis le jardin
-        </li>
-        <li class="flex items-start space-x-1 mt-2">
-          <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
-            <FlowerBullet className="text-primary" />
-          </div>
-          La station de ski familiale du village se trouve à seulement 3 minutes
-          en voiture.
-        </li>
-      </ul>
+  <section id="presentation" class="mt-12 flex justify-center">
+    <div
+      class="container flex flex-col lg:flex-row items-center justify-center"
+    >
+      <div class="flex-1 w-full lg:w-1/2">
+        <ZoomedImage client:load>
+          <Image
+            src={IMAGES.EXTERIEUR_ARBRES.url}
+            alt={IMAGES.EXTERIEUR_ARBRES.caption}
+            width={911}
+            height={684}
+            class="sm:rounded-lg"
+          />
+        </ZoomedImage>
+      </div>
+      <div class="flex-1 p-8 w-full lg:w-1/2">
+        <LandingH2>Au coeur des montagnes du Jura</LandingH2>
+        <ul class="mt-4">
+          <li class="flex items-start space-x-1 mt-2">
+            <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
+              <FlowerBullet className="text-primary" />
+            </div>
+            Le village est entouré de sapins, de prairies et de lacs. Il est à proximité
+            de la frontière suisse 🇨🇭, de la station de ski de Métabief et de la
+            ville de Pontarlier.
+          </li>
+          <li class="flex items-start space-x-1 mt-2">
+            <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
+              <FlowerBullet className="text-primary" />
+            </div>
+            Le village lui-même possède des magasins, des restaurants et des fromageries.
+          </li>
+          <li class="flex items-start space-x-1 mt-2">
+            <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
+              <FlowerBullet className="text-primary" />
+            </div>
+            Le gîte dispose d'un jardin clôturé avec une table extérieure, un barbecue,
+            une balançoire pour enfants et un espace de détente.
+          </li>
+          <H3 className="mt-4">En hiver</H3>
+          <li class="flex items-start space-x-1 mt-2">
+            <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
+              <FlowerBullet className="text-primary" />
+            </div>
+            Les skieurs de fond et les raquetteurs peuvent accéder aux centaines
+            de kilomètres de pistes depuis le jardin
+          </li>
+          <li class="flex items-start space-x-1 mt-2">
+            <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
+              <FlowerBullet className="text-primary" />
+            </div>
+            La station de ski familiale du village se trouve à seulement 3 minutes
+            en voiture.
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
-
-  <section id="summer" class="flex flex-col md:flex-row">
-    <div class="flex-1 p-8 w-full md:w-1/2">
-      <H3 className="mt-4">En été</H3>
-      <li class="flex items-start space-x-1 mt-2">
-        <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
-          <FlowerBullet className="text-primary" />
-        </div>
-        Des sentiers de randonnée et de VTT passent juste devant le gîte, notamment
-        le GTJ, la Via Francigena et le GR5.
-      </li>
-      <li class="flex items-start space-x-1 mt-2">
-        <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
-          <FlowerBullet className="text-primary" />
-        </div>
-        Sports nautiques au lac de Saint Point/Malbuisson.
-      </li>
-      <li class="flex items-start space-x-1 mt-2">
-        <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
-          <FlowerBullet className="text-primary" />
-        </div>
-        Sport d'aventure avec les via ferrata, l'accrobranche et le disc golf.
-      </li>
-      <li class="flex items-start space-x-1 mt-2">
-        <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
-          <FlowerBullet className="text-primary" />
-        </div>
-        Visitez le Château de Joux, les fromageries et les caves de vieillissement
-        du Comté.
-      </li>
-    </div>
-    <div class="flex-1 w-full md:w-1/2">
-      <ZoomedImage client:load wrapperClassName="rounded-lg">
-        <Image
-          src="/outside-snow.webp"
-          alt="Gîte de l'extérieur dans la neige"
-          class="rounded-l-lg"
-          width={911}
-          height={684}
-        />
-      </ZoomedImage>
+  <section id="summer" class="mt-12 flex justify-center">
+    <div
+      class="container flex flex-col lg:flex-row items-center justify-center"
+    >
+      <div class="flex-1 w-full block lg:hidden">
+        <ZoomedImage client:load wrapperClassName="rounded-lg">
+          <Image
+            src={IMAGES.EXTERIEUR_GITE_ETE.url}
+            alt={IMAGES.EXTERIEUR_GITE_ETE.caption}
+            class="sm:rounded-lg"
+            width={911}
+            height={684}
+          />
+        </ZoomedImage>
+      </div>
+      <div class="flex-1 p-8 w-full lg:w-1/2">
+        <H3 className="lg:mt-4">En été</H3>
+        <li class="flex items-start space-x-1 mt-2">
+          <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
+            <FlowerBullet className="text-primary" />
+          </div>
+          Des sentiers de randonnée et de VTT passent juste devant le gîte, notamment
+          le GTJ, la Via Francigena et le GR5.
+        </li>
+        <li class="flex items-start space-x-1 mt-2">
+          <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
+            <FlowerBullet className="text-primary" />
+          </div>
+          Sports nautiques au lac de Saint Point/Malbuisson.
+        </li>
+        <li class="flex items-start space-x-1 mt-2">
+          <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
+            <FlowerBullet className="text-primary" />
+          </div>
+          Sport d'aventure avec les via ferrata, l'accrobranche et le disc golf.
+        </li>
+        <li class="flex items-start space-x-1 mt-2">
+          <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
+            <FlowerBullet className="text-primary" />
+          </div>
+          Visitez le Château de Joux, les fromageries et les caves de vieillissement
+          du Comté.
+        </li>
+      </div>
+      <div class="flex-1 w-full lg:w-1/2 hidden lg:block">
+        <ZoomedImage client:load wrapperClassName="rounded-lg">
+          <Image
+            src={IMAGES.EXTERIEUR_GITE_ETE.url}
+            alt={IMAGES.EXTERIEUR_GITE_ETE.caption}
+            class="sm:rounded-lg"
+            width={911}
+            height={684}
+          />
+        </ZoomedImage>
+      </div>
     </div>
   </section>
   <Gallery client:load />

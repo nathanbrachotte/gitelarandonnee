@@ -1,0 +1,25 @@
+---
+import { cn } from "@/lib/utils";
+
+export type Props = {
+  href: string;
+  target?: "_blank" | "_self" | "_parent" | "_top";
+  caption?: string;
+  className?: string;
+};
+
+const { href, className, target } = Astro.props;
+---
+
+<a
+  class={cn(
+    "cursor-pointer text-green-800 underline decoration-secondary decoration-[0.1em] underline-offset-2 transition-all",
+    "visited:text-indigo-700 visited:decoration-indigo-700",
+    "hover:decoration-green-400 hover:text-green-400",
+    className,
+  )}
+  target={target ?? "_blank"}
+  href={href}
+>
+  <slot />
+</a>

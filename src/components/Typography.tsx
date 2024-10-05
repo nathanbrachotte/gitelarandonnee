@@ -38,6 +38,24 @@ export const H1 = ({
   );
 };
 
+export const LandingH2 = ({
+  children,
+  className,
+  ...props
+}: HTMLAttributes<HTMLHeadingElement>) => {
+  return (
+    <h2
+      className={cn(
+        "text-4xl font-extrabold tracking-tight lg:text-5xl text-primary font-logo",
+        className,
+      )}
+      {...props}
+    >
+      {children}
+    </h2>
+  );
+};
+
 export const H2 = ({
   children,
   className,

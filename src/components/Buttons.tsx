@@ -7,14 +7,14 @@ import { ROUTES } from "@/routes";
 export const CGLButton = () => {
   return (
     <Button asChild variant={"link"}>
-      <a href="/cgl">CGLds </a>
+      <a href={ROUTES.CGL.getPath({})}>CGL</a>
     </Button>
   );
 };
 export const MentionLegalesButton = () => {
   return (
     <Button variant={"link"}>
-      <a href="/mentions-legales">Mention Légales</a>
+      <a href={ROUTES.MENTIONS_LEGALES.getPath({})}>Mention Légales</a>
     </Button>
   );
 };

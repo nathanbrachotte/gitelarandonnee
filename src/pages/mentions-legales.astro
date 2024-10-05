@@ -1,0 +1,77 @@
+---
+import { H1 } from "@/components/Typography";
+import Layout from "@/layouts/Layout.astro";
+import { ADDRESS, EMAIL, PHONE_NUMBER, WEBSITE_ADDRESS } from "@/data";
+---
+
+<Layout title="Mentions Légales">
+  <div class="container">
+    <H1>MENTIONS LÉGALES</H1>
+    <p class="mt-4">Vous êtes sur le site internet {WEBSITE_ADDRESS}</p>
+    <p class="mt-4">
+      Le site {WEBSITE_ADDRESS} ainsi que tous ses composants sont la propriété de
+      Mme.Brachotte Cécile, {ADDRESS}, tél : {PHONE_NUMBER}, e-mail :
+      {EMAIL}
+    </p>
+    <p class="mt-4">Directeur de la publication : Mme. Brachotte Cécile</p>
+    <p class="mt-4">
+      Fournisseur d’hébergement : Cloudflare assure l’hébergement du site {
+        WEBSITE_ADDRESS
+      }
+    </p>
+    <p class="mt-4">
+      Le simple fait d’accéder au site implique que vous acceptiez sans réserve
+      les termes et conditions définies ci-dessous.
+    </p>
+    <p class="mt-4">
+      Article 1 – Utilisations autorisées : Le Gîte La Randonnée s’interdit
+      expressément de procéder à l’exploitation des images susceptibles de
+      porter atteinte à la vie privée et à la réputation, ni utiliser les images
+      dans tout support à caractère pornographique, raciste, xénophobe ou toute
+      autre exploitation préjudiciable.Aucune reproduction d’une œuvre protégée
+      ou d’une marque sans l’accord de son auteur, de ses ayant droit ou de son
+      titulaire ne sera mise en ligne.
+    </p>
+    <p class="mt-4">
+      Article 2 – Loi informatique et libertés: D’après la loi du 6 janvier
+      1978, les utilisateurs du site sont tenus de respecter les dispositions de
+      la loi informatique, fichiers et libertés, dont la violation est passible
+      de sanctions pénales. Ils doivent notamment s’abstenir, s’agissant des
+      informations nominatives auxquelles ils accèdent, de toute utilisation
+      détournée et d’une manière générale, de tout acte susceptible de porter
+      atteinte à la vie privée ou à la réputation des personnes.
+    </p>
+    <p class="mt-4">
+      Article 3 – Droit d’auteur : Le contenu de ce site relève de la
+      législation française et internationale sur le droit d’auteur et la
+      propriété intellectuelle. Tous les droits de reproduction sont réservés y
+      compris les représentations graphiques et pictographiques.Le Gîte La
+      Randonnée se réserve le droit de poursuivre en justice toute tentative de
+      détournement des documentations, animations et bases de données du site.
+    </p>
+    <p class="mt-4">
+      Article 4 – Mailing : Les adresses mail figurant sur ce site ne peuvent
+      être collectées à des fins de prospection sans autorisation préalable.
+    </p>
+    <p class="mt-4">
+      Article 5 – Liens hypertextes : Le site {WEBSITE_ADDRESS}
+      peut renvoyer l’utilisateur à d’autres sites Internet par le biais de liens
+      hypertextes. Le Gîte La Randonnée ne saurait être tenu pour responsable du
+      contenu de ces sites, lesquels relèvent de l’entière responsabilité de leurs
+      titulaires. Certains dangers sont inhérents à l’utilisation de l’Internet et
+      l’utilisateur est mis en garde quant à la nécessité de prendre en compte les
+      risques potentiels (toute infection par virus informatique, tout bugue, tout
+      ralentissement, etc…) avant de procéder à la consultation du site {
+        WEBSITE_ADDRESS
+      }
+      Le Gîte La Randonnée ne saurait être tenu pour responsable de toute coupure
+      d’accès aux services du site {WEBSITE_ADDRESS}
+    </p>
+    <p class="mt-4">
+      Article 6 – Base de Données : La base de données relatives au site est
+      protégée par la loi du 10 juillet 1998 spécifiant qu’à compter de son
+      achèvement, son auteur bénéficie d’une protection qui obéit aux règles du
+      droit d’auteur et ce pendant 15 ans.
+    </p>
+  </div>
+</Layout>

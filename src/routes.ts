@@ -125,6 +125,16 @@ export const ROUTES = {
       return generateUrl("/activites", props);
     },
   },
+  CGL: {
+    getPath: (props: RouteParams) => {
+      return generateUrl("/condition-generale-location", props);
+    },
+  },
+  MENTIONS_LEGALES: {
+    getPath: (props: RouteParams) => {
+      return generateUrl("/mentions-legales", props);
+    },
+  },
 } as const satisfies Record<string, Routes>;
 
 /**
