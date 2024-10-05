@@ -87,7 +87,7 @@ export const AccueilLink = ({ activePath }: { activePath: string }) => {
       asChild
       variant={"link"}
       size={"lg"}
-      className={cn({
+      className={cn("px-3", {
         "underline text-purple-950": isActive,
       })}
     >
@@ -105,7 +105,7 @@ export const DispoLink = ({ activePath }: { activePath: string }) => {
       asChild
       variant={"link"}
       size={"lg"}
-      className={cn({
+      className={cn("px-3", {
         "underline text-purple-950": isActive,
       })}
     >
@@ -123,7 +123,7 @@ export const PlanLink = ({ activePath }: { activePath: string }) => {
       asChild
       variant={"link"}
       size={"lg"}
-      className={cn({
+      className={cn("px-3", {
         "underline text-purple-950": isActive,
       })}
     >
@@ -141,7 +141,7 @@ export const ActivitésLink = ({ activePath }: { activePath: string }) => {
       asChild
       variant={"link"}
       size={"lg"}
-      className={cn({
+      className={cn("px-3", {
         "underline text-purple-950": isActive,
       })}
     >

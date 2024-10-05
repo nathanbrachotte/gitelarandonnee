@@ -6,7 +6,7 @@ import { IMAGES } from "@/data";
 export function Gallery() {
   return (
     <>
-      <section id="gallery" className="mt-24 text-center px-4">
+      <section id="gallery" className="mt-24 mb-12 text-center px-4">
         <LandingH2 className="mb-8">Le Gîte en images</LandingH2>
         <div className="columns-2 gap-4 sm:columns-3 mt-4">
           {Object.values(IMAGES).map((image, idx) => (
