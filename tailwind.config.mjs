@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        logo: ["Campfire", "sans-serif"],
+        logo: ["Anastasia", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

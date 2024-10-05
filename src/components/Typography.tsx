@@ -2,6 +2,24 @@ import { cn } from "@/lib/utils";
 import { Slot } from "@radix-ui/react-slot";
 import type { HTMLAttributes } from "react";
 
+export const LandingH1 = ({
+  className,
+  children,
+  ...props
+}: HTMLAttributes<HTMLHeadingElement>) => {
+  return (
+    <h1
+      className={cn(
+        "text-5xl font-extrabold tracking-tight lg:text-6xl font-logo text-primary",
+        className,
+      )}
+      {...props}
+    >
+      {children}
+    </h1>
+  );
+};
+
 export const H1 = ({
   className,
   children,

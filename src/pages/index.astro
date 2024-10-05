@@ -1,5 +1,5 @@
 ---
-import { H1, H2, H3 } from "@/components/Typography";
+import { H2, H3, LandingH1 } from "@/components/Typography";
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import { AddressLink, MailLink, PhoneNumberLink } from "@/components/Buttons";
@@ -10,22 +10,22 @@ import { cn } from "@/lib/utils";
 ---
 
 <Layout title="La Randonnée" withPadding={false}>
-  <section id="hero" class="relative w-full h-[24rem] sm:h-[36rem]">
+  <section id="hero" class="relative w-full h-[24rem] sm:h-[56rem]">
     <Image
-      src="/forest.webp"
+      src="/gite/exterieur-neige-grand.webp"
       alt="Gite exterior"
-      width={980}
-      height={855}
+      width={911}
+      height={684}
       class="w-full h-full object-cover"
     />
     <div
       class={cn(
-        "w-11/12 sm:w-9/12 lg:w-1/2 bg-background absolute inset-0 flex flex-col justify-center self-center justify-self-center p-6 px-8 text-center",
+        "w-11/12 sm:w-9/12 lg:w-1/2 bg-background opacity-90 absolute inset-0 flex flex-col justify-center self-center justify-self-center p-6 sm:p-12 px-8 text-center",
         "px-12 md:px-14",
         "rounded-lg",
       )}
     >
-      <H1>Bienvenue</H1>
+      <LandingH1>Bienvenue</LandingH1>
       <p class="my-4">
         Venez découvrir les charmes de la montagne dans notre gîte dans le Doubs
         situé à 1200m d'altitude, au cœur du village de Les Fourgs. Idéal pour
