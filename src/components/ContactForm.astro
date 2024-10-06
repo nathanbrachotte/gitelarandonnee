@@ -1,0 +1,84 @@
+---
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { ContactFormSuccess } from "@/components/ContactFormSuccess";
+import { H2 } from "@/components/Typography";
+import { PaperPlaneIcon } from "@radix-ui/react-icons";
+
+const IS_DEBUG = import.meta.env.DEV;
+---
+
+<div class="container mx-auto mt-8 flex justify-center">
+  <form action="/actions/send-email" method="post">
+    <div class="space-y-5">
+      <div class="text-center">
+        <H2>Nous contacter</H2>
+        <p class="text-gray-500">
+          Pour toute réservation ou question. Nous vous répondrons dans les plus
+          brefs délais.
+        </p>
+      </div>
+      <div id="contact-form-success" class="container mx-auto hidden">
+        <ContactFormSuccess client:load />
+      </div>
+      <div id="contact-form-container">
+        <div class="gap-4 grid grid-cols-2">
+          <div class="space-y-1 col-span-2 md:col-span-1">
+            <Label htmlFor="name">Nom</Label>
+            <Input
+              id="name"
+              placeholder="Enter your name"
+              name="name"
+              value={IS_DEBUG ? "John Doe" : ""}
+            />
+          </div>
+          <div class="space-y-1 col-span-2 md:col-span-1">
+            <Label htmlFor="email">Email</Label>
+            <Input
+              id="email"
+              placeholder="Enter your email"
+              type="email"
+              name="email"
+              value={IS_DEBUG ? "john.doe@example.com" : ""}
+            />
+          </div>
+          <div class="space-y-1 col-span-2">
+            <Label htmlFor="message">Message</Label>
+            <Textarea
+              id="message"
+              placeholder="Enter your message"
+              className="min-h-[100px]"
+              name="message"
+              value={IS_DEBUG ? "Hello, I want to book a stay." : ""}
+            />
+          </div>
+        </div>
+        <Button type="submit" className="mx-auto flex w-1/2 mt-5">
+          <PaperPlaneIcon className="w-4 h-4 mr-2" /> Envoyer
+        </Button>
+      </div>
+    </div>
+  </form>
+</div>
+<script>
+  import { actions } from "astro:actions";
+
+  const form = document.querySelector("form");
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    const { error } = await actions.sendContactEmail(formData);
+    if (!error) {
+      const contactFormSuccess = document.getElementById(
+        "contact-form-success",
+      );
+      if (contactFormSuccess) contactFormSuccess.style.display = "block";
+      const contactFormContainer = document.getElementById(
+        "contact-form-container",
+      );
+      if (contactFormContainer) contactFormContainer.classList.add("hidden");
+    }
+  });
+</script>
