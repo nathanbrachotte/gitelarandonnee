@@ -8,7 +8,11 @@ import { MidWeekAlert } from "@/components/Alerts";
 import Calendar from "@/components/Calendar.astro";
 ---
 
-<Layout title="Disponibilités et tarifs" withPadding={false}>
+<Layout
+  title="Disponibilités et tarifs"
+  withPadding={false}
+  ignoreViewTransitions
+>
   <Calendar />
   <section class="flex justify-center">
     <div
