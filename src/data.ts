@@ -6,6 +6,10 @@ export const ADDRESS = "102 Grande Rue, 25300 Les Fourgs";
 export const EMAIL = "gite.larandonnee25@gmail.com";
 
 export const IMAGES = {
+  EXTERIEUR_ETE: {
+    url: "/gite/exterieur-ete.webp",
+    caption: "Le jardin en été",
+  },
   CHAMBRE_BEIGE: { url: "/gite/chambre-beige.webp", caption: "Chambre beige" },
   CHAMBRE_ORANGE: {
     url: "/gite/chambre-orange.webp",
@@ -23,7 +27,6 @@ export const IMAGES = {
     url: "/gite/exterieur-arbres.jpg",
     caption: "Extérieur arbres",
   },
-  EXTERIEUR_ETE: { url: "/gite/exterieur-ete.webp", caption: "Extérieur ete" },
   EXTERIEUR_LOIN: {
     url: "/gite/exterieur-loin.webp",
     caption: "Extérieur loin",
@@ -31,10 +34,6 @@ export const IMAGES = {
   EXTERIEUR_NEIGE: {
     url: "/gite/exterieur-neige.webp",
     caption: "Extérieur neige",
-  },
-  EXTERIEUR_GITE_ETE: {
-    url: "/gite/exterieur-gite-ete.webp",
-    caption: "Extérieur gite été",
   },
   EXTERIEUR_PARKING: {
     url: "/gite/exterieur-parking.webp",
@@ -45,10 +44,10 @@ export const IMAGES = {
     caption: "Extérieur table d'entrée",
   },
   FONDUE: { url: "/gite/fondue.webp", caption: "Fondue" },
-  INTERIEUR_CUISINE: {
-    url: "/gite/interieur-cuisine.webp",
-    caption: "Interieur cuisine",
-  },
+  // INTERIEUR_CUISINE: {
+  //   url: "/gite/interieur-cuisine.webp",
+  //   caption: "Interieur cuisine",
+  // },
   INTERIEUR_ENTREE: {
     url: "/gite/interieur-entree.webp",
     caption: "Interieur entrée",
@@ -56,7 +55,7 @@ export const IMAGES = {
   PETANQUE: { url: "/gite/petanque.webp", caption: "Pétanque" },
   PETIT_SALON_COMPLET: {
     url: "/gite/petit-salon-complet.webp",
-    caption: "Petit salon complet",
+    caption: "Salle de détente avec lit double",
   },
   PETIT_SALON: { url: "/gite/petit-salon.webp", caption: "Petit salon" },
   PETITE_SALLE_DE_BAIN: {
@@ -117,5 +116,17 @@ export const LINKS = {
   },
   LA_COUPE: {
     url: "https://maps.app.goo.gl/B2TySGZj9FmrR8828",
+  },
+  METABIEF: {
+    maps: "https://g.co/kgs/zn23rn5",
+  },
+  ST_POINT: {
+    maps: "https://maps.app.goo.gl/FfjS1SdSeWn4Uq9HA",
+  },
+  JOUX: {
+    maps: "https://g.co/kgs/J536vFi",
+  },
+  OFFICE_DE_TOURISME: {
+    maps: "https://maps.app.goo.gl/oxYb4H9ca2pZFcAZ8",
   },
 } as const;

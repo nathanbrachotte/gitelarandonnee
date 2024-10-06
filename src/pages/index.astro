@@ -11,13 +11,13 @@ import { cn } from "@/lib/utils";
 ---
 
 <Layout title="La Randonnée" withPadding={false}>
-  <section id="hero" class="relative w-full h-[24rem] sm:h-[56rem]">
+  <section id="hero" class="relative w-full h-[36rem] sm:h-[46rem]">
     <Image
-      src="/gite/exterieur-neige-grand.webp"
-      alt="Gite exterior"
+      src={IMAGES.INTERIEUR_SALON_ENTIER.url}
+      alt={IMAGES.INTERIEUR_SALON_ENTIER.caption}
       width={911}
       height={684}
-      class="w-full h-full object-cover"
+      class="w-full h-full object-cover object-center"
     />
     <div
       class={cn(
@@ -30,8 +30,8 @@ import { cn } from "@/lib/utils";
       <p class="my-4">
         Venez découvrir les charmes de la montagne dans notre gîte dans le Doubs
         situé à 1200m d'altitude, au cœur du village de Les Fourgs. Idéal pour
-        les vacances en famille ou entre amis, notre grand gîte peut accueillir
-        jusqu'à 14 personnes.
+        les vacances en famille ou entre amis, notre gîte convivial et familial
+        peut accueillir jusqu'à 14 personnes.
       </p>
       <div class="flex flex-row gap-4 justify-center">
         <PhoneNumberLink />
@@ -105,8 +105,8 @@ import { cn } from "@/lib/utils";
       <div class="flex-1 w-full block lg:hidden">
         <ZoomedImage client:load wrapperClassName="rounded-lg">
           <Image
-            src={IMAGES.EXTERIEUR_GITE_ETE.url}
-            alt={IMAGES.EXTERIEUR_GITE_ETE.caption}
+            src={IMAGES.EXTERIEUR_PARKING.url}
+            alt={IMAGES.EXTERIEUR_PARKING.caption}
             class="sm:rounded-lg"
             width={911}
             height={684}
@@ -145,8 +145,8 @@ import { cn } from "@/lib/utils";
       <div class="flex-1 w-full lg:w-1/2 hidden lg:block">
         <ZoomedImage client:load wrapperClassName="rounded-lg">
           <Image
-            src={IMAGES.EXTERIEUR_GITE_ETE.url}
-            alt={IMAGES.EXTERIEUR_GITE_ETE.caption}
+            src={IMAGES.EXTERIEUR_PARKING.url}
+            alt={IMAGES.EXTERIEUR_PARKING.caption}
             class="sm:rounded-lg"
             width={911}
             height={684}

@@ -6,7 +6,7 @@ import { PHONE_NUMBER } from "@/data";
 
 export const MidWeekAlert = () => {
   return (
-    <Alert className="col-span-3 mt-4">
+    <Alert className="col-span-3">
       <InfoCircledIcon className="h-4 w-4 stroke-primary" />
       <AlertTitle className="uppercase">
         Locations mid-week ou week-end

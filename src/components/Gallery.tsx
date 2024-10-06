@@ -16,7 +16,7 @@ export function Gallery() {
               inView
               className="relative"
             >
-              <div className="z-10 text-sm text-primary absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-white p-2 rounded-lg pointer-events-none">
+              <div className="z-10 text-xs bottom-0.5 p-1.5 sm:text-sm text-primary absolute sm:bottom-2 left-1/2 transform -translate-x-1/2 bg-white rounded-lg pointer-events-none">
                 <p>{image.caption}</p>
               </div>
               <ZoomedImage>

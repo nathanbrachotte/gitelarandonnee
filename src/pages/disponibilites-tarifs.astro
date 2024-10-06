@@ -1,6 +1,6 @@
 ---
 import Card from "@/components/Card.astro";
-import { H1, LandingH1, LandingH2 } from "@/components/Typography";
+import { LandingH2 } from "@/components/Typography";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import Layout from "@/layouts/Layout.astro";
 import { InfoCircledIcon } from "@radix-ui/react-icons";
@@ -8,69 +8,74 @@ import { MidWeekAlert } from "@/components/Alerts";
 import Calendar from "@/components/Calendar.astro";
 ---
 
-<Layout title="Disponibilités et tarifs">
-  <LandingH2 className="text-center">Disponibilités</LandingH2>
+<Layout title="Disponibilités et tarifs" withPadding={false}>
   <Calendar />
-  <LandingH2 className="text-center mt-8">Nos tarifs à la semaine</LandingH2>
-  <section class="container grid grid-cols-1 md:grid-cols-3 gap-2 mt-4">
-    <Card title="Vacances Scolaire" className="col-span-3 md:col-span-1">
-      <div class="flex flex-col">
-        <span class="font-bold mt-2">Pâques :</span>
-        <li>10 personnes: 650€</li>
-        <li>14 personnes: 750€</li>
-        <p class="mt-2">
-          <span class="font-bold">Vacances d'été:</span> 1000€
-        </p>
-        <span class="font-bold mt-2">Vacances de Toussaint</span>
-        <li>10 personnes: 650€</li>
-        <li>14 personnes: 750€</li>
-        <p class="mt-2">
-          <span class="font-bold">Vacances de Noël :</span> 1600€
-        </p>
-        <p class="mt-2">
-          <span class="font-bold">Vacances de Février :</span> 1600€
-        </p>
-      </div>
-    </Card>
-    <Card title="Hors saison" className="col-span-3 md:col-span-1">
-      <div class="flex flex-col">
-        <span class="font-bold mt-2">Janvier, Février, Mars</span>
-        <li>10 personnes: 800€ / 850€</li>
-        <li>14 personnes: 980€ / 1000€</li>
-        <span class="font-bold mt-2">Mai, Juin et Septembre:</span>
-        <li>10 personnes: 650€</li>
-        <li>14 personnes: 750€</li>
-        <span class="font-bold mt-2">Octobre, November, Décembre:</span>
-        <li>10 personnes: 800€ / 850€</li>
-        <li>14 personnes: 980€ / 1000€</li>
-      </div>
-    </Card>
-    <Card title="Options et taxes" className="col-span-3 md:col-span-1">
-      <div class="flex flex-col">
-        <p class="font-bold mt-2">Charges et location de draps :</p>
-        <li>Compris dans le prix</li>
-        <p class="font-bold mt-2">Taxe de séjour :</p>
-        <li>1,10 € par nuit par adulte</li>
-        <p class="font-bold mt-2">Forfait Ménage :</p>
-        <li>125€</li>
-        <p class="font-bold mt-2">Salle de bain supplémentaire :</p>
-        <li>70€ par semaine</li>
-      </div>
-    </Card>
-    <MidWeekAlert />
-    <Alert className="col-span-3 mt-4">
-      <InfoCircledIcon className="h-4 w-4 stroke-primary" />
-      <AlertTitle>HEURES D'ARRIVÉE ET DÉPART</AlertTitle>
-      <AlertDescription>
-        <li>
-          Location semaine: Arrivée le samedi à 16h au plus tôt, départ à 10h au
-          plus tard.
-        </li>
-        <li>
-          Location week-end: Arrivée le vendredi à 16h au plus tôt, départ le
-          dimanche à 17h au plus tard.
-        </li>
-      </AlertDescription>
-    </Alert>
+  <section class="flex justify-center">
+    <div
+      class="grid grid-cols-1 md:grid-cols-3 gap-2 mt-4 px-4 md:px-8 container"
+    >
+      <LandingH2 className="text-center mt-8 col-span-3 mb-2"
+        >Nos tarifs à la semaine</LandingH2
+      >
+      <Card title="Vacances Scolaire" className="col-span-3 md:col-span-1">
+        <div class="flex flex-col">
+          <span class="font-bold mt-2">Pâques :</span>
+          <li>10 personnes: 650€</li>
+          <li>14 personnes: 750€</li>
+          <p class="mt-2">
+            <span class="font-bold">Vacances d'été:</span> 1000€
+          </p>
+          <span class="font-bold mt-2">Vacances de Toussaint</span>
+          <li>10 personnes: 650€</li>
+          <li>14 personnes: 750€</li>
+          <p class="mt-2">
+            <span class="font-bold">Vacances de Noël :</span> 1600€
+          </p>
+          <p class="mt-2">
+            <span class="font-bold">Vacances de Février :</span> 1600€
+          </p>
+        </div>
+      </Card>
+      <Card title="Hors saison" className="col-span-3 md:col-span-1">
+        <div class="flex flex-col">
+          <span class="font-bold mt-2">Janvier, Février, Mars</span>
+          <li>10 personnes: 800€ / 850€</li>
+          <li>14 personnes: 980€ / 1000€</li>
+          <span class="font-bold mt-2">Mai, Juin et Septembre:</span>
+          <li>10 personnes: 650€</li>
+          <li>14 personnes: 750€</li>
+          <span class="font-bold mt-2">Octobre, November, Décembre:</span>
+          <li>10 personnes: 800€ / 850€</li>
+          <li>14 personnes: 980€ / 1000€</li>
+        </div>
+      </Card>
+      <Card title="Options et taxes" className="col-span-3 md:col-span-1">
+        <div class="flex flex-col">
+          <p class="font-bold mt-2">Charges et location de draps :</p>
+          <li>Compris dans le prix</li>
+          <p class="font-bold mt-2">Taxe de séjour :</p>
+          <li>1,10 € par nuit par adulte</li>
+          <p class="font-bold mt-2">Forfait Ménage :</p>
+          <li>125€</li>
+          <p class="font-bold mt-2">Salle de bain supplémentaire :</p>
+          <li>70€ par semaine</li>
+        </div>
+      </Card>
+      <MidWeekAlert />
+      <Alert className="col-span-3">
+        <InfoCircledIcon className="h-4 w-4 stroke-primary" />
+        <AlertTitle>HEURES D'ARRIVÉE ET DÉPART</AlertTitle>
+        <AlertDescription>
+          <li>
+            Location semaine: Arrivée le samedi à 16h au plus tôt, départ à 10h
+            au plus tard.
+          </li>
+          <li>
+            Location week-end: Arrivée le vendredi à 16h au plus tôt, départ le
+            dimanche à 17h au plus tard.
+          </li>
+        </AlertDescription>
+      </Alert>
+    </div>
   </section>
 </Layout>
