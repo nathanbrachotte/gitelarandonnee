@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
   target?: "_blank" | "_self" | "_parent" | "_top";
-  caption?: string;
   className?: string;
 }
 

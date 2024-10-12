@@ -8,103 +8,166 @@ export const EMAIL = "gite.larandonnee25@gmail.com";
 export const IMAGES = {
   EXTERIEUR_ETE: {
     url: "/gite/exterieur-ete.webp",
+    alt: "Le jardin en été",
     caption: "Le jardin en été",
   },
-  CHAMBRE_BEIGE: { url: "/gite/chambre-beige.webp", caption: "Chambre beige" },
+  CHAMBRE_BEIGE: {
+    url: "/gite/chambre-beige.webp",
+    alt: "Chambre beige",
+    caption: "Chambre beige",
+  },
   CHAMBRE_ORANGE: {
     url: "/gite/chambre-orange.webp",
+    alt: "Chambre orange",
     caption: "Chambre orange",
   },
   CHAMBRE_VIOLETTE: {
     url: "/gite/chambre-violette.webp",
+    alt: "Chambre violette",
     caption: "Chambre violette",
   },
   EXTERIEUR_APERO: {
     url: "/gite/exterieur-apero.webp",
+    alt: "Extérieur apero",
     caption: "Extérieur apero",
   },
   EXTERIEUR_ARBRES: {
     url: "/gite/exterieur-arbres.jpg",
+    alt: "Extérieur arbres",
     caption: "Extérieur arbres",
   },
   EXTERIEUR_LOIN: {
     url: "/gite/exterieur-loin.webp",
-    caption: "Extérieur loin",
+    alt: "Extérieur loin",
+    // caption: "Extérieur loin",
   },
   EXTERIEUR_NEIGE: {
     url: "/gite/exterieur-neige.webp",
-    caption: "Extérieur neige",
+    alt: "Extérieur neige",
+    caption: "Le jardin enneigé",
   },
   EXTERIEUR_PARKING: {
     url: "/gite/exterieur-parking.webp",
-    caption: "Extérieur parking",
+    alt: "Extérieur parking",
+    caption: "Extérieur",
   },
   EXTERIEUR_TABLE_ENTREE: {
     url: "/gite/exterieur-table-entree.webp",
-    caption: "Extérieur table d'entrée",
+    alt: "Extérieur table d'entrée",
+    // caption: "Extérieur table d'entrée",
   },
-  FONDUE: { url: "/gite/fondue.webp", caption: "Fondue" },
-  // INTERIEUR_CUISINE: {
-  //   url: "/gite/interieur-cuisine.webp",
-  //   caption: "Interieur cuisine",
-  // },
+  FONDUE: { url: "/gite/fondue.webp", alt: "Fondue", caption: "Fondue" },
   INTERIEUR_ENTREE: {
     url: "/gite/interieur-entree.webp",
-    caption: "Interieur entrée",
+    alt: "Interieur entrée",
+    caption: "Entrée",
   },
-  PETANQUE: { url: "/gite/petanque.webp", caption: "Pétanque" },
+  PETANQUE: {
+    url: "/gite/petanque.webp",
+    alt: "Pétanque",
+    caption: "Terrain de pétanque et molki",
+  },
   PETIT_SALON_COMPLET: {
     url: "/gite/petit-salon-complet.webp",
+    alt: "Salle de détente avec lit double",
     caption: "Salle de détente avec lit double",
   },
-  PETIT_SALON: { url: "/gite/petit-salon.webp", caption: "Petit salon" },
+  PETIT_SALON: {
+    url: "/gite/petit-salon.webp",
+    alt: "Petit salon",
+    caption: "Petit salon",
+  },
   PETITE_SALLE_DE_BAIN: {
     url: "/gite/petite-salle-de-bain.webp",
+    alt: "Petite salle de bain",
     caption: "Petite salle de bain",
   },
-  SALON: { url: "/gite/salon.webp", caption: "Salon" },
-  VACHES: { url: "/gite/vaches.webp", caption: "Vaches" },
+  SALON: { url: "/gite/salon.webp", alt: "Salon", caption: "Salon" },
+  VACHES: {
+    url: "/gite/vaches.webp",
+    alt: "Vaches",
+    // caption: "Vaches"
+  },
   EXTERIEUR_SKI_DE_FOND: {
     url: "/gite/exterieur-ski-de-fond.webp",
-    caption: "Extérieur ski de fond",
+    alt: "Extérieur ski de fond",
+    caption: "Piste de ski de fond",
   },
   INTERIEUR_CUISINE_2: {
     url: "/gite/interieur-cuisine-2.webp",
-    caption: "Interieur cuisine 2",
+    alt: "Interieur cuisine 2",
+    caption: "Cuisine",
   },
   INTERIEUR_CUISINE_BAR: {
     url: "/gite/interieur-cuisine-bar.webp",
-    caption: "Interieur cuisine bar",
+    alt: "Interieur cuisine bar",
+    caption: "Salle de vie",
   },
   INTERIEUR_CUISINE_TOUT: {
     url: "/gite/interieur-cuisine-tout.webp",
-    caption: "Interieur cuisine",
+    alt: "Interieur cuisine",
+    caption: "Cuisine et salon",
   },
   INTERIEUR_FONDUE: {
     url: "/gite/interieur-fondue.webp",
-    caption: "Fondue entre amis",
+    alt: "Fondue entre amis",
+    // caption: "Grande table",
   },
   INTERIEUR_SALON_ENTIER: {
     url: "/gite/interieur-salon-entier.webp",
-    caption: "Interieur salon entier",
+    alt: "Interieur salon entier",
+    caption: "Salle de vie",
   },
   LES_FOURGS_LES_RANGS: {
     url: "/les-fourgs-les-rangs.webp",
+    alt: "Les Rangs à 1km du Gîte",
     caption: "Les Rangs à 1km du Gîte",
   },
   METABIEF_NEIGE: {
     url: "/metabief-neige.webp",
+    alt: "Station de ski de Métabief",
     caption: "Station de ski de Métabief",
   },
   METABIEF_FONDUE: {
     url: "/metabief-fondue.webp",
-    caption: "Fondue à Métabief",
+    alt: "Fondue à Métabief",
   },
   METABIEF_VIEW: {
     url: "/metabief-view.webp",
+    alt: "Vue sur les Alpes depuis Métabief",
     caption: "Vue sur les Alpes depuis Métabief",
   },
 };
+
+export const GALLERY = [
+  IMAGES.EXTERIEUR_PARKING,
+  IMAGES.EXTERIEUR_ETE,
+  IMAGES.EXTERIEUR_NEIGE,
+  IMAGES.CHAMBRE_BEIGE,
+  IMAGES.CHAMBRE_ORANGE,
+  IMAGES.CHAMBRE_VIOLETTE,
+  IMAGES.EXTERIEUR_ARBRES,
+  IMAGES.EXTERIEUR_LOIN,
+  // IMAGES.EXTERIEUR_TABLE_ENTREE,
+  // IMAGES.FONDUE,
+  IMAGES.INTERIEUR_ENTREE,
+  IMAGES.PETANQUE,
+  IMAGES.PETIT_SALON_COMPLET,
+  IMAGES.PETIT_SALON,
+  IMAGES.PETITE_SALLE_DE_BAIN,
+  IMAGES.SALON,
+  IMAGES.VACHES,
+  IMAGES.EXTERIEUR_SKI_DE_FOND,
+  IMAGES.INTERIEUR_CUISINE_2,
+  IMAGES.INTERIEUR_CUISINE_BAR,
+  IMAGES.INTERIEUR_CUISINE_TOUT,
+  IMAGES.INTERIEUR_FONDUE,
+  IMAGES.INTERIEUR_SALON_ENTIER,
+  IMAGES.LES_FOURGS_LES_RANGS,
+  IMAGES.METABIEF_NEIGE,
+  IMAGES.METABIEF_FONDUE,
+  IMAGES.METABIEF_VIEW,
+];
 
 export const LINKS = {
   LES_RANGS: {
