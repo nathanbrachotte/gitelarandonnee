@@ -29,12 +29,12 @@ export const IMAGES = {
   EXTERIEUR_APERO: {
     url: "/gite/exterieur-apero.webp",
     alt: "Extérieur apero",
-    caption: "Extérieur apero",
+    // caption: "Extérieur apero",
   },
   EXTERIEUR_ARBRES: {
     url: "/gite/exterieur-arbres.jpg",
     alt: "Extérieur arbres",
-    caption: "Extérieur arbres",
+    // caption: "Extérieur arbres",
   },
   EXTERIEUR_LOIN: {
     url: "/gite/exterieur-loin.webp",
@@ -179,6 +179,7 @@ export const LINKS = {
   },
   LA_COUPE: {
     url: "https://maps.app.goo.gl/B2TySGZj9FmrR8828",
+    discGoldUrl: "https://udisc.com/courses/parcours-aventure-disc-golf-l48s"
   },
   METABIEF: {
     maps: "https://g.co/kgs/zn23rn5",
@@ -191,5 +192,18 @@ export const LINKS = {
   },
   OFFICE_DE_TOURISME: {
     maps: "https://maps.app.goo.gl/oxYb4H9ca2pZFcAZ8",
+  },
+  GTJ: {
+    url: "https://www.gtj.asso.fr/en/",
+  },
+  VIA_FRANCIGENA: {
+    url: "https://www.viefrancigene.org/en/",
+  },
+  GR5: {
+    url: "https://www.grande-traversee-alpes.com/",
+  },
+  BOURGOGNE_FRANCHE_COMTE: {
+    escalade_url:
+      "https://www.bourgognefranchecomte.com/activites/en-hauteur/escalade-via-ferrata/",
   },
 } as const;

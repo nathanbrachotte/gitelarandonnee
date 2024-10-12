@@ -5,9 +5,17 @@ import { Image } from "astro:assets";
 import { AddressLink, MailLink, PhoneNumberLink } from "@/components/Buttons";
 import { ZoomedImage } from "@/components/ZoomedImage";
 import { Gallery } from "@/components/Gallery";
-import { FlowerBullet } from "@/components/icons";
+import {
+  DarkGreenPlant,
+  FlowerBullet,
+  OrangeDiamond,
+  OrangeFlower,
+  PinkFlower,
+} from "@/components/icons";
 import { IMAGES } from "@/data";
 import { cn } from "@/lib/utils";
+import { Link } from "@/components/Link";
+import { LINKS } from "@/data";
 ---
 
 <Layout title="La Randonnée" withPadding={false}>
@@ -49,7 +57,7 @@ import { cn } from "@/lib/utils";
         <ZoomedImage client:load>
           <Image
             src={IMAGES.EXTERIEUR_ARBRES.url}
-            alt={IMAGES.EXTERIEUR_ARBRES.caption}
+            alt={IMAGES.EXTERIEUR_ARBRES.alt}
             width={911}
             height={684}
             class="sm:rounded-lg"
@@ -77,23 +85,27 @@ import { cn } from "@/lib/utils";
             <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
               <FlowerBullet className="text-primary" />
             </div>
+            <!-- <PinkFlower className="w-4 h-4" />
+            <OrangeDiamond className="w-4 h-4" />
+            <OrangeFlower className="w-4 h-4" />
+            <DarkGreenPlant className="w-10 h-10 bg-black" /> -->
             Le gîte dispose d'un jardin clôturé avec une table extérieure, un barbecue,
             une balançoire pour enfants et un espace de détente.
           </li>
           <H3 className="mt-4">En hiver</H3>
           <li class="flex items-start space-x-1 mt-2">
             <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
-              <FlowerBullet className="text-primary" />
+              <FlowerBullet className="w-4 h-4" />
             </div>
-            Les skieurs de fond et les raquetteurs peuvent accéder aux centaines
-            de kilomètres de pistes depuis le jardin
+            Les skieurs de fond et raquetteurs peuvent accéder aux centaines de kilomètres
+            de pistes depuis le jardin
           </li>
           <li class="flex items-start space-x-1 mt-2">
             <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
               <FlowerBullet className="text-primary" />
             </div>
-            La station de ski familiale du village se trouve à seulement 3 minutes
-            en voiture.
+            La station de ski familiale du village est à 3 minutes en voiture, ou
+            10 minutes en ski.
           </li>
         </ul>
       </div>
@@ -120,20 +132,34 @@ import { cn } from "@/lib/utils";
           <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
             <FlowerBullet className="text-primary" />
           </div>
-          Des sentiers de randonnée et de VTT passent juste devant le gîte, notamment
-          le GTJ, la Via Francigena et le GR5.
+          <p>
+            Des sentiers de randonnée et de VTT passent juste devant le gîte,
+            notamment la <Link href={LINKS.GTJ.url}>GTJ</Link>, la <Link
+              href={LINKS.VIA_FRANCIGENA.url}>Via Francigena</Link
+            > et le
+            <Link href={LINKS.GR5.url}>GR5</Link>.
+          </p>
         </li>
         <li class="flex items-start space-x-1 mt-2">
           <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
             <FlowerBullet className="text-primary" />
           </div>
-          Sports nautiques au lac de Saint Point/Malbuisson.
+          <p>
+            Sports nautiques au <Link href={LINKS.ST_POINT.maps}
+              >lac de Saint Point/Malbuisson</Link
+            >.
+          </p>
         </li>
         <li class="flex items-start space-x-1 mt-2">
           <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
             <FlowerBullet className="text-primary" />
           </div>
-          Sport d'aventure avec les via ferrata, l'accrobranche et le disc golf.
+          Sport d'aventure avec <Link
+            href={LINKS.BOURGOGNE_FRANCHE_COMTE.escalade_url}
+            >les via ferrata</Link
+          >, l'accrobranche et le <Link href={LINKS.LA_COUPE.discGoldUrl}
+            >disc golf</Link
+          >.
         </li>
         <li class="flex items-start space-x-1 mt-2">
           <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
