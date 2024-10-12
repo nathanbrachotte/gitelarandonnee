@@ -3,6 +3,10 @@ import { Button } from "@/components/ui/button";
 import { ADDRESS, EMAIL, PHONE_NUMBER } from "@/data";
 import { cn } from "@/lib/utils";
 import { ROUTES } from "@/routes";
+import { useState } from "react";
+import { CheckIcon, ClipboardCopyIcon } from "@radix-ui/react-icons";
+import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "@/components/Link";
 
 export const CGLButton = () => {
   return (
@@ -56,6 +60,67 @@ export const AddressLink = ({ withLabel = false }: { withLabel?: boolean }) => {
         {withLabel ? ADDRESS : ""}
       </a>
     </Button>
+  );
+};
+
+export function CopyButton({
+  content,
+  className,
+}: {
+  content: string;
+  className?: string;
+}) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(content);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <Button
+      onClick={handleCopy}
+      variant="link"
+      size="icon"
+      disabled={copied}
+      className={cn(className)}
+    >
+      <AnimatePresence initial={false} mode="wait">
+        {copied ? (
+          <motion.div
+            key="check"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.5 }}
+            transition={{ duration: 0.1 }}
+          >
+            <CheckIcon />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="copy"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.5 }}
+            transition={{ duration: 0.1 }}
+          >
+            <ClipboardCopyIcon />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </Button>
+  );
+}
+
+export const ContactMailLink = () => {
+  return (
+    <>
+      <Link href="mailto:gite.larandonnee25@gmail.com" target="_self">
+        {EMAIL}
+      </Link>
+      <CopyButton content={EMAIL} />
+    </>
   );
 };
 
