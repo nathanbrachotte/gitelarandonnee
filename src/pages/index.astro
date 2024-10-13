@@ -3,10 +3,7 @@ import { H3, LandingH1, LandingH2 } from "@/components/Typography";
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import {
-  AddressLink,
-  MailLink,
   PhoneNumberButton,
-  PhoneNumberLink,
   AddressButton,
   MailButton,
 } from "@/components/Buttons";
@@ -14,7 +11,6 @@ import { ZoomedImage } from "@/components/ZoomedImage";
 import { Gallery } from "@/components/Gallery";
 import {
   DarkGreenPlant,
-  FlowerBullet,
   OrangeBush,
   Diamond,
   OrangePlant,
@@ -30,7 +26,11 @@ import { Link } from "@/components/Link";
 import { LINKS } from "@/data";
 ---
 
-<Layout title="La Randonnée" withPadding={false}>
+<Layout
+  title="La Randonnée"
+  description="Gîte de la Randonnée aux Fourgs"
+  withPadding={false}
+>
   <section id="hero" class="relative w-full h-[36rem] sm:h-[46rem]">
     <Image
       src={IMAGES.INTERIEUR_SALON_ENTIER.url}

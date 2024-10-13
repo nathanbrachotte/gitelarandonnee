@@ -1,11 +1,14 @@
 ---
+import { H1 } from "@/components/Typography";
+import Layout from "@/layouts/Layout.astro";
 ---
-<html>
-  <head>
-    <title>404 - Page Not Found</title>
-  </head>
-  <body>
-    <h1>404 - Page Not Found</h1>
-    <p>The page you're looking for doesn't exist.</p>
-  </body>
-</html>
+
+<Layout
+  title="404 - Page non trouvée"
+  description="La page que vous cherchez n'existe pas."
+>
+  <div class="flex flex-col items-center justify-center h-60">
+    <H1>404 - Page non trouvée</H1>
+    <p>La page que vous cherchez n'existe pas.</p>
+  </div>
+</Layout>
