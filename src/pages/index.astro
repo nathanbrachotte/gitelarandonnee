@@ -6,11 +6,16 @@ import { AddressLink, MailLink, PhoneNumberLink } from "@/components/Buttons";
 import { ZoomedImage } from "@/components/ZoomedImage";
 import { Gallery } from "@/components/Gallery";
 import {
-  // DarkGreenPlant,
+  DarkGreenPlant,
   FlowerBullet,
-  // OrangeDiamond,
-  // OrangeFlower,
-  // PinkFlower,
+  OrangeBush,
+  Diamond,
+  OrangePlant,
+  PinkFlower,
+  YellowButterfly,
+  DarkBluePlant,
+  DarkGreenLeaf,
+  LightGreenPlan,
 } from "@/components/icons";
 import { IMAGES } from "@/data";
 import { cn } from "@/lib/utils";
@@ -49,6 +54,17 @@ import { LINKS } from "@/data";
       </div>
     </div>
   </section>
+  <div class="flex flex-row gap-4 justify-center">
+    <DarkGreenPlant className="w-10 h-10" />
+    <PinkFlower className="w-10 h-10" />
+    <Diamond className="w-10 h-10" />
+    <OrangePlant className="w-10 h-10" />
+    <OrangeBush className="w-10 h-10" />
+    <YellowButterfly className="w-10 h-10" />
+    <DarkBluePlant className="w-10 h-10" />
+    <DarkGreenLeaf className="w-10 h-10" />
+    <LightGreenPlan className="w-10 h-10" />
+  </div>
   <section id="presentation" class="mt-12 flex justify-center">
     <div
       class="container flex flex-col lg:flex-row items-center justify-center"
@@ -67,43 +83,30 @@ import { LINKS } from "@/data";
       <div class="flex-1 p-8 w-full lg:w-1/2">
         <LandingH2>Au coeur des montagnes du Jura</LandingH2>
         <ul class="mt-4">
-          <li class="flex items-start space-x-1 mt-2">
-            <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
-              <FlowerBullet className="text-primary" />
-            </div>
+          <li class="flex items-start space-x-1 mt-4">
+            <Diamond className="w-6 h-6 self-start shrink-0 text-primary" />
             Le village est entouré de sapins, de prairies et de lacs. Il est à proximité
             de la frontière suisse 🇨🇭, de la station de ski de Métabief et de la
             ville de Pontarlier.
           </li>
-          <li class="flex items-start space-x-1 mt-2">
-            <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
-              <FlowerBullet className="text-primary" />
-            </div>
+          <li class="flex items-start space-x-1 mt-4">
+            <Diamond className="w-6 h-6 self-start shrink-0 text-primary" />
             Le village lui-même possède des magasins, des restaurants et des fromageries.
           </li>
-          <li class="flex items-start space-x-1 mt-2">
-            <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
-              <FlowerBullet className="text-primary" />
-            </div>
-            <!-- <PinkFlower className="w-4 h-4" />
-            <OrangeDiamond className="w-4 h-4" />
-            <OrangeFlower className="w-4 h-4" />
-            <DarkGreenPlant className="w-10 h-10 bg-black" /> -->
-            Le gîte dispose d'un jardin clôturé avec une table extérieure, un barbecue,
-            une balançoire pour enfants et un espace de détente.
+          <li class="flex items-start space-x-1 mt-4">
+            <Diamond className="w-6 h-6 self-start shrink-0 text-primary" />
+
+            Le gîte dispose d'un jardin clôturé avec une table extérieure, un
+            barbecue, une balançoire pour enfants et un espace de détente.
           </li>
           <H3 className="mt-4">En hiver</H3>
-          <li class="flex items-start space-x-1 mt-2">
-            <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
-              <FlowerBullet className="w-4 h-4" />
-            </div>
+          <li class="flex items-start space-x-1 mt-4">
+            <Diamond className="w-6 h-6 self-start shrink-0 text-primary" />
             Les skieurs de fond et raquetteurs peuvent accéder aux centaines de kilomètres
             de pistes depuis le jardin
           </li>
-          <li class="flex items-start space-x-1 mt-2">
-            <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
-              <FlowerBullet className="text-primary" />
-            </div>
+          <li class="flex items-start space-x-1 mt-4">
+            <Diamond className="w-6 h-6 self-start shrink-0 text-primary" />
             La station de ski familiale du village est à 3 minutes en voiture, ou
             10 minutes en ski.
           </li>
@@ -157,7 +160,7 @@ import { LINKS } from "@/data";
           Sport d'aventure avec <Link
             href={LINKS.BOURGOGNE_FRANCHE_COMTE.escalade_url}
             >les via ferrata</Link
-          >, l'accrobranche et le <Link href={LINKS.LA_COUPE.discGoldUrl}
+          >, l'accrobranche et le <Link href={LINKS.LA_COUPE.discGolfUrl}
             >disc golf</Link
           >.
         </li>

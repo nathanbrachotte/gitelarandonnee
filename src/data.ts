@@ -179,7 +179,7 @@ export const LINKS = {
   },
   LA_COUPE: {
     url: "https://maps.app.goo.gl/B2TySGZj9FmrR8828",
-    discGoldUrl: "https://udisc.com/courses/parcours-aventure-disc-golf-l48s"
+    discGolfUrl: "https://udisc.com/courses/parcours-aventure-disc-golf-l48s",
   },
   METABIEF: {
     maps: "https://g.co/kgs/zn23rn5",
