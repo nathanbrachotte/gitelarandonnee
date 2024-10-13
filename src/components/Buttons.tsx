@@ -4,7 +4,7 @@ import { ADDRESS, EMAIL, PHONE_NUMBER } from "@/data";
 import { cn } from "@/lib/utils";
 import { ROUTES } from "@/routes";
 import { useState } from "react";
-import { CheckIcon, ClipboardCopyIcon, CopyIcon } from "@radix-ui/react-icons";
+import { CheckIcon, CopyIcon } from "@radix-ui/react-icons";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "@/components/Link";
 
