@@ -10,8 +10,6 @@ import {
   PaperPlaneIcon,
 } from "@radix-ui/react-icons";
 import { ContactMailLink } from "@/components/Buttons";
-
-const IS_DEBUG = import.meta.env.DEV;
 ---
 
 <div class="container mx-auto mt-8 flex justify-center px-4 md:px-8">
@@ -51,12 +49,7 @@ const IS_DEBUG = import.meta.env.DEV;
         <div class="gap-4 grid grid-cols-2">
           <div class="space-y-1 col-span-2 md:col-span-1">
             <Label htmlFor="name">Nom</Label>
-            <Input
-              id="name"
-              placeholder="Enter your name"
-              name="name"
-              value={IS_DEBUG ? "John Doe" : ""}
-            />
+            <Input id="name" placeholder="Enter your name" name="name" />
           </div>
           <div class="space-y-1 col-span-2 md:col-span-1">
             <Label htmlFor="email">Email</Label>
@@ -65,7 +58,6 @@ const IS_DEBUG = import.meta.env.DEV;
               placeholder="Enter your email"
               type="email"
               name="email"
-              value={IS_DEBUG ? "john.doe@example.com" : ""}
             />
           </div>
           <div class="space-y-1 col-span-2">
@@ -75,7 +67,6 @@ const IS_DEBUG = import.meta.env.DEV;
               placeholder="Enter your message"
               className="min-h-[100px]"
               name="message"
-              value={IS_DEBUG ? "Hello, I want to book a stay." : ""}
             />
           </div>
         </div>
