@@ -2,7 +2,14 @@
 import { H3, LandingH1, LandingH2 } from "@/components/Typography";
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import { AddressLink, MailLink, PhoneNumberLink } from "@/components/Buttons";
+import {
+  AddressLink,
+  MailLink,
+  PhoneNumberButton,
+  PhoneNumberLink,
+  AddressButton,
+  MailButton,
+} from "@/components/Buttons";
 import { ZoomedImage } from "@/components/ZoomedImage";
 import { Gallery } from "@/components/Gallery";
 import {
@@ -48,9 +55,9 @@ import { LINKS } from "@/data";
         peut accueillir jusqu'à 14 personnes.
       </p>
       <div class="flex flex-row gap-4 justify-center">
-        <PhoneNumberLink />
-        <MailLink />
-        <AddressLink />
+        <PhoneNumberButton />
+        <MailButton />
+        <AddressButton />
       </div>
     </div>
   </section>
@@ -83,30 +90,40 @@ import { LINKS } from "@/data";
       <div class="flex-1 p-8 w-full lg:w-1/2">
         <LandingH2>Au coeur des montagnes du Jura</LandingH2>
         <ul class="mt-4">
-          <li class="flex items-start space-x-1 mt-4">
-            <Diamond className="w-6 h-6 self-start shrink-0 text-primary" />
+          <li class="flex items-start space-x-1 mt-2">
+            <Diamond
+              className="w-4 h-4 self-start shrink-0 text-primary mt-1 mr-1"
+            />
             Le village est entouré de sapins, de prairies et de lacs. Il est à proximité
             de la frontière suisse 🇨🇭, de la station de ski de Métabief et de la
             ville de Pontarlier.
           </li>
-          <li class="flex items-start space-x-1 mt-4">
-            <Diamond className="w-6 h-6 self-start shrink-0 text-primary" />
+          <li class="flex items-start space-x-1 mt-2">
+            <Diamond
+              className="w-4 h-4 self-start shrink-0 text-primary mt-1 mr-1"
+            />
             Le village lui-même possède des magasins, des restaurants et des fromageries.
           </li>
-          <li class="flex items-start space-x-1 mt-4">
-            <Diamond className="w-6 h-6 self-start shrink-0 text-primary" />
+          <li class="flex items-start space-x-1 mt-2">
+            <Diamond
+              className="w-4 h-4 self-start shrink-0 text-primary mt-1 mr-1"
+            />
 
             Le gîte dispose d'un jardin clôturé avec une table extérieure, un
             barbecue, une balançoire pour enfants et un espace de détente.
           </li>
           <H3 className="mt-4">En hiver</H3>
-          <li class="flex items-start space-x-1 mt-4">
-            <Diamond className="w-6 h-6 self-start shrink-0 text-primary" />
+          <li class="flex items-start space-x-1 mt-2">
+            <Diamond
+              className="w-4 h-4 self-start shrink-0 text-primary mt-1 mr-1"
+            />
             Les skieurs de fond et raquetteurs peuvent accéder aux centaines de kilomètres
             de pistes depuis le jardin
           </li>
-          <li class="flex items-start space-x-1 mt-4">
-            <Diamond className="w-6 h-6 self-start shrink-0 text-primary" />
+          <li class="flex items-start space-x-1 mt-2">
+            <Diamond
+              className="w-4 h-4 self-start shrink-0 text-primary mt-1 mr-1"
+            />
             La station de ski familiale du village est à 3 minutes en voiture, ou
             10 minutes en ski.
           </li>
@@ -132,9 +149,9 @@ import { LINKS } from "@/data";
       <div class="flex-1 p-8 w-full lg:w-1/2">
         <H3 className="lg:mt-4">En été</H3>
         <li class="flex items-start space-x-1 mt-2">
-          <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
-            <FlowerBullet className="text-primary" />
-          </div>
+          <Diamond
+            className="w-4 h-4 self-start shrink-0 text-primary mt-1 mr-1"
+          />
           <p>
             Des sentiers de randonnée et de VTT passent juste devant le gîte,
             notamment la <Link href={LINKS.GTJ.url}>GTJ</Link>, la <Link
@@ -144,9 +161,9 @@ import { LINKS } from "@/data";
           </p>
         </li>
         <li class="flex items-start space-x-1 mt-2">
-          <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
-            <FlowerBullet className="text-primary" />
-          </div>
+          <Diamond
+            className="w-4 h-4 self-start shrink-0 text-primary mt-1 mr-1"
+          />
           <p>
             Sports nautiques au <Link href={LINKS.ST_POINT.maps}
               >lac de Saint Point/Malbuisson</Link
@@ -154,22 +171,25 @@ import { LINKS } from "@/data";
           </p>
         </li>
         <li class="flex items-start space-x-1 mt-2">
-          <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
-            <FlowerBullet className="text-primary" />
-          </div>
-          Sport d'aventure avec <Link
-            href={LINKS.BOURGOGNE_FRANCHE_COMTE.escalade_url}
-            >les via ferrata</Link
-          >, l'accrobranche et le <Link href={LINKS.LA_COUPE.discGolfUrl}
-            >disc golf</Link
-          >.
+          <Diamond
+            className="w-4 h-4 self-start shrink-0 text-primary mt-1 mr-1"
+          />
+          <p>
+            Sport d'aventure avec <Link
+              href={LINKS.BOURGOGNE_FRANCHE_COMTE.escalade_url}
+              >les via ferrata</Link
+            >, l'accrobranche et le <Link href={LINKS.LA_COUPE.discGolfUrl}
+              >disc golf</Link
+            >.
+          </p>
         </li>
         <li class="flex items-start space-x-1 mt-2">
-          <div class="flex-shrink-0 w-6 h-6 flex items-start pt-1">
-            <FlowerBullet className="text-primary" />
-          </div>
-          Visitez le Château de Joux, les fromageries et les caves de vieillissement
-          du Comté.
+          <Diamond
+            className="w-4 h-4 self-start shrink-0 text-primary mt-1 mr-1"
+          /><p>
+            Visitez le Château de Joux, les fromageries et les caves de
+            vieillissement du Comté.
+          </p>
         </li>
       </div>
       <div class="flex-1 w-full lg:w-1/2 hidden lg:block">

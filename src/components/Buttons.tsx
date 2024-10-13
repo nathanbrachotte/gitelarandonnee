@@ -4,7 +4,7 @@ import { ADDRESS, EMAIL, PHONE_NUMBER } from "@/data";
 import { cn } from "@/lib/utils";
 import { ROUTES } from "@/routes";
 import { useState } from "react";
-import { CheckIcon, ClipboardCopyIcon } from "@radix-ui/react-icons";
+import { CheckIcon, ClipboardCopyIcon, CopyIcon } from "@radix-ui/react-icons";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "@/components/Link";
 
@@ -23,7 +23,7 @@ export const MentionLegalesButton = () => {
   );
 };
 
-export const PhoneNumberLink = ({
+export const PhoneNumberButton = ({
   withLabel = false,
 }: {
   withLabel?: boolean;
@@ -31,23 +31,50 @@ export const PhoneNumberLink = ({
   return (
     <Button
       asChild
-      variant={withLabel ? "link" : "ghost"}
+      variant={withLabel ? "link" : "default"}
       size={withLabel ? "default" : "icon"}
     >
       <a className="flex flex-row gap-2" href={"tel:" + PHONE_NUMBER}>
         <PhoneIcon />
-
         {withLabel ? PHONE_NUMBER : ""}
       </a>
     </Button>
   );
 };
 
-export const AddressLink = ({ withLabel = false }: { withLabel?: boolean }) => {
+export const PhoneNumberLink = ({
+  withLabel = false,
+  withIcon = false,
+}: {
+  withLabel?: boolean;
+  withIcon?: boolean;
+}) => {
+  return (
+    <div className="flex flex-row justify-center items-center">
+      <Button
+        asChild
+        variant={withLabel ? "link" : "default"}
+        size={withLabel ? "default" : "icon"}
+      >
+        <a className="flex flex-row gap-2" href={"tel:" + PHONE_NUMBER}>
+          {withIcon ? <PhoneIcon /> : ""}
+          {withLabel ? PHONE_NUMBER : ""}
+        </a>
+      </Button>
+      <CopyButton className="-ml-5" content={PHONE_NUMBER} />
+    </div>
+  );
+};
+
+export const AddressButton = ({
+  withLabel = false,
+}: {
+  withLabel?: boolean;
+}) => {
   return (
     <Button
       asChild
-      variant={withLabel ? "link" : "ghost"}
+      variant={withLabel ? "link" : "default"}
       size={withLabel ? "default" : "icon"}
     >
       <a
@@ -60,6 +87,35 @@ export const AddressLink = ({ withLabel = false }: { withLabel?: boolean }) => {
         {withLabel ? ADDRESS : ""}
       </a>
     </Button>
+  );
+};
+
+export const AddressLink = ({
+  withLabel = false,
+  withIcon = false,
+}: {
+  withLabel?: boolean;
+  withIcon?: boolean;
+}) => {
+  return (
+    <div className="flex flex-row gap-0 justify-center items-center">
+      <Button
+        asChild
+        variant={withLabel ? "link" : "ghost"}
+        size={withLabel ? "default" : "icon"}
+      >
+        <a
+          className="flex flex-row gap-2"
+          target="_blank"
+          rel="noreferrer noopener"
+          href="https://goo.gl/maps/AsjZTatf1GT9vk4a6"
+        >
+          {withIcon ? <LocationIcon /> : ""}
+          {withLabel ? ADDRESS : ""}
+        </a>
+      </Button>
+      <CopyButton className="-ml-5" content={ADDRESS} />
+    </div>
   );
 };
 
@@ -84,7 +140,7 @@ export function CopyButton({
       variant="link"
       size="icon"
       disabled={copied}
-      className={cn(className)}
+      className={cn(className, "")}
     >
       <AnimatePresence initial={false} mode="wait">
         {copied ? (
@@ -95,7 +151,7 @@ export function CopyButton({
             exit={{ opacity: 0, scale: 0.5 }}
             transition={{ duration: 0.1 }}
           >
-            <CheckIcon />
+            <CheckIcon className="w-4 h-4 text-green-900" />
           </motion.div>
         ) : (
           <motion.div
@@ -105,7 +161,7 @@ export function CopyButton({
             exit={{ opacity: 0, scale: 0.5 }}
             transition={{ duration: 0.1 }}
           >
-            <ClipboardCopyIcon />
+            <CopyIcon />
           </motion.div>
         )}
       </AnimatePresence>
@@ -115,20 +171,20 @@ export function CopyButton({
 
 export const ContactMailLink = () => {
   return (
-    <>
+    <div className="flex flex-row gap-0 justify-center items-center">
       <Link href="mailto:gite.larandonnee25@gmail.com" target="_self">
         {EMAIL}
       </Link>
-      <CopyButton content={EMAIL} />
-    </>
+      <CopyButton className="-ml-3" content={EMAIL} />
+    </div>
   );
 };
 
-export const MailLink = ({ withLabel = false }: { withLabel?: boolean }) => {
+export const MailButton = ({ withLabel = false }: { withLabel?: boolean }) => {
   return (
     <Button
       asChild
-      variant={withLabel ? "link" : "ghost"}
+      variant={withLabel ? "link" : "default"}
       size={withLabel ? "default" : "icon"}
     >
       <a
@@ -140,6 +196,34 @@ export const MailLink = ({ withLabel = false }: { withLabel?: boolean }) => {
         {withLabel ? EMAIL : ""}
       </a>
     </Button>
+  );
+};
+
+export const MailLink = ({
+  withLabel = false,
+  withIcon = false,
+}: {
+  withLabel?: boolean;
+  withIcon?: boolean;
+}) => {
+  return (
+    <div className="flex flex-row gap-0 justify-center items-center">
+      <Button
+        asChild
+        variant={withLabel ? "link" : "ghost"}
+        size={withLabel ? "default" : "icon"}
+      >
+        <a
+          className="flex flex-row gap-2"
+          href="mailto:gite.larandonnee25@gmail.com"
+          target="_self"
+        >
+          {withIcon ? <MailIcon /> : ""}
+          {withLabel ? EMAIL : ""}
+        </a>
+      </Button>
+      <CopyButton className="-ml-5" content={EMAIL} />
+    </div>
   );
 };
 
