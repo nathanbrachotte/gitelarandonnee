@@ -3,11 +3,15 @@ import Layout from "@/layouts/Layout.astro";
 import { LandingH2 } from "@/components/Typography";
 import { Image } from "astro:assets";
 import { ZoomedImage } from "@/components/ZoomedImage";
+import { SEO_META } from "@/data";
 
 const LABEL = "Plan du Gîte";
 ---
 
-<Layout title={LABEL} description={"Le plan du gîte"}>
+<Layout
+  title={SEO_META.PLAN_DU_GITE.title}
+  description={SEO_META.PLAN_DU_GITE.description}
+>
   <div class="flex justify-center">
     <div class="container">
       <LandingH2 className="text-center">{LABEL}</LandingH2>
@@ -17,7 +21,7 @@ const LABEL = "Plan du Gîte";
             <!-- TODO: use webp -->
             <Image
               src="/plan.webp"
-              alt="Plan du gîte"
+              alt={LABEL}
               class={"w-full h-full object-cover"}
               height="4500"
               width="2500"

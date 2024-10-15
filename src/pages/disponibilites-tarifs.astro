@@ -6,11 +6,12 @@ import Layout from "@/layouts/Layout.astro";
 import { InfoCircledIcon } from "@radix-ui/react-icons";
 import { MidWeekAlert } from "@/components/Alerts";
 import Calendar from "@/components/Calendar.astro";
+import { SEO_META } from "@/data";
 ---
 
 <Layout
-  title="Disponibilités et tarifs"
-  description="Disponibilités et tarifs du gîte de la Randonnée aux Fourgs"
+  title={SEO_META.DISPONIBILITES_TARIFS.title}
+  description={SEO_META.DISPONIBILITES_TARIFS.description}
   withPadding={false}
   ignoreViewTransitions
 >

@@ -1,11 +1,12 @@
 ---
 import { H1, H2 } from "@/components/Typography";
+import { SEO_META } from "@/data";
 import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout
-  title="Condition Générale de location"
-  description="Condition Générale de location du Gîte de la Randonnée aux Fourgs"
+  title={SEO_META.CONDITION_GENERALE_LOCATION.title}
+  description={SEO_META.CONDITION_GENERALE_LOCATION.description}
 >
   <div class="container">
     <H1>CONDITION GENERALE DE LOCATION</H1>

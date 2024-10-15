@@ -1,12 +1,18 @@
 ---
 import { H1 } from "@/components/Typography";
 import Layout from "@/layouts/Layout.astro";
-import { ADDRESS, EMAIL, PHONE_NUMBER, WEBSITE_ADDRESS } from "@/data";
+import {
+  ADDRESS,
+  EMAIL,
+  PHONE_NUMBER,
+  SEO_META,
+  WEBSITE_ADDRESS,
+} from "@/data";
 ---
 
 <Layout
-  title="Mentions Légales"
-  description="Mentions Légales du Gîte de la Randonnée aux Fourgs"
+  title={SEO_META.MENTIONS_LEGALES.title}
+  description={SEO_META.MENTIONS_LEGALES.description}
 >
   <div class="container">
     <H1>MENTIONS LÉGALES</H1>

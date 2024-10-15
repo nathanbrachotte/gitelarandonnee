@@ -207,3 +207,37 @@ export const LINKS = {
       "https://www.bourgognefranchecomte.com/activites/en-hauteur/escalade-via-ferrata/",
   },
 } as const;
+
+export const SEO_META = {
+  INDEX: {
+    title: "Gîte La Randonnée | Les Fourgs",
+    description:
+      "Découvrez le Gîte La Randonnée aux Fourgs, un gîte confortable et familial pour 14 personnes au cœur du Jura. Idéal pour les vacances en famille ou entre amis, le ski et la randonnée.",
+  },
+  ERROR: {
+    title: "Page non trouvée | Gîte La Randonnée",
+    description: "La page que vous cherchez n'existe pas.",
+  },
+  ACTIVITES: {
+    title: "Activités à faire dans la région | Gîte La Randonnée",
+    description:
+      "Découvrez les activités à faire dans la région des Fourgs. Des pistes de ski de fond, des remontées mécaniques, des forêts et des montagnes.",
+  },
+  CONDITION_GENERALE_LOCATION: {
+    title: "Condition Générale de location | Gîte La Randonnée",
+    description:
+      "Condition Générale de location du Gîte La Randonnée aux Fourgs.",
+  },
+  DISPONIBILITES_TARIFS: {
+    title: "Disponibilités et tarifs | Gîte La Randonnée",
+    description: "Disponibilités et tarifs du Gîte La Randonnée aux Fourgs.",
+  },
+  MENTIONS_LEGALES: {
+    title: "Mentions Légales | Gîte La Randonnée",
+    description: "Mentions Légales du Gîte La Randonnée aux Fourgs.",
+  },
+  PLAN_DU_GITE: {
+    title: "Plan du Gîte | Gîte La Randonnée",
+    description: "Plan du Gîte La Randonnée aux Fourgs.",
+  },
+};
