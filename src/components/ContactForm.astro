@@ -10,10 +10,21 @@ import {
   PaperPlaneIcon,
 } from "@radix-ui/react-icons";
 import { ContactMailLink } from "@/components/Buttons";
+import { Drawing1, Drawing2, Drawing3 } from "@/components/icons";
+// import { DarkBluePlant, DarkGreenLeaf } from "@/components/icons";
 ---
 
 <div class="container mx-auto mt-8 flex justify-center px-4 md:px-8">
-  <form action="/actions/send-email" method="post">
+  <form
+    action="/actions/send-email"
+    method="post"
+    class="border-primary px-6 sm:px-12 py-8 rounded-lg relative bg-card"
+  >
+    <Drawing1
+      className="absolute left-0 right-0 -bottom-12 w-full h-16 rotate-180"
+    />
+    <Drawing2 className="absolute -top-12 -left-12 h-48 w-48" />
+    <Drawing3 className="absolute -right-4 -top-4 h-32 w-32 -rotate-90" />
     <div class="space-y-5">
       <div class="text-center">
         <H2>Nous contacter</H2>
@@ -41,7 +52,7 @@ import { ContactMailLink } from "@/components/Buttons";
           <p class="text-center">
             Une erreur est survenue lors de l'envoi de votre message. <br
             />Veuillez réessayer ou nous contacter directement à l'adresse
-            <ContactMailLink client:load />
+            <ContactMailLink client:visible />
           </p>
         </div>
       </div>

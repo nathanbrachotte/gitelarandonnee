@@ -161,7 +161,7 @@ export function CopyButton({
             exit={{ opacity: 0, scale: 0.5 }}
             transition={{ duration: 0.1 }}
           >
-            <CheckIcon className="w-4 h-4 text-green-900" />
+            <CheckIcon className="w-4 h-4 text-primary" />
           </motion.div>
         ) : (
           <motion.div

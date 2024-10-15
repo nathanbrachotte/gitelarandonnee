@@ -7,6 +7,13 @@ import { InfoCircledIcon } from "@radix-ui/react-icons";
 import { MidWeekAlert } from "@/components/Alerts";
 import Calendar from "@/components/Calendar.astro";
 import { SEO_META } from "@/data";
+import {
+  DarkBluePlant,
+  DarkGreenLeaf,
+  FlowerBullet,
+  OrangePlant,
+  PinkFlower,
+} from "@/components/icons";
 ---
 
 <Layout
@@ -23,9 +30,13 @@ import { SEO_META } from "@/data";
       <LandingH2 className="text-center mt-8 col-span-3 mb-2"
         >Nos tarifs à la semaine</LandingH2
       >
-      <Card title="Vacances Scolaire" className="col-span-3 md:col-span-1">
+      <Card
+        title="Vacances Scolaire"
+        className="col-span-3 md:col-span-1 relative"
+      >
+        <DarkGreenLeaf className="absolute right-4 top-4 w-8 h-8" />
         <div class="flex flex-col">
-          <span class="font-bold mt-2">Pâques :</span>
+          <span class="font-bold mt-2"> Pâques :</span>
           <li>10 personnes: 650€</li>
           <li>14 personnes: 750€</li>
           <p class="mt-2">
@@ -42,7 +53,8 @@ import { SEO_META } from "@/data";
           </p>
         </div>
       </Card>
-      <Card title="Hors saison" className="col-span-3 md:col-span-1">
+      <Card title="Hors saison" className="col-span-3 md:col-span-1 relative">
+        <PinkFlower className="absolute right-4 top-4 w-8 h-8" />
         <div class="flex flex-col">
           <span class="font-bold mt-2">Janvier, Février, Mars</span>
           <li>10 personnes: 800€ / 850€</li>
@@ -55,7 +67,11 @@ import { SEO_META } from "@/data";
           <li>14 personnes: 980€ / 1000€</li>
         </div>
       </Card>
-      <Card title="Options et taxes" className="col-span-3 md:col-span-1">
+      <Card
+        title="Options et taxes"
+        className="col-span-3 md:col-span-1 relative"
+      >
+        <DarkBluePlant className="absolute right-4 top-4 w-8 h-8" />
         <div class="flex flex-col">
           <p class="font-bold mt-2">Charges et location de draps :</p>
           <li>Compris dans le prix</li>

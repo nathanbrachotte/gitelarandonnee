@@ -2,15 +2,13 @@ import React from "react";
 import { cn } from "@/lib/utils";
 
 interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  href: string;
   target?: "_blank" | "_self" | "_parent" | "_top";
   className?: string;
 }
 
 export const Link: React.FC<LinkProps> = ({
-  href,
   className,
-  target = "_blank",
+  target = "_self",
   children,
   ...props
 }) => {
@@ -23,7 +21,6 @@ export const Link: React.FC<LinkProps> = ({
         className,
       )}
       target={target}
-      href={href}
       {...props}
     >
       {children}

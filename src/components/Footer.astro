@@ -19,7 +19,7 @@ import Image from "astro/components/Image.astro";
     class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 mt-28 border-t border-green-800 pt-8"
   >
     <div class="flex flex-col">
-      <GiteLogoWrapper client:load />
+      <GiteLogoWrapper />
       <div class="flex flex-row justify-center gap-2 mt-4">
         <Image
           src="/meuble-de-tourisme.webp"
@@ -44,9 +44,11 @@ import Image from "astro/components/Image.astro";
       <FacebookLink />
     </div>
   </div>
-  <div class="mt-8 text-center">
-    <CGLButton client:load />
-    <MentionLegalesButton client:load />
+  <div
+    class="mt-8 text-center gap-4 flex flex-wrap justify-center items-center"
+  >
+    <CGLButton />
+    <MentionLegalesButton />
     <Small className="whitespace-nowrap">
       &copy; {new Date().getFullYear()} Gîte La Randonnée. Tous droits réservés.
     </Small>

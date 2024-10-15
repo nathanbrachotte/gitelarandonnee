@@ -4,6 +4,8 @@ import { LandingH2 } from "@/components/Typography";
 import { Image } from "astro:assets";
 import { ZoomedImage } from "@/components/ZoomedImage";
 import { SEO_META } from "@/data";
+import { DarkBluePlant } from "@/components/icons";
+import { Diamond } from "@/components/icons";
 
 const LABEL = "Plan du Gîte";
 ---
@@ -28,27 +30,31 @@ const LABEL = "Plan du Gîte";
             />
           </ZoomedImage>
         </div>
-        <div class="mt-4 flex-1 flex flex-col justify-center gap-2">
-          <li class="flex gap-2 items-center">
+        <ul class="mt-4 flex-1 flex flex-col justify-center gap-2">
+          <li class="flex items-start space-x-1 mt-2">
+            <Diamond className="h-4 w-4 shrink-0 text-primary mt-1 mr-1" />
+
             Pour les groupes jusqu'à 10 personnes : <div
               class="h-6 w-6 border bg-pastel-blue shrink-0"
             >
             </div>
           </li>
-          <li class="flex gap-2 items-center">
+          <li class="flex items-start space-x-1 mt-2">
+            <Diamond className="h-4 w-4 shrink-0 text-primary mt-1 mr-1" />
             Pour les groupes jusqu'à 14 personnes: <div
               class="h-6 w-6 border bg-pastel-blue shrink-0"
             >
             </div>
-            + <div class="h-6 w-6 border bg-pastel-green shrink-0"></div>
+            &nbsp;+<div class="h-6 w-6 border bg-pastel-green shrink-0"></div>
           </li>
-          <li class="flex gap-2 items-center">
+          <li class="flex items-start space-x-1 mt-2">
+            <Diamond className="h-4 w-4 shrink-0 text-primary mt-1 mr-1" />
             Petite salle de bain en option (table à langer, baignoire): <div
               class="h-6 w-6 border bg-pastel-yellow shrink-0"
             >
             </div>
           </li>
-        </div>
+        </ul>
       </div>
     </div>
   </div>
