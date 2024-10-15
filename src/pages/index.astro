@@ -1,5 +1,5 @@
 ---
-import { H3, LandingH1, LandingH2 } from "@/components/Typography";
+import { H3, LandingH1, LandingH2, Text } from "@/components/Typography";
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import {
@@ -47,14 +47,16 @@ import { LINKS } from "@/data";
         "rounded-lg",
       )}
     >
-      <LandingH1>Bienvenue</LandingH1>
-      <p class="my-4">
+      <LandingH1>Bienvenue au Gîte La Randonnée</LandingH1>
+      <Text className="mt-4 mb-2 font-bold">
         Venez découvrir les charmes de la montagne dans notre gîte dans le Doubs
-        situé à 1200m d'altitude, au cœur du village de Les Fourgs. Idéal pour
-        les vacances en famille ou entre amis, notre gîte convivial et familial
-        peut accueillir jusqu'à 14 personnes.
-      </p>
-      <div class="flex flex-row gap-4 justify-center">
+        situé à 1200m d'altitude, au cœur du village de Les Fourgs.
+      </Text>
+      <Text>
+        Idéal pour les vacances en famille ou entre amis, notre gîte convivial
+        et familial peut accueillir jusqu'à 14 personnes.
+      </Text>
+      <div class="flex flex-row gap-4 justify-center mt-6">
         <PhoneNumberButton />
         <MailButton />
         <AddressButton />
