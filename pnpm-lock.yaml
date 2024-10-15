@@ -18,8 +18,8 @@ importers:
         specifier: ^3.6.2
         version: 3.6.2(@types/react-dom@18.3.0)(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.2(@types/node@22.5.0))
       '@astrojs/sitemap':
-        specifier: ^3.2.0
-        version: 3.2.0
+        specifier: ^3.2.1
+        version: 3.2.1
       '@astrojs/tailwind':
         specifier: ^5.1.0
         version: 5.1.0(astro@4.15.5(@types/node@22.5.0)(rollup@4.21.0)(typescript@5.5.4))(tailwindcss@3.4.11)
@@ -185,8 +185,8 @@ packages:
       react: ^17.0.2 || ^18.0.0 || ^19.0.0-beta
       react-dom: ^17.0.2 || ^18.0.0 || ^19.0.0-beta
 
-  '@astrojs/sitemap@3.2.0':
-    resolution: {integrity: sha512-SkrOCL3Z6HxdiXreZ1+aPBWgnBMJ31EgPdcscgQeLqI2Gqk/4EKLuw9q0SqKU9MmHpcPXXtcd0odfCk4barPoA==}
+  '@astrojs/sitemap@3.2.1':
+    resolution: {integrity: sha512-uxMfO8f7pALq0ADL6Lk68UV6dNYjJ2xGUzyjjVj60JLBs5a6smtlkBYv3tQ0DzoqwS7c9n4FUx5lgv0yPo/fgA==}
 
   '@astrojs/tailwind@5.1.0':
     resolution: {integrity: sha512-BJoCDKuWhU9FT2qYg+fr6Nfb3qP4ShtyjXGHKA/4mHN94z7BGcmauQK23iy+YH5qWvTnhqkd6mQPQ1yTZTe9Ig==}
@@ -4410,7 +4410,7 @@ snapshots:
       - supports-color
       - vite
 
-  '@astrojs/sitemap@3.2.0':
+  '@astrojs/sitemap@3.2.1':
     dependencies:
       sitemap: 8.0.0
       stream-replace-string: 2.0.0
