@@ -212,7 +212,7 @@ export const SEO_META = {
   INDEX: {
     title: "Gîte La Randonnée | Les Fourgs",
     description:
-      "Découvrez le Gîte La Randonnée aux Fourgs, un gîte confortable et familial pour 14 personnes au cœur du Jura. Idéal pour les vacances en famille ou entre amis, le ski et la randonnée.",
+      "Découvrez le Gîte La Randonnée aux Fourgs, un gîte confortable et familial pour 14 personnes au cœur du Jura.",
   },
   ERROR: {
     title: "Page non trouvée | Gîte La Randonnée",
