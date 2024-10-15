@@ -206,38 +206,46 @@ export const LINKS = {
     escalade_url:
       "https://www.bourgognefranchecomte.com/activites/en-hauteur/escalade-via-ferrata/",
   },
+  FACEBOOK: {
+    url: "https://www.facebook.com/larandonnee.lesfourgs",
+  },
 } as const;
 
 export const SEO_META = {
   INDEX: {
-    title: "Gîte La Randonnée | Les Fourgs",
+    title:
+      "Gîte La Randonnée | Les Fourgs, Doubs - Hébergement jusqu'à 14 personnes",
     description:
-      "Découvrez le Gîte La Randonnée aux Fourgs, un gîte confortable et familial pour 14 personnes au cœur du Jura.",
+      "Découvrez le Gîte La Randonnée aux Fourgs, un hébergement spacieux pour 14 personnes au cœur des montagnes du Jura dans le Doubs. Idéal pour les vacances en famille, la randonnée en été, le ski de fond et alpin en hiver.",
   },
   ERROR: {
-    title: "Page non trouvée | Gîte La Randonnée",
-    description: "La page que vous cherchez n'existe pas.",
+    title: "Page non trouvée | Gîte La Randonnée aux Fourgs",
+    description:
+      "La page que vous cherchez n'existe pas. Retournez à l'accueil pour découvrir notre gîte dans le Doubs.",
   },
   ACTIVITES: {
-    title: "Activités à faire dans la région | Gîte La Randonnée",
+    title: "Activités été et hiver | Gîte La Randonnée aux Fourgs, Doubs",
     description:
-      "Découvrez les activités à faire dans la région des Fourgs. Des pistes de ski de fond, des remontées mécaniques, des forêts et des montagnes.",
+      "Profitez des activités variées autour du Gîte La Randonnée aux Fourgs : randonnée, ski de fond, ski alpin, raquettes, escalade et lacs en été. Un paradis pour les sportifs en toute saison dans le Doubs.",
   },
   CONDITION_GENERALE_LOCATION: {
-    title: "Condition Générale de location | Gîte La Randonnée",
+    title: "Conditions Générales de Location | Gîte La Randonnée aux Fourgs",
     description:
-      "Condition Générale de location du Gîte La Randonnée aux Fourgs.",
+      "Consultez les conditions générales de location du Gîte La Randonnée, hébergement pour 14 personnes aux Fourgs, dans le Doubs.",
   },
   DISPONIBILITES_TARIFS: {
-    title: "Disponibilités et tarifs | Gîte La Randonnée",
-    description: "Disponibilités et tarifs du Gîte La Randonnée aux Fourgs.",
+    title: "Disponibilités et Tarifs | Gîte La Randonnée aux Fourgs, Doubs",
+    description:
+      "Réservez votre séjour au Gîte La Randonnée aux Fourgs. Consultez nos disponibilités et tarifs pour un hébergement de 14 personnes dans le Doubs.",
   },
   MENTIONS_LEGALES: {
-    title: "Mentions Légales | Gîte La Randonnée",
-    description: "Mentions Légales du Gîte La Randonnée aux Fourgs.",
+    title: "Mentions Légales | Gîte La Randonnée aux Fourgs, Doubs",
+    description:
+      "Informations légales concernant le Gîte La Randonnée, hébergement de vacances pour 14 personnes aux Fourgs, dans le Doubs.",
   },
   PLAN_DU_GITE: {
-    title: "Plan du Gîte | Gîte La Randonnée",
-    description: "Plan du Gîte La Randonnée aux Fourgs.",
+    title: "Plan du Gîte | La Randonnée aux Fourgs - Hébergement 14 personnes",
+    description:
+      "Découvrez le plan détaillé du Gîte La Randonnée, un hébergement spacieux pour 14 personnes aux Fourgs, dans les montagnes du Jura (Doubs).",
   },
 };

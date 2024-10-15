@@ -1,6 +1,11 @@
-import { LocationIcon, MailIcon, PhoneIcon } from "@/components/icons";
+import {
+  FacebookIcon2,
+  LocationIcon,
+  MailIcon,
+  PhoneIcon,
+} from "@/components/icons";
 import { Button } from "@/components/ui/button";
-import { ADDRESS, EMAIL, PHONE_NUMBER } from "@/data";
+import { ADDRESS, EMAIL, LINKS, PHONE_NUMBER } from "@/data";
 import { cn } from "@/lib/utils";
 import { ROUTES } from "@/routes";
 import { useState } from "react";
@@ -295,6 +300,17 @@ export const ActivitésLink = ({ activePath }: { activePath: string }) => {
       })}
     >
       <a href={link}>Activités</a>
+    </Button>
+  );
+};
+
+export const FacebookLink = () => {
+  return (
+    <Button asChild variant={"link"} size={"default"}>
+      <a href={LINKS.FACEBOOK.url} className="flex flex-row gap-2">
+        <FacebookIcon2 className="w-6 h-6" />
+        Suivez notre page Facebook
+      </a>
     </Button>
   );
 };
