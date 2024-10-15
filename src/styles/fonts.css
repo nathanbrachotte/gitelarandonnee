@@ -1,54 +1,6 @@
 @font-face {
-  font-family: "Campfire";
-  src: url("/fonts/Campfire.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Tasteful Sandwich";
-  src: url("/fonts/Tasteful Sandwich.otf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: "Anastasia";
   src: url("/fonts/Anastasia.otf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "AdventureScript";
-  src: url("/fonts/AdventureScript.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "CallingFont";
-  src: url("/fonts/CallingFont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Campfire";
-  src: url("/fonts/Campfire.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Cute Kitchen";
-  src: url("/fonts/Cute Kitchen.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
