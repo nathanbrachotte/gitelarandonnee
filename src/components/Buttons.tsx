@@ -15,14 +15,14 @@ import { Link } from "@/components/Link";
 
 export const CGLButton = () => {
   return (
-    <Button asChild variant={"link"}>
+    <Button asChild variant={"link"} aria-label="CGL">
       <a href={ROUTES.CGL.getPath({})}>CGL</a>
     </Button>
   );
 };
 export const MentionLegalesButton = () => {
   return (
-    <Button variant={"link"}>
+    <Button variant={"link"} aria-label="Mention Légales">
       <a href={ROUTES.MENTIONS_LEGALES.getPath({})}>Mention Légales</a>
     </Button>
   );
@@ -38,6 +38,7 @@ export const PhoneNumberButton = ({
       asChild
       variant={withLabel ? "link" : "default"}
       size={withLabel ? "default" : "icon"}
+      aria-label="Téléphone"
     >
       <a className="flex flex-row gap-2" href={"tel:" + PHONE_NUMBER}>
         <PhoneIcon />
@@ -57,6 +58,7 @@ export const PhoneNumberLink = ({
   return (
     <div className="flex flex-row justify-center items-center">
       <Button
+        aria-label="Téléphone"
         asChild
         variant={withLabel ? "link" : "default"}
         size={withLabel ? "default" : "icon"}
@@ -79,6 +81,7 @@ export const AddressButton = ({
   return (
     <Button
       asChild
+      aria-label="Adresse"
       variant={withLabel ? "link" : "default"}
       size={withLabel ? "default" : "icon"}
     >
@@ -105,6 +108,7 @@ export const AddressLink = ({
   return (
     <div className="flex flex-row gap-0 justify-center items-center">
       <Button
+        aria-label="Adresse"
         asChild
         variant={withLabel ? "link" : "ghost"}
         size={withLabel ? "default" : "icon"}
@@ -142,6 +146,7 @@ export function CopyButton({
   return (
     <Button
       onClick={handleCopy}
+      aria-label="Copier"
       variant="link"
       size="icon"
       disabled={copied}
@@ -177,7 +182,11 @@ export function CopyButton({
 export const ContactMailLink = () => {
   return (
     <div className="flex flex-row gap-0 justify-center items-center">
-      <Link href="mailto:gite.larandonnee25@gmail.com" target="_self">
+      <Link
+        href="mailto:gite.larandonnee25@gmail.com"
+        target="_self"
+        aria-label="Email"
+      >
         {EMAIL}
       </Link>
       <CopyButton className="-ml-3" content={EMAIL} />
@@ -191,6 +200,7 @@ export const MailButton = ({ withLabel = false }: { withLabel?: boolean }) => {
       asChild
       variant={withLabel ? "link" : "default"}
       size={withLabel ? "default" : "icon"}
+      aria-label="Email"
     >
       <a
         className="flex flex-row gap-2"
@@ -217,6 +227,7 @@ export const MailLink = ({
         asChild
         variant={withLabel ? "link" : "ghost"}
         size={withLabel ? "default" : "icon"}
+        aria-label="Email"
       >
         <a
           className="flex flex-row gap-2"
@@ -245,7 +256,9 @@ export const AccueilLink = ({ activePath }: { activePath: string }) => {
         "underline text-purple-950": isActive,
       })}
     >
-      <a href={link}>Accueil</a>
+      <a href={link} aria-label="Accueil">
+        Accueil
+      </a>
     </Button>
   );
 };
@@ -263,7 +276,9 @@ export const DispoLink = ({ activePath }: { activePath: string }) => {
         "underline text-purple-950": isActive,
       })}
     >
-      <a href={link}>Disponibilités et Tarifs</a>
+      <a href={link} aria-label="Disponibilités et Tarifs">
+        Disponibilités et Tarifs
+      </a>
     </Button>
   );
 };
@@ -281,7 +296,9 @@ export const PlanLink = ({ activePath }: { activePath: string }) => {
         "underline text-purple-950": isActive,
       })}
     >
-      <a href={link}>Plan du Gîte</a>
+      <a href={link} aria-label="Plan du Gîte">
+        Plan du Gîte
+      </a>
     </Button>
   );
 };
@@ -299,7 +316,9 @@ export const ActivitésLink = ({ activePath }: { activePath: string }) => {
         "underline text-purple-950": isActive,
       })}
     >
-      <a href={link}>Activités</a>
+      <a href={link} aria-label="Activités">
+        Activités
+      </a>
     </Button>
   );
 };
@@ -307,7 +326,11 @@ export const ActivitésLink = ({ activePath }: { activePath: string }) => {
 export const FacebookLink = () => {
   return (
     <Button asChild variant={"link"} size={"default"}>
-      <a href={LINKS.FACEBOOK.url} className="flex flex-row gap-2">
+      <a
+        href={LINKS.FACEBOOK.url}
+        className="flex flex-row gap-2"
+        aria-label="Page Facebook"
+      >
         <FacebookIcon2 className="w-6 h-6" />
         Suivez notre page Facebook
       </a>
