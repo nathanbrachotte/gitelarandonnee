@@ -2,6 +2,7 @@ import { BlurFade } from "@/components/magicui/blur-fade";
 import { LandingH2 } from "@/components/Typography";
 import { ZoomedImage } from "@/components/ZoomedImage";
 import { GALLERY } from "@/data";
+import { cn } from "@/lib/utils";
 
 export function Gallery() {
   return (
@@ -17,7 +18,12 @@ export function Gallery() {
               className="relative"
             >
               {"caption" in image && typeof image.caption === "string" ? (
-                <div className="z-10 text-xs bottom-0.5 p-1.5 sm:text-sm text-primary absolute sm:bottom-2 left-1/2 transform -translate-x-1/2 bg-white rounded-lg pointer-events-none">
+                <div
+                  className={cn(
+                    "z-10 text-xs bottom-0.5 p-1.5 sm:text-sm text-primary absolute sm:bottom-2 left-1/2 transform -translate-x-1/2 bg-white rounded-lg pointer-events-none",
+                    "text-nowrap",
+                  )}
+                >
                   <p>{image.caption}</p>
                 </div>
               ) : null}

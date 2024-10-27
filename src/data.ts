@@ -65,12 +65,12 @@ export const IMAGES = {
   PETANQUE: {
     url: "/gite/petanque.webp",
     alt: "Pétanque",
-    caption: "Terrain de pétanque et molki",
+    caption: "Terrain de pétanque",
   },
   PETIT_SALON_COMPLET: {
     url: "/gite/petit-salon-complet.webp",
     alt: "Salle de détente avec lit double",
-    caption: "Salle de détente avec lit double",
+    caption: "Salon détente",
   },
   PETIT_SALON: {
     url: "/gite/petit-salon.webp",
@@ -135,7 +135,7 @@ export const IMAGES = {
   METABIEF_VIEW: {
     url: "/metabief-view.webp",
     alt: "Vue sur les Alpes depuis Métabief",
-    caption: "Vue sur les Alpes depuis Métabief",
+    caption: "Les Alpes depuis Métabief",
   },
 };
 
