@@ -79,7 +79,7 @@ import { LINKS } from "@/data";
       class="container flex flex-col lg:flex-row items-center justify-center"
     >
       <div class="flex-1 w-full lg:w-1/2">
-        <ZoomedImage client:load>
+        <ZoomedImage client:idle>
           <Image
             src={IMAGES.EXTERIEUR_ARBRES.url}
             alt={IMAGES.EXTERIEUR_ARBRES.alt}
@@ -138,7 +138,7 @@ import { LINKS } from "@/data";
       class="container flex flex-col lg:flex-row items-center justify-center"
     >
       <div class="flex-1 w-full block lg:hidden">
-        <ZoomedImage client:load wrapperClassName="rounded-lg">
+        <ZoomedImage client:visible wrapperClassName="rounded-lg">
           <Image
             src={IMAGES.EXTERIEUR_PARKING.url}
             alt={IMAGES.EXTERIEUR_PARKING.caption}
@@ -195,7 +195,7 @@ import { LINKS } from "@/data";
         </li>
       </div>
       <div class="flex-1 w-full lg:w-1/2 hidden lg:block">
-        <ZoomedImage client:load wrapperClassName="rounded-lg">
+        <ZoomedImage client:visible wrapperClassName="rounded-lg">
           <Image
             src={IMAGES.EXTERIEUR_PARKING.url}
             alt={IMAGES.EXTERIEUR_PARKING.caption}
@@ -207,5 +207,5 @@ import { LINKS } from "@/data";
       </div>
     </div>
   </section>
-  <Gallery client:load />
+  <Gallery client:visible />
 </Layout>
