@@ -9,7 +9,6 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
   site: "https://gitelarandonnee.fr",
   output: "hybrid",
-
   integrations: [
     sitemap(),
     react(),
@@ -17,6 +16,9 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
   ],
-
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    platformProxy: {
+      enabled: true,
+    },
+  }),
 });
