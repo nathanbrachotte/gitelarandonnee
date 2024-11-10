@@ -151,6 +151,15 @@ export const Quote = ({ children }: HTMLAttributes<HTMLHeadingElement>) => {
   );
 };
 
-export const Small = ({ children }: HTMLAttributes<HTMLHeadingElement>) => {
-  return <small className="text-sm font-medium leading-none">{children}</small>;
+export const Small = ({
+  children,
+  className,
+}: HTMLAttributes<HTMLHeadingElement>) => {
+  return (
+    <small
+      className={cn("text-sm text-primary font-medium leading-none", className)}
+    >
+      {children}
+    </small>
+  );
 };

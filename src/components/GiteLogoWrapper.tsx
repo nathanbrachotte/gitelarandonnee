@@ -1,20 +1,29 @@
 import { Link } from "@/components/Link";
 import { GiteLogo } from "@/components/logo";
-import { H2, Text } from "@/components/Typography";
-import { NAME, SHORT_NAME } from "@/data";
+import { H2, Small, Text } from "@/components/Typography";
+import { NAME, PHONE_NUMBER, SHORT_NAME } from "@/data";
+import type { PropsWithChildren } from "react";
+import { PhoneIcon } from "./icons";
+// import { CopyButton } from "./Buttons";
 
-export function GiteLogoWrapper() {
+export function GiteLogoWrapper({}: PropsWithChildren) {
   return (
-    <Link href="/" className="no-underline" target="_self">
-      <div className="flex items-end justify-center gap-2 sm:gap-4">
-        <GiteLogo className="w-10 h-10 sm:w-12 sm:h-12" />
-        <Text className="hidden sm:block whitespace-nowrap pb-0 font-logo text-4xl text-primary font-bold -mb-1.5">
-          {NAME}
-        </Text>
-        <H2 className="block sm:hidden whitespace-nowrap pb-0 font-logo mt-2">
-          {SHORT_NAME}
-        </H2>
+    <div className="flex flex-row items-end gap-2">
+      <Link href="/" target="_self" className="no-underline">
+        <GiteLogo className="w-14 h-14 rounded-lg" />
+      </Link>
+      <div className="flex flex-col items-start">
+        <Link href="/" target="_self" className="no-underline">
+          <H2 className="whitespace-nowrap font-logo -mb-3">{NAME}</H2>
+        </Link>
+        <Small className="text-xs flex flex-row gap-0.5 relative select-all">
+          <PhoneIcon className="w-4 h-4" />
+          {PHONE_NUMBER}
+          {/* <div className="absolute -right-7 -top-2">
+                <CopyButton content={PHONE_NUMBER} className="scale-75" />
+              </div> */}
+        </Small>
       </div>
-    </Link>
+    </div>
   );
 }

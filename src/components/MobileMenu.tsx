@@ -22,7 +22,7 @@ export function MobileMenu({ activePath }: { activePath: string }) {
         <span className="sr-only">Menu</span>
       </SheetTrigger>
       <SheetContent className="w-full sm:w-[300px] bg-white">
-        <SheetHeader className="py-4">
+        <SheetHeader className="py-4 justify-center flex flex-row flex-1">
           <GiteLogoWrapper />
         </SheetHeader>
         <SheetDescription className="flex-1 flex flex-col gap-2 pt-4">

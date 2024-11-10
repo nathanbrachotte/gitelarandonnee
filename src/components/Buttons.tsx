@@ -150,7 +150,7 @@ export function CopyButton({
       variant="link"
       size="icon"
       disabled={copied}
-      className={cn(className, "")}
+      className={cn(className)}
     >
       <AnimatePresence initial={false} mode="wait">
         {copied ? (
