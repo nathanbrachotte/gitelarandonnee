@@ -1,4 +1,4 @@
-import { WWW_SITE } from "./constants";
+import { WEBSITE_ADDRESS } from "./data";
 
 type ImplicitPathParams =
   | {
@@ -73,7 +73,7 @@ const generateUrl = <
   props?: RouteParams<T, Q>,
 ): string => {
   const baseUrl =
-    props != null && "baseUrl" in props ? props.baseUrl : WWW_SITE;
+    props != null && "baseUrl" in props ? props.baseUrl : WEBSITE_ADDRESS;
   const locale =
     props != null && "locale" in props && props.locale != null
       ? props.locale
@@ -81,7 +81,7 @@ const generateUrl = <
 
   const { withBaseUrl, queryParams } = props ?? {};
 
-  const isDifferentOrigin = withBaseUrl === true && baseUrl !== WWW_SITE;
+  const isDifferentOrigin = withBaseUrl === true && baseUrl !== WEBSITE_ADDRESS;
 
   const origin = withBaseUrl === true ? baseUrl : "";
   const isLocaleExpected = locale !== "none";
@@ -172,7 +172,7 @@ export const generateQueryParams = (
  * @returns The absolute URL
  */
 export const getAbsoluteUrl = ({
-  origin = WWW_SITE,
+  origin = WEBSITE_ADDRESS,
   url,
 }: {
   origin?: string;
