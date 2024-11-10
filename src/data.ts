@@ -209,6 +209,9 @@ export const LINKS = {
   FACEBOOK: {
     url: "https://www.facebook.com/larandonnee.lesfourgs",
   },
+  METABIEF_ADVENTURE: {
+    url: "https://www.metabiefaventures.fr/",
+  },
 } as const;
 
 export const SEO_META = {
