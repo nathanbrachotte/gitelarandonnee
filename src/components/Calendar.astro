@@ -51,9 +51,9 @@ const { showTitle = true } = Astro.props;
   type="text/javascript"></script>
 <script is:inline define:vars={{ ingenieCode, siteUrl }}>
   // Créer un widget de dispo et/ou resa
-  const widget_dispo_resa = new window.IngenieWidgetDispoResa.Client({
-    code: ingenieCode, // Code de la prestation
-    url: siteUrl, //(string) Url du site (dynamique)
+  const widget_dispo_resa = new IngenieWidgetDispoResa.Client({
+    code: "HLOBFC025334000496", // Code de la prestation
+    url: "https://www.destination-haut-doubs.com", //(string) Url du site (dynamique)
     elementHtml: "widget-fiche-ingenie", //(string) Identifiant destination HTML du widget
     enable_dispo: true, // Active dispo
     enable_resa: false, // Active résa
@@ -64,16 +64,12 @@ const { showTitle = true } = Astro.props;
     },
     dispo: {
       options: {
-        templates: {
-          Week: "semaineLigne",
-          Days: "jourSemaineLigne",
-        },
+        templates: {},
       },
     },
     resa: {
       typeWidget: "OBJET",
     },
   });
-
   widget_dispo_resa.init();
 </script>
