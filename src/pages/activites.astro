@@ -18,7 +18,7 @@ import { Image } from "astro:assets";
     <Card className="mt-4">
       <div class="flex flex-col gap-4 md:flex-row justify-center items-center">
         <div class="flex-1">
-          <ZoomedImage client:load>
+          <ZoomedImage client:idle>
             <Image
               src="/les-fourgs-plan.webp"
               alt="Plan des Fourgs"
