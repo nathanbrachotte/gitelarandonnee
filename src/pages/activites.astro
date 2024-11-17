@@ -2,7 +2,6 @@
 import Card from "@/components/Card.astro";
 import { Link } from "@/components/Link";
 import { LandingH2 } from "@/components/Typography";
-import { ZoomedImage } from "@/components/ZoomedImage";
 import { IMAGES, SEO_META } from "@/data";
 import { LINKS } from "@/data";
 import Layout from "@/layouts/Layout.astro";
@@ -18,14 +17,12 @@ import { Image } from "astro:assets";
     <Card className="mt-4">
       <div class="flex flex-col gap-4 md:flex-row justify-center items-center">
         <div class="flex-1">
-          <ZoomedImage client:idle>
-            <Image
-              src="/les-fourgs-plan.webp"
-              alt="Plan des Fourgs"
-              width={1100}
-              height={776}
-            /></ZoomedImage
-          >
+          <Image
+            src="/les-fourgs-plan.webp"
+            alt="Plan des Fourgs"
+            width={1100}
+            height={776}
+          />
         </div>
         <div class="flex-1 flex">
           <ul class="space-y-4 flex flex-col">

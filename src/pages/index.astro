@@ -79,15 +79,13 @@ import { LINKS } from "@/data";
       class="container flex flex-col lg:flex-row items-center justify-center"
     >
       <div class="flex-1 w-full lg:w-1/2">
-        <ZoomedImage client:idle>
-          <Image
-            src={IMAGES.EXTERIEUR_ARBRES.url}
-            alt={IMAGES.EXTERIEUR_ARBRES.alt}
-            width={911}
-            height={684}
-            class="sm:rounded-lg"
-          />
-        </ZoomedImage>
+        <Image
+          src={IMAGES.EXTERIEUR_ARBRES.url}
+          alt={IMAGES.EXTERIEUR_ARBRES.alt}
+          width={911}
+          height={684}
+          class="sm:rounded-lg"
+        />
       </div>
       <div class="flex-1 p-8 w-full lg:w-1/2">
         <LandingH2>Au coeur des montagnes du Jura</LandingH2>
@@ -139,15 +137,13 @@ import { LINKS } from "@/data";
       class="container flex flex-col lg:flex-row items-center justify-center"
     >
       <div class="flex-1 w-full block lg:hidden">
-        <ZoomedImage client:visible wrapperClassName="rounded-lg">
-          <Image
-            src={IMAGES.EXTERIEUR_PARKING.url}
-            alt={IMAGES.EXTERIEUR_PARKING.caption}
-            class="sm:rounded-lg"
-            width={911}
-            height={684}
-          />
-        </ZoomedImage>
+        <Image
+          src={IMAGES.EXTERIEUR_PARKING.url}
+          alt={IMAGES.EXTERIEUR_PARKING.caption}
+          class="sm:rounded-lg"
+          width={911}
+          height={684}
+        />
       </div>
       <div class="flex-1 p-8 w-full lg:w-1/2">
         <H3 className="lg:mt-4">En été</H3>
@@ -206,15 +202,13 @@ import { LINKS } from "@/data";
         </li>
       </div>
       <div class="flex-1 w-full lg:w-1/2 hidden lg:block">
-        <ZoomedImage client:visible wrapperClassName="rounded-lg">
-          <Image
-            src={IMAGES.EXTERIEUR_PARKING.url}
-            alt={IMAGES.EXTERIEUR_PARKING.caption}
-            class="sm:rounded-lg"
-            width={911}
-            height={684}
-          />
-        </ZoomedImage>
+        <Image
+          src={IMAGES.EXTERIEUR_PARKING.url}
+          alt={IMAGES.EXTERIEUR_PARKING.caption}
+          class="sm:rounded-lg"
+          width={911}
+          height={684}
+        />
       </div>
     </div>
   </section>
