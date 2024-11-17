@@ -112,7 +112,7 @@ export const ROUTES = {
   },
   DISPO_TARIFS: {
     getPath: (props: RouteParams) => {
-      return generateUrl("/disponibilites-tarifs", props);
+      return generateUrl("/disponibilites", props);
     },
   },
   PLAN_DU_GITE: {
