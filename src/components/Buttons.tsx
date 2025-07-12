@@ -181,7 +181,7 @@ export function CopyButton({
 
 export const ContactMailLink = () => {
   return (
-    <div className="flex flex-row gap-0 justify-center items-center">
+    <div className="flex flex-row gap-1 justify-center items-center">
       <Link
         href="mailto:gite.larandonnee25@gmail.com"
         target="_self"
@@ -277,7 +277,7 @@ export const DispoLink = ({ activePath }: { activePath: string }) => {
       })}
     >
       <a href={link} aria-label="Disponibilités et Tarifs">
-        Disponibilités et Tarifs
+        Réserver
       </a>
     </Button>
   );

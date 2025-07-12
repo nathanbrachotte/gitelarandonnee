@@ -1,0 +1,43 @@
+---
+const ingenieCode = import.meta.env.PUBLIC_INGENIE_CODE;
+const siteUrl = import.meta.env.PUBLIC_SITE_URL;
+
+export type Props = {
+  showTitle?: boolean;
+};
+---
+
+<div class="relative h-[400px] sm:h-[400px] flex justify-center">
+  <div class="max-w-full absolute" id="widget-fiche-ingenie-dispo"></div>
+</div>
+
+<script
+  is:inline
+  src="https://static.ingenie.fr/js/ScriptsLoader.js"
+  type="text/javascript"></script>
+<script
+  is:inline
+  src="https://static.ingenie.fr/widgets/dispo_resa/Client.js"
+  type="text/javascript"></script>
+<script is:inline define:vars={{ ingenieCode, siteUrl }}>
+  // Widget pour les disponibilités uniquement
+  const widget_dispo = new IngenieWidgetDispoResa.Client({
+    code: "HLOBFC025334000496",
+    url: "https://www.destination-haut-doubs.com",
+    elementHtml: "widget-fiche-ingenie-dispo",
+    enable_dispo: true,
+    enable_resa: false,
+    styles: {
+      direction: "horizontal",
+      responsiveAt: "900",
+      inlineLabels: true,
+    },
+    dispo: {
+      options: {
+        templates: {},
+      },
+    },
+  });
+
+  widget_dispo.init();
+</script>

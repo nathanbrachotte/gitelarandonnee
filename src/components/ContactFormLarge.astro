@@ -1,0 +1,103 @@
+---
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { H2 } from "@/components/Typography";
+import {
+  CheckCircledIcon,
+  CrossCircledIcon,
+  PaperPlaneIcon,
+} from "@radix-ui/react-icons";
+import { ContactMailLink } from "@/components/Buttons";
+import { PinkFlower } from "@/components/icons";
+---
+
+<form action="/actions/send-email" method="post" class="relative w-full">
+  <!-- SUCCESS STATE -->
+  <div id="contact-form-success" class="container mx-auto hidden">
+    <div
+      class="flex flex-col items-center justify-center border border-green-500 p-4 rounded-md h-56 gap-2 fade-in"
+    >
+      <CheckCircledIcon className="w-10 h-10 text-green-500" />
+      <p class="text-center">
+        Votre message a bien été envoyé. <br />
+        Nous vous répondrons dans les plus brefs délais.
+      </p>
+    </div>
+  </div>
+  <!-- ERROR STATE -->
+  <div id="contact-form-error" class="container mx-auto hidden">
+    <div
+      class="flex flex-col items-center justify-center border border-red-500 p-4 rounded-md h-56 gap-2 fade-in"
+    >
+      <CrossCircledIcon className="w-10 h-10 text-red-500" />
+      <p class="text-center">
+        Une erreur est survenue lors de l'envoi de votre message. <br />Veuillez
+        réessayer ou nous contacter directement à l'adresse
+        <ContactMailLink client:visible />
+      </p>
+    </div>
+  </div>
+  <!-- FORM -->
+  <div id="contact-form-container">
+    <div class="gap-4 grid grid-cols-2">
+      <div class="space-y-1 col-span-2 md:col-span-1">
+        <Label htmlFor="name">Nom</Label>
+        <Input
+          id="name"
+          placeholder="Votre nom"
+          name="name"
+          className="bg-background"
+        />
+      </div>
+      <div class="space-y-1 col-span-2 md:col-span-1">
+        <Label htmlFor="email">Email</Label>
+        <Input
+          id="email"
+          placeholder="Votre email"
+          type="email"
+          name="email"
+          className="bg-background"
+        />
+      </div>
+      <div class="space-y-1 col-span-2">
+        <Label htmlFor="message">Message</Label>
+        <Textarea
+          id="message"
+          placeholder="Les dates de votre séjour, le nombre de personnes, etc."
+          className="min-h-[100px]"
+          name="message"
+          className="bg-background"
+        />
+      </div>
+    </div>
+    <Button type="submit" className="mt-5">
+      Envoyer <PaperPlaneIcon className="w-4 h-4 ml-2" />
+    </Button>
+  </div>
+</form>
+
+<script>
+  import { actions } from "astro:actions";
+
+  const form = document.querySelector("form");
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    const result = await actions.sendContactEmail(formData);
+
+    if (!result.data?.success) {
+      const contactFormError = document.getElementById("contact-form-error");
+      if (contactFormError) contactFormError.style.display = "block";
+      return;
+    }
+
+    const contactFormSuccess = document.getElementById("contact-form-success");
+    if (contactFormSuccess) contactFormSuccess.style.display = "block";
+    const contactFormContainer = document.getElementById(
+      "contact-form-container",
+    );
+    if (contactFormContainer) contactFormContainer.classList.add("hidden");
+  });
+</script>

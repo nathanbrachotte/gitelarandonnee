@@ -5,6 +5,9 @@ import { Image } from "astro:assets";
 import { ZoomedImage } from "@/components/ZoomedImage";
 import { SEO_META } from "@/data";
 import { Diamond } from "@/components/icons";
+import Container from "@/components/Container.astro";
+import ContactForm from "@/components/ContactForm.astro";
+import Card from "@/components/Card.astro";
 
 const LABEL = "Plan du Gîte";
 ---
@@ -13,9 +16,9 @@ const LABEL = "Plan du Gîte";
   title={SEO_META.PLAN_DU_GITE.title}
   description={SEO_META.PLAN_DU_GITE.description}
 >
-  <div class="flex justify-center">
-    <div class="container">
-      <LandingH2 className="text-center">{LABEL}</LandingH2>
+  <Container>
+    <LandingH2 className="text-center">{LABEL}</LandingH2>
+    <Card className="mt-4">
       <div class="flex flex-col justify-center gap-4 mt-4 items-center">
         <div class="lg:w-2/3">
           <ZoomedImage client:idle>
@@ -38,6 +41,9 @@ const LABEL = "Plan du Gîte";
           </li>
         </ul>
       </div>
-    </div>
-  </div>
+    </Card>
+  </Container>
+  <Container>
+    <ContactForm />
+  </Container>
 </Layout>

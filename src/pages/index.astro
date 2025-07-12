@@ -23,6 +23,8 @@ import { IMAGES, SEO_META } from "@/data";
 import { cn } from "@/lib/utils";
 import { Link } from "@/components/Link";
 import { LINKS } from "@/data";
+import ContactForm from "@/components/ContactForm.astro";
+import Container from "@/components/Container.astro";
 ---
 
 <Layout
@@ -212,4 +214,7 @@ import { LINKS } from "@/data";
     </div>
   </section>
   <Gallery client:visible />
+  <Container>
+    <ContactForm />
+  </Container>
 </Layout>

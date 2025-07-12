@@ -19,6 +19,7 @@ const {
   description,
   withPadding = true,
   ignoreViewTransitions = false,
+  className = {},
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
@@ -95,9 +96,12 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
   >
     <Header />
     <div
-      class={cn({
-        "px-4 md:px-8 mb-8 mt-8": withPadding,
-      })}
+      class={cn(
+        {
+          "px-4 md:px-8 mb-8 mt-8": withPadding,
+        },
+        className,
+      )}
     >
       <slot />
     </div>

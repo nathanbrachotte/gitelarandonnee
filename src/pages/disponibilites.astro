@@ -1,96 +1,47 @@
 ---
 import Card from "@/components/Card.astro";
-import { LandingH2 } from "@/components/Typography";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { H2, H3, LandingH2, Text } from "@/components/Typography";
 import Layout from "@/layouts/Layout.astro";
-import { InfoCircledIcon } from "@radix-ui/react-icons";
-import { MidWeekAlert } from "@/components/Alerts";
-import Calendar from "@/components/Calendar.astro";
-import { SEO_META } from "@/data";
+import CalendarDirect from "@/components/CalendarDirect.astro";
+import ContactFormLarge from "@/components/ContactFormLarge.astro";
+import PricesSection from "@/components/PricesSection.astro";
+import { SEO_META, LINKS } from "@/data";
+import Container from "@/components/Container.astro";
+import { PinkFlower } from "@/components/icons";
+import { Button } from "@/components/ui/button";
+import { Link } from "@/components/Link";
 ---
 
 <Layout
   title={SEO_META.DISPONIBILITES_TARIFS.title}
   description={SEO_META.DISPONIBILITES_TARIFS.description}
-  withPadding={false}
   ignoreViewTransitions
+  className="flex flex-col gap-12"
 >
-  <Calendar />
-  <section class="flex justify-center">
-    <div
-      class="grid grid-cols-1 md:grid-cols-3 gap-2 mt-4 px-4 md:px-8 container"
-    >
-      <LandingH2 className="text-center mt-8 col-span-3 mb-2"
-        >Nos tarifs à la semaine</LandingH2
-      >
-      <Card
-        title="Vacances Scolaire"
-        className="col-span-3 md:col-span-1 relative"
-      >
-        <!-- <DarkGreenLeaf className="absolute right-4 top-4 w-8 h-8" /> -->
-        <div class="flex flex-col">
-          <p class="mt-2">
-            <span class="font-bold">Pâques : </span>750€
-          </p>
-          <p class="mt-2">
-            <span class="font-bold">Vacances d'été :</span> 1000€
-          </p>
-          <p class="mt-2">
-            <span class="font-bold">Vacances de Toussaint:</span> 750€
-          </p>
-          <p class="mt-2">
-            <span class="font-bold">Vacances de Noël :</span> 1600€
-          </p>
-          <p class="mt-2">
-            <span class="font-bold">Vacances de Février :</span> 1600€
-          </p>
-        </div>
-      </Card>
-      <Card title="Hors saison" className="col-span-3 md:col-span-1 relative">
-        <!-- <PinkFlower className="absolute right-4 top-4 w-8 h-8" /> -->
-        <div class="flex flex-col">
-          <p class="mt-2">
-            <span class="font-bold">Janvier, Février, Mars :</span> 1000€
-          </p>
-          <p class="mt-2">
-            <span class="font-bold">Mai, Juin et Septembre :</span> 750€
-          </p>
-          <p class="mt-2">
-            <span class="font-bold">Octobre, November, Décembre :</span> 1000€
-          </p>
-        </div>
-      </Card>
-      <Card
-        title="Options et taxes"
-        className="col-span-3 md:col-span-1 relative"
-      >
-        <!-- <DarkBluePlant className="absolute right-4 top-4 w-8 h-8" /> -->
-        <div class="flex flex-col">
-          <p class="font-bold mt-2">Charges et location de draps :</p>
-          <li>Compris dans le prix</li>
-          <p class="font-bold mt-2">Taxe de séjour :</p>
-          <li>1,10 € par nuit par adulte</li>
-          <p class="font-bold mt-2">Forfait Ménage :</p>
-          <li>125€</li>
-          <p class="font-bold mt-2">Salle de bain supplémentaire :</p>
-          <li>70€ par semaine</li>
-        </div>
-      </Card>
-      <MidWeekAlert />
-      <Alert className="col-span-3">
-        <InfoCircledIcon className="h-4 w-4 stroke-primary" />
-        <AlertTitle>HEURES D'ARRIVÉE ET DÉPART</AlertTitle>
-        <AlertDescription>
-          <li>
-            Location semaine: Arrivée le samedi à 16h au plus tôt, départ à 10h
-            au plus tard.
-          </li>
-          <li>
-            Location week-end: Arrivée le vendredi à 16h au plus tôt, départ le
-            dimanche à 17h au plus tard.
-          </li>
-        </AlertDescription>
-      </Alert>
-    </div>
-  </section>
+  <Container>
+    <LandingH2 className="text-center">Réserver</LandingH2>
+    <Card className="mt-3">
+      <H2>Disponibilités</H2>
+      <CalendarDirect />
+    </Card>
+    <Card className="mt-3">
+      <H2>Réserver</H2>
+      <div class="flex flex-col">
+        <H3>Via l'office du tourisme du Pays du Haut-Doubs</H3>
+        <Text>Validation automatique mais inclut des frais de gestion.</Text>
+        <Link href={LINKS.OFFICE_TOURISME_GITE.url} className="mt-3">
+          <Button>Réserver via l'office du tourisme</Button>
+        </Link>
+      </div>
+
+      <H3 className="flex items-center justify-start gap-2 mt-10">
+        Nous contacter directement par e-mail
+        <PinkFlower className="h-7 w-7" />
+      </H3>
+      <ContactFormLarge />
+    </Card>
+    <Card className="mt-3">
+      <PricesSection />
+    </Card>
+  </Container>
 </Layout>

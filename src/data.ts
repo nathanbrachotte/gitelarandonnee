@@ -212,6 +212,9 @@ export const LINKS = {
   METABIEF_ADVENTURE: {
     url: "https://www.metabiefaventures.fr/",
   },
+  OFFICE_TOURISME_GITE: {
+    url: "https://www.destination-haut-doubs.com/reservation/gite-de-la-randonnee.html",
+  },
 } as const;
 
 export const SEO_META = {
@@ -237,7 +240,7 @@ export const SEO_META = {
       "Consultez les conditions générales de location du Gîte La Randonnée, hébergement pour 14 personnes aux Fourgs, dans le Doubs.",
   },
   DISPONIBILITES_TARIFS: {
-    title: "Disponibilités et Tarifs | Gîte La Randonnée aux Fourgs, Doubs",
+    title: "Reserver | Gîte La Randonnée aux Fourgs, Doubs",
     description:
       "Réservez votre séjour au Gîte La Randonnée aux Fourgs. Consultez nos disponibilités et tarifs pour un hébergement de 14 personnes dans le Doubs.",
   },

@@ -1,0 +1,84 @@
+---
+import Card from "@/components/Card.astro";
+import { H2 } from "@/components/Typography";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { InfoCircledIcon } from "@radix-ui/react-icons";
+import { MidWeekAlert } from "@/components/Alerts";
+---
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+  <H2 className="col-span-3">Nos tarifs à la semaine</H2>
+  <Card
+    title="Vacances Scolaire"
+    className="col-span-3 md:col-span-1 relative bg-background"
+  >
+    <!-- <DarkGreenLeaf className="absolute right-4 top-4 w-8 h-8" /> -->
+    <div class="flex flex-col">
+      <p class="mt-2">
+        <span class="font-bold">Pâques : </span>750€
+      </p>
+      <p class="mt-2">
+        <span class="font-bold">Vacances d'été :</span> 1000€
+      </p>
+      <p class="mt-2">
+        <span class="font-bold">Vacances de Toussaint:</span> 750€
+      </p>
+      <p class="mt-2">
+        <span class="font-bold">Vacances de Noël :</span> 1600€
+      </p>
+      <p class="mt-2">
+        <span class="font-bold">Vacances de Février :</span> 1600€
+      </p>
+    </div>
+  </Card>
+  <Card
+    title="Hors saison"
+    className="col-span-3 md:col-span-1 relative bg-background"
+  >
+    <!-- <PinkFlower className="absolute right-4 top-4 w-8 h-8" /> -->
+    <div class="flex flex-col">
+      <p class="mt-2">
+        <span class="font-bold">Janvier, Février, Mars :</span> 1000€
+      </p>
+      <p class="mt-2">
+        <span class="font-bold">Mai, Juin et Septembre :</span> 750€
+      </p>
+      <p class="mt-2">
+        <span class="font-bold">Octobre, November, Décembre :</span> 1000€
+      </p>
+    </div>
+  </Card>
+  <Card
+    title="Options et taxes"
+    className="col-span-3 md:col-span-1 relative bg-background"
+  >
+    <!-- <DarkBluePlant className="absolute right-4 top-4 w-8 h-8" /> -->
+    <div class="flex flex-col">
+      <p class="font-bold mt-2">Charges et location de draps :</p>
+      <li>Compris dans le prix</li>
+      <p class="font-bold mt-2">Taxe de séjour :</p>
+      <li>1,10 € par nuit par adulte</li>
+      <p class="font-bold mt-2">Forfait Ménage :</p>
+      <li>125€</li>
+      <p class="font-bold mt-2">Salle de bain supplémentaire :</p>
+      <li>70€ par semaine</li>
+    </div>
+  </Card>
+  <MidWeekAlert />
+  <Alert className="col-span-3">
+    <InfoCircledIcon className="h-4 w-4 stroke-primary" />
+    <AlertTitle className="font-bold">
+      HEURES DE DÉPART ET D'ARRIVÉE
+    </AlertTitle>
+    <AlertDescription>
+      <li>
+        <span class="font-bold">Location semaine:</span> Arrivée le samedi à 16h
+        au plus tôt, départ à 10h au plus tard.
+      </li>
+    </AlertDescription>
+    <li>
+      <span class="font-bold">Location week-end:</span> Arrivée le vendredi à 16h
+      au plus tôt, départ le dimanche à 17h au plus tard.
+    </li>
+  </Alert>
+</div>
