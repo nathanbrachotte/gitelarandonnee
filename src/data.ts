@@ -215,6 +215,15 @@ export const LINKS = {
   OFFICE_TOURISME_GITE: {
     url: "https://www.destination-haut-doubs.com/reservation/gite-de-la-randonnee.html",
   },
+  EXPLORE_DOUBS: {
+    url: "https://explore.doubs.fr/",
+  },
+  INTRAMUROS: {
+    url: "https://www.intramuros.org/lesfourgs",
+  },
+  SINGLE_TRACK: {
+    url: "https://www.destination-haut-doubs.com/pumptrack-singletrack.html",
+  },
 } as const;
 
 export const SEO_META = {
@@ -232,7 +241,7 @@ export const SEO_META = {
   ACTIVITES: {
     title: "Activités été et hiver | Gîte La Randonnée aux Fourgs, Doubs",
     description:
-      "Profitez des activités variées autour du Gîte La Randonnée aux Fourgs : randonnée, ski de fond, ski alpin, raquettes, escalade et lacs en été. Un paradis pour les sportifs en toute saison dans le Doubs.",
+      "Découvrez les activités variées autour du Gîte La Randonnée aux Fourgs : randonnée, ski de fond, ski alpin, raquettes, escalade et lacs en été. Un paradis pour les sportifs en toute saison dans le Doubs.",
   },
   CONDITION_GENERALE_LOCATION: {
     title: "Conditions Générales de Location | Gîte La Randonnée aux Fourgs",
