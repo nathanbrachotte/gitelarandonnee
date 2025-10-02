@@ -7,7 +7,7 @@ export const MidWeekAlert = () => {
     <Alert className="col-span-3">
       <InfoCircledIcon className="h-4 w-4 stroke-primary" />
       <AlertTitle className="uppercase font-bold">
-        Locations mid-week ou week-end
+        Locations week-end
       </AlertTitle>
       <AlertDescription>
         <ul className="list-disc list-inside">
@@ -19,8 +19,30 @@ export const MidWeekAlert = () => {
           </li>
         </ul>
         <div className="flex items-center mt-2">
-          Nous contacter directement pour plus d'informations
-          <MailIcon className="h-4 w-4 ml-1 stroke-primary" />
+          Pour les location en milieu de semaine, nous contacter directement
+          <MailIcon
+            className="h-4 w-4 ml-1 stroke-primary cursor-pointer hover:opacity-70 transition-opacity"
+            onClick={() => {
+              // Look for the H2 "Réserver" heading that contains the contact form
+              const h2Headings = document.querySelectorAll("h2");
+              let reserverHeading = null;
+
+              for (const heading of h2Headings) {
+                if (
+                  heading.textContent?.includes("Nous contacter directement")
+                ) {
+                  reserverHeading = heading;
+                  break;
+                }
+              }
+
+              if (reserverHeading) {
+                reserverHeading.scrollIntoView({
+                  behavior: "smooth",
+                });
+              }
+            }}
+          />
         </div>
       </AlertDescription>
     </Alert>
@@ -37,7 +59,7 @@ export const ArrivalDepartureAlert = () => {
       <AlertDescription>
         <ul className="list-disc list-inside">
           <li>
-            <span className="font-bold">Location semaine:</span> Arrivée le
+            <span className="font-bold">Location à la semaine:</span> Arrivée le
             samedi à 16h au plus tôt, départ à 10h au plus tard.
           </li>
           <li>
