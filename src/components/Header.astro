@@ -4,6 +4,7 @@ import {
   PlanLink,
   DecouvrirLaRegionLink,
   DispoLink,
+  RentalToggleButton,
 } from "@/components/Buttons";
 import { Image } from "astro:assets";
 import { MobileMenu } from "@/components/MobileMenu";
@@ -16,7 +17,7 @@ const activePath = Astro.url.pathname;
   <div class="container mx-auto flex justify-between items-center">
     <div class="flex flex-wrap space-y-2">
       <div class="mr-4">
-        <GiteLogoWrapper />
+        <GiteLogoWrapper currentPath={activePath} />
       </div>
       <div class="flex flex-row flex-1 min-w-40 justify-start gap-2">
         <Image
@@ -36,11 +37,16 @@ const activePath = Astro.url.pathname;
       </div>
     </div>
     <MobileMenu activePath={activePath} client:load />
-    <nav class="hidden lg:flex flex-1 justify-end">
-      <AccueilLink activePath={activePath} client:load />
-      <DispoLink activePath={activePath} client:load />
-      <PlanLink activePath={activePath} client:load />
-      <DecouvrirLaRegionLink activePath={activePath} client:load />
+    <nav class="hidden lg:flex flex-1 flex-col justify-end gap-3">
+      <div class="flex justify-end gap-3">
+        <AccueilLink activePath={activePath} client:load />
+        <DispoLink activePath={activePath} client:load />
+        <PlanLink activePath={activePath} client:load />
+        <DecouvrirLaRegionLink activePath={activePath} client:load />
+      </div>
+      <div class="flex justify-center pt-3 pb-2">
+        <RentalToggleButton activePath={activePath} client:load />
+      </div>
     </nav>
   </div>
 </header>

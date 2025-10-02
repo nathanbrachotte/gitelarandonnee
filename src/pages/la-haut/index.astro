@@ -1,0 +1,220 @@
+---
+import { H3, LandingH1, LandingH2, Text } from "@/components/Typography";
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import {
+  PhoneNumberButton,
+  AddressButton,
+  MailButton,
+} from "@/components/Buttons";
+import { Gallery } from "@/components/Gallery";
+import {
+  // DarkGreenPlant,
+  // OrangeBush,
+  Diamond,
+  // OrangePlant,
+  // PinkFlower,
+  // YellowButterfly,
+  // DarkBluePlant,
+  // DarkGreenLeaf,
+  // LightGreenPlan,
+} from "@/components/icons";
+import { IMAGES, SEO_META } from "@/data";
+import { cn } from "@/lib/utils";
+import { Link } from "@/components/Link";
+import { LINKS } from "@/data";
+import ContactForm from "@/components/ContactForm.astro";
+import Container from "@/components/Container.astro";
+---
+
+<Layout
+  title={SEO_META.INDEX.title}
+  description={SEO_META.INDEX.description}
+  withPadding={false}
+>
+  <section id="hero" class="relative w-full h-[36rem] sm:h-[46rem]">
+    <Image
+      src={IMAGES.INTERIEUR_SALON_ENTIER.url}
+      alt={IMAGES.INTERIEUR_SALON_ENTIER.caption}
+      width={911}
+      height={684}
+      class="w-full h-full object-cover object-center"
+    />
+    <div
+      class={cn(
+        "w-11/12 sm:w-9/12 lg:w-1/2 bg-background opacity-90 flex flex-col justify-center self-center justify-self-center p-6 sm:p-12 px-8 text-center",
+        "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2",
+        "px-12 md:px-14",
+        "rounded-lg",
+      )}
+    >
+      <LandingH1>Bienvenue au Gîte La-Haut</LandingH1>
+      <Text className="mt-4 mb-2 font-bold">
+        Venez découvrir les charmes de la montagne dans notre gîte dans le Doubs
+        situé à 1200m d'altitude, au cœur du village de Les Fourgs.
+      </Text>
+      <Text>
+        Idéal pour les vacances en famille ou entre amis, notre gîte convivial
+        et familial peut accueillir jusqu'à 14 personnes.
+      </Text>
+      <div class="flex flex-row gap-4 justify-center mt-6">
+        <PhoneNumberButton />
+        <MailButton />
+        <AddressButton />
+      </div>
+    </div>
+  </section>
+  <!-- <div class="flex flex-row gap-4 justify-center">
+    <DarkGreenPlant className="w-10 h-10" />
+    <PinkFlower className="w-10 h-10" />
+    <Diamond className="w-10 h-10" />
+    <OrangePlant className="w-10 h-10" />
+    <OrangeBush className="w-10 h-10" />
+    <YellowButterfly className="w-10 h-10" />
+    <DarkBluePlant className="w-10 h-10" />
+    <DarkGreenLeaf className="w-10 h-10" />
+    <LightGreenPlan className="w-10 h-10" />
+  </div> -->
+  <section id="presentation" class="mt-12 flex justify-center">
+    <div
+      class="container flex flex-col lg:flex-row items-center justify-center"
+    >
+      <div class="flex-1 w-full lg:w-1/2">
+        <Image
+          src={IMAGES.EXTERIEUR_ARBRES.url}
+          alt={IMAGES.EXTERIEUR_ARBRES.alt}
+          width={911}
+          height={684}
+          class="sm:rounded-lg"
+        />
+      </div>
+      <div class="flex-1 p-8 w-full lg:w-1/2">
+        <LandingH2>Au coeur des montagnes du Jura</LandingH2>
+        <ul class="mt-4">
+          <li class="flex items-start space-x-1 mt-2">
+            <Diamond
+              className="w-4 h-4 self-start shrink-0 text-primary mt-1 mr-1"
+            />
+            Le village est entouré de sapins, de prairies et de lacs. Il est à proximité
+            de la frontière Suisse 🇨🇭, de la station de ski de Métabief et de la
+            ville de Pontarlier.
+          </li>
+          <li class="flex items-start space-x-1 mt-2">
+            <Diamond
+              className="w-4 h-4 self-start shrink-0 text-primary mt-1 mr-1"
+            />
+            Le village possède magasins, restaurants, fromageries et de multiples
+            activités touristiques toute l'année.
+          </li>
+          <li class="flex items-start space-x-1 mt-2">
+            <Diamond
+              className="w-4 h-4 self-start shrink-0 text-primary mt-1 mr-1"
+            />
+
+            Le gîte dispose d'un jardin clôturé avec une table extérieure, un
+            barbecue, une balançoire pour enfants et un espace de détente.
+          </li>
+          <H3 className="mt-4">En hiver</H3>
+          <li class="flex items-start space-x-1 mt-2">
+            <Diamond
+              className="w-4 h-4 self-start shrink-0 text-primary mt-1 mr-1"
+            />
+            Les skieurs de fond et raquetteurs peuvent accéder aux centaines de kilomètres
+            de pistes depuis le jardin.
+          </li>
+          <li class="flex items-start space-x-1 mt-2">
+            <Diamond
+              className="w-4 h-4 self-start shrink-0 text-primary mt-1 mr-1"
+            />
+            La station de ski familiale du village est 500m, accessible à pied, en
+            ski ou en voiture.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section id="summer" class="mt-12 flex justify-center">
+    <div
+      class="container flex flex-col lg:flex-row items-center justify-center"
+    >
+      <div class="flex-1 w-full block lg:hidden">
+        <Image
+          src={IMAGES.EXTERIEUR_PARKING.url}
+          alt={IMAGES.EXTERIEUR_PARKING.caption}
+          class="sm:rounded-lg"
+          width={911}
+          height={684}
+        />
+      </div>
+      <div class="flex-1 p-8 w-full lg:w-1/2">
+        <H3 className="lg:mt-4">En été</H3>
+        <li class="flex items-start space-x-1 mt-2">
+          <Diamond
+            className="w-4 h-4 self-start shrink-0 text-primary mt-1 mr-1"
+          />
+          <p>
+            Des sentiers de randonnée et de VTT passent juste devant le gîte,
+            notamment la <Link href={LINKS.GTJ.url}>GTJ</Link>, la <Link
+              href={LINKS.VIA_FRANCIGENA.url}>Via Francigena</Link
+            > et le
+            <Link href={LINKS.GR5.url}>GR5</Link>.
+          </p>
+        </li>
+        <li class="flex items-start space-x-1 mt-2">
+          <Diamond
+            className="w-4 h-4 self-start shrink-0 text-primary mt-1 mr-1"
+          />
+          <p>
+            Sports nautiques au <Link href={LINKS.ST_POINT.maps}
+              >lac de Saint Point/Malbuisson</Link
+            >.
+          </p>
+        </li>
+        <li class="flex items-start space-x-1 mt-2">
+          <Diamond
+            className="w-4 h-4 self-start shrink-0 text-primary mt-1 mr-1"
+          />
+          <p>
+            Sport d'aventure avec <Link
+              href={LINKS.BOURGOGNE_FRANCHE_COMTE.escalade_url}
+              >les via ferrata</Link
+            >, <Link href={LINKS.METABIEF_ADVENTURE.url}
+              >site de Métabief Adventures</Link
+            > et le <Link href={LINKS.LA_COUPE.discGolfUrl}>disc golf</Link>.
+          </p>
+        </li>
+        <li class="flex items-start space-x-1 mt-2">
+          <Diamond
+            className="w-4 h-4 self-start shrink-0 text-primary mt-1 mr-1"
+          /><p>
+            Visitez le Château de Joux, les fromageries et les caves de
+            vieillissement du Comté.
+          </p>
+        </li>
+        <li class="flex items-start space-x-1 mt-2">
+          <Diamond
+            className="w-4 h-4 self-start shrink-0 text-primary mt-1 mr-1"
+          /><p>
+            Plus de renseignements à
+            <Link href={LINKS.OFFICE_DE_TOURISME.maps}
+              >l'Office de Tourisme</Link
+            >.
+          </p>
+        </li>
+      </div>
+      <div class="flex-1 w-full lg:w-1/2 hidden lg:block">
+        <Image
+          src={IMAGES.EXTERIEUR_PARKING.url}
+          alt={IMAGES.EXTERIEUR_PARKING.caption}
+          class="sm:rounded-lg"
+          width={911}
+          height={684}
+        />
+      </div>
+    </div>
+  </section>
+  <Gallery client:visible />
+  <Container>
+    <ContactForm />
+  </Container>
+</Layout>

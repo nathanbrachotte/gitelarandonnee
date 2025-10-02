@@ -5,13 +5,20 @@ import {
   PhoneIcon,
 } from "@/components/icons";
 import { Button } from "@/components/ui/button";
-import { ADDRESS, EMAIL, LINKS, PHONE_NUMBER } from "@/data";
+import { ADDRESS, EMAIL, GITE, LINKS, PHONE_NUMBER } from "@/data";
 import { cn } from "@/lib/utils";
-import { ROUTES } from "@/routes";
+import {
+  getDecouvrirLaRegionPath,
+  getDispoTarifsPath,
+  getHomePagePath,
+  getPlanDuGitePath,
+  ROUTES,
+} from "@/routes";
 import { useState } from "react";
 import { CheckIcon, CopyIcon } from "@radix-ui/react-icons";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "@/components/Link";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
 
 export const CGLButton = () => {
   return (
@@ -244,7 +251,7 @@ export const MailLink = ({
 };
 
 export const AccueilLink = ({ activePath }: { activePath: string }) => {
-  const link = ROUTES.ACCUEIL.getPath({});
+  const link = getHomePagePath(activePath);
   const isActive = activePath === link;
 
   return (
@@ -264,7 +271,7 @@ export const AccueilLink = ({ activePath }: { activePath: string }) => {
 };
 
 export const DispoLink = ({ activePath }: { activePath: string }) => {
-  const link = ROUTES.DISPO_TARIFS.getPath({});
+  const link = getDispoTarifsPath(activePath);
   const isActive = activePath === link;
 
   return (
@@ -284,7 +291,7 @@ export const DispoLink = ({ activePath }: { activePath: string }) => {
 };
 
 export const PlanLink = ({ activePath }: { activePath: string }) => {
-  const link = ROUTES.PLAN_DU_GITE.getPath({});
+  const link = getPlanDuGitePath(activePath);
   const isActive = activePath === link;
 
   return (
@@ -308,7 +315,7 @@ export const DecouvrirLaRegionLink = ({
 }: {
   activePath: string;
 }) => {
-  const link = ROUTES.ACTIVITES.getPath({});
+  const link = getDecouvrirLaRegionPath(activePath);
   const isActive = activePath === link;
 
   return (
@@ -339,5 +346,130 @@ export const FacebookLink = () => {
         Suivez notre page Facebook
       </a>
     </Button>
+  );
+};
+
+export const RentalToggleButton = ({ activePath }: { activePath: string }) => {
+  const isLaHaut = activePath.includes("la-haut");
+  const linkToRental = isLaHaut ? "La Randonnée" : "Là-Haut";
+  const togglePath = isLaHaut
+    ? ROUTES.LAR_ACCUEIL.getPath({})
+    : ROUTES.LAH_ACCUEIL.getPath({});
+
+  const targetCapacity = GITE[isLaHaut ? "la_randonnee" : "la_haut"].maxPersons;
+  const currentCapacity =
+    GITE[isLaHaut ? "la_haut" : "la_randonnee"].maxPersons;
+
+  // Create contextual message based on capacity difference
+  const needsMoreSpace = currentCapacity < targetCapacity;
+  const contextualMessage = needsMoreSpace
+    ? "Besoin de plus de place ?"
+    : "Êtes-vous un petit groupe ?";
+
+  return (
+    <motion.div
+      className="flex flex-col items-center gap-2"
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.2 }}
+    >
+      {/* Contextual message */}
+      <motion.p
+        className="text-sm text-gray-600 font-medium text-center hidden lg:block"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
+      >
+        {contextualMessage}
+      </motion.p>
+
+      {/* Button */}
+      <motion.div
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+      >
+        <Button
+          asChild
+          aria-label={`Basculer vers ${linkToRental}`}
+          className="relative h-auto py-3 px-4 bg-gradient-to-br from-green-600 via-green-700 to-green-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-green-500/20 hover:border-green-300/40 group overflow-hidden"
+        >
+          <a
+            href={togglePath}
+            className="flex flex-col items-center justify-center gap-1 relative z-10"
+          >
+            {/* Animated background gradient */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-green-400/20 to-emerald-400/20"
+              initial={{ opacity: 0, x: "-100%" }}
+              whileHover={{ opacity: 1, x: "100%" }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+            />
+
+            {/* Main content */}
+            <motion.div
+              className="flex items-center gap-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.1 }}
+            >
+              <span className="text-sm font-semibold">Gîte {linkToRental}</span>
+              <motion.div
+                animate={{ x: [0, 4, 0] }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                <ArrowRightIcon className="w-4 h-4" />
+              </motion.div>
+            </motion.div>
+
+            {/* Capacity transition animation */}
+            <motion.div
+              className="flex items-center gap-1"
+              initial={{ opacity: 0, y: 4 }}
+              animate={{ opacity: 0.9, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              <motion.span
+                className="text-xs font-medium text-green-100 px-1 py-0.5 rounded bg-green-900/30"
+                key={`current-${currentCapacity}`}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3 }}
+              >
+                {currentCapacity}p
+              </motion.span>
+              <motion.span
+                className="text-xs text-green-200"
+                animate={{ opacity: [0.5, 1, 0.5], scale: [1, 1.1, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                ➤
+              </motion.span>
+              <motion.span
+                className="text-xs font-bold text-green-50 bg-green-500/20 px-1 py-0.5 rounded"
+                key={`target-${targetCapacity}`}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+              >
+                {targetCapacity}p
+              </motion.span>
+            </motion.div>
+
+            {/* Subtle highlight */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-t from-white/5 to-transparent"
+              initial={{ opacity: 0 }}
+              whileHover={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+            />
+          </a>
+        </Button>
+      </motion.div>
+    </motion.div>
   );
 };

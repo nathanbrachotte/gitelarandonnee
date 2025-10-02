@@ -1,16 +1,49 @@
-# Astro Starter Kit: Basics
+# Gîte La Randonnée Website
 
-```sh
-npm create astro@latest -- --template basics
-```
+A rental property website built with Astro, featuring dual rental system support.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Dual Rental System Implementation
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+This project has been enhanced to support two rental properties:
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+- **La Randonnée** (original, purple theme) - `/`
+- **Là-Haut** (new, green theme) - `/la-haut/`
+
+### Implementation Details
+
+#### 1. URL Structure
+
+- Main rental "La Randonnée": Standard URLs (e.g., `/`, `/disponibilites`)
+- New rental "Là-Haut": Prefixed URLs (e.g., `/la-haut/`, `/la-haut/disponibilites`)
+- Shared pages (like `/decouvrir-la-region`) remain the same for both rentals
+
+#### 5. Implementation Status
+
+**✅ Completed:**
+
+- [ ] URL routing system with rental prefixes
+- [ ] Header dropdown for rental selection
+- [ ] Rental-specific content and images
+- [ ] Green theme implementation for "Là-Haut"
+- [ ] Dynamic home page content based on rental
+- [ ] Placeholder content for new rental
+- [ ] Type-safe rental system
+
+**🔄 Testing Required:**
+
+1. Test dropdown functionality on both rentals
+2. Verify URL routing works correctly
+3. Test page structure handles both rentals
+4. Validate theme switching
+5. Test mobile responsiveness of new dropdown
+
+**📋 Future Enhancements:**
+
+- Add rental-specific SEO meta tags
+- Implement rental-specific pricing
+- Add rental-specific gallery images
+- Extend to other pages (pricing, availability, etc.)
+- Add proper error handling for invalid rental URLs
 
 ## 🚀 Project Structure
 

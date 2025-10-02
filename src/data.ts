@@ -5,6 +5,17 @@ export const WEBSITE_ADDRESS = "https://gitelarandonnee.fr";
 export const ADDRESS = "102 Grande Rue, 25300 Les Fourgs";
 export const EMAIL = "gite.larandonnee25@gmail.com";
 
+export const GITE = {
+  la_randonnee: {
+    url: "/",
+    maxPersons: 14,
+  },
+  la_haut: {
+    url: "/la-haut",
+    maxPersons: 6,
+  },
+};
+
 export const IMAGES = {
   EXTERIEUR_ETE: {
     url: "/gite/exterieur-ete.webp",
