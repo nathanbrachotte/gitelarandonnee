@@ -11,8 +11,12 @@ export const MidWeekAlert = () => {
       </AlertTitle>
       <AlertDescription>
         <ul className="list-disc list-inside">
-          <li>Tarif estival : 560€</li>
-          <li>Tarif hivernal : 580€</li>
+          <li>
+            <span className="font-bold">En été :</span> 560€
+          </li>
+          <li>
+            <span className="font-bold">En hiver :</span> 580€
+          </li>
         </ul>
         <div className="flex items-center mt-2">
           Nous contacter directement pour plus d'informations

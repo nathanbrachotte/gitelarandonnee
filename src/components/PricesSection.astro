@@ -52,16 +52,24 @@ import { MidWeekAlert, ArrivalDepartureAlert } from "@/components/Alerts";
     className="col-span-3 md:col-span-1 relative bg-background"
   >
     <!-- <DarkBluePlant className="absolute right-4 top-4 w-8 h-8" /> -->
-    <div class="flex flex-col">
-      <p class="font-bold mt-2">Charges et location de draps :</p>
-      <li>Compris dans le prix</li>
-      <p class="font-bold mt-2">Taxe de séjour :</p>
-      <li>1,10 € par nuit par adulte</li>
-      <p class="font-bold mt-2">Forfait Ménage :</p>
-      <li>125€</li>
-      <p class="font-bold mt-2">Salle de bain supplémentaire :</p>
-      <li>70€ par semaine</li>
-    </div>
+    <ul class="space-y-2 mt-2">
+      <li>
+        <span class="font-bold">Charges et location de draps :</span>
+        <span class="ml-2">Compris dans le prix</span>
+      </li>
+      <li>
+        <span class="font-bold">Taxe de séjour :</span>
+        <span class="ml-2">1,10 € par nuit par adulte</span>
+      </li>
+      <li>
+        <span class="font-bold">Forfait Ménage :</span>
+        <span class="ml-2">125€</span>
+      </li>
+      <li>
+        <span class="font-bold">Salle de bain supplémentaire :</span>
+        <span class="ml-2">70€ par semaine</span>
+      </li>
+    </ul>
   </Card>
   <MidWeekAlert />
   <ArrivalDepartureAlert />
