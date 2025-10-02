@@ -2,7 +2,7 @@
 import {
   AccueilLink,
   PlanLink,
-  ActivitésLink,
+  DecouvrirLaRegionLink,
   DispoLink,
 } from "@/components/Buttons";
 import { Image } from "astro:assets";
@@ -40,7 +40,7 @@ const activePath = Astro.url.pathname;
       <AccueilLink activePath={activePath} client:load />
       <DispoLink activePath={activePath} client:load />
       <PlanLink activePath={activePath} client:load />
-      <ActivitésLink activePath={activePath} client:load />
+      <DecouvrirLaRegionLink activePath={activePath} client:load />
     </nav>
   </div>
 </header>

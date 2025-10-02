@@ -238,7 +238,7 @@ export const SEO_META = {
     description:
       "La page que vous cherchez n'existe pas. Retournez à l'accueil pour découvrir notre gîte dans le Doubs.",
   },
-  ACTIVITES: {
+  DECOUVRIR: {
     title: "Activités été et hiver | Gîte La Randonnée aux Fourgs, Doubs",
     description:
       "Découvrez les activités variées autour du Gîte La Randonnée aux Fourgs : randonnée, ski de fond, ski alpin, raquettes, escalade et lacs en été. Un paradis pour les sportifs en toute saison dans le Doubs.",

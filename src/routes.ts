@@ -122,7 +122,7 @@ export const ROUTES = {
   },
   ACTIVITES: {
     getPath: (props: RouteParams) => {
-      return generateUrl("/activites", props);
+      return generateUrl("/decouvrir-la-region", props);
     },
   },
   CGL: {

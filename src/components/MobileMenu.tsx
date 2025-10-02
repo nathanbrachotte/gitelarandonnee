@@ -9,7 +9,7 @@ import { GiteLogoWrapper } from "@/components/GiteLogoWrapper";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import {
   AccueilLink,
-  ActivitésLink,
+  DecouvrirLaRegionLink,
   DispoLink,
   PlanLink,
 } from "@/components/Buttons";
@@ -29,7 +29,7 @@ export function MobileMenu({ activePath }: { activePath: string }) {
           <AccueilLink activePath={activePath} />
           <DispoLink activePath={activePath} />
           <PlanLink activePath={activePath} />
-          <ActivitésLink activePath={activePath} />
+          <DecouvrirLaRegionLink activePath={activePath} />
         </SheetDescription>
       </SheetContent>
     </Sheet>

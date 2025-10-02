@@ -303,7 +303,11 @@ export const PlanLink = ({ activePath }: { activePath: string }) => {
   );
 };
 
-export const ActivitésLink = ({ activePath }: { activePath: string }) => {
+export const DecouvrirLaRegionLink = ({
+  activePath,
+}: {
+  activePath: string;
+}) => {
   const link = ROUTES.ACTIVITES.getPath({});
   const isActive = activePath === link;
 
@@ -316,8 +320,8 @@ export const ActivitésLink = ({ activePath }: { activePath: string }) => {
         "underline text-purple-950": isActive,
       })}
     >
-      <a href={link} aria-label="Activités">
-        Activités
+      <a href={link} aria-label="Découvrir la région">
+        Découvrir la région
       </a>
     </Button>
   );

@@ -10,8 +10,8 @@ import { Image } from "astro:assets";
 ---
 
 <Layout
-  title={SEO_META.ACTIVITES.title}
-  description={SEO_META.ACTIVITES.description}
+  title={SEO_META.DECOUVRIR.title}
+  description={SEO_META.DECOUVRIR.description}
 >
   <Container>
     <LandingH2 className="text-center">Aux Fourgs</LandingH2>
@@ -47,6 +47,40 @@ import { Image } from "astro:assets";
         </div>
       </div>
     </Card>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+      <Card title="Single track">
+        <Image
+          src="/single-track.webp"
+          alt="Single track Les Fourgs"
+          width={504}
+          height={461}
+          class="w-full h-52 object-cover mt-2"
+        />
+        <p class="mt-2">
+          Le <Link href={LINKS.SINGLE_TRACK.url}>single track du village</Link>.
+          Parfait pour les amateurs de VTT et de vélo tout terrain qui
+          souhaitent s'amuser sur des parcours techniques.
+        </p>
+      </Card>
+
+      <Card title="Intramuros">
+        <Image
+          src="/les-fourgs-logo.webp"
+          alt="Intramuros Les Fourgs"
+          width={504}
+          height={461}
+          class="w-full h-52 object-contain mt-2"
+        />
+        <p class="mt-2">
+          Le site officiel de la commune <Link href={LINKS.INTRAMUROS.url}
+            >Intramuros</Link
+          >
+          permet d'explorer Les Fourgs et ses environs. Une plateforme dédiée aux
+          activités et découvertes locales dans la région.
+        </p>
+      </Card>
+    </div>
 
     <!-- <DirectionAwareHover client:load>
     <div slot="img">
@@ -115,39 +149,6 @@ import { Image } from "astro:assets";
           une vue imprenable sur la vallée environnante.
         </p>
       </Card>
-
-      <Card title="Single track">
-        <Image
-          src="/single-track.webp"
-          alt="Single track Les Fourgs"
-          width={504}
-          height={461}
-          class="w-full h-52 object-cover mt-2"
-        />
-        <p class="mt-2">
-          Le <Link href={LINKS.SINGLE_TRACK.url}>single track du village</Link>.
-          Parfait pour les amateurs de VTT et de vélo tout terrain qui
-          souhaitent s'amuser sur des parcours techniques.
-        </p>
-      </Card>
-
-      <Card title="Intramuros">
-        <Image
-          src="/les-fourgs-logo.webp"
-          alt="Intramuros Les Fourgs"
-          width={504}
-          height={461}
-          class="w-full h-52 object-contain mt-2"
-        />
-        <p class="mt-2">
-          Le site de la commune de Les Fourgs <Link href={LINKS.INTRAMUROS.url}
-            >Intramuros</Link
-          >
-          permet d'explorer Les Fourgs et ses environs. Une plateforme dédiée aux
-          activités et découvertes locales dans la région.
-        </p>
-      </Card>
-
       <Card title="ExploreDoubs">
         <Image
           src="/explore-doubs.webp"
