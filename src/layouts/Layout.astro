@@ -6,6 +6,7 @@ import "../styles/fonts.css";
 import { cn } from "@/lib/utils";
 import { ViewTransitions } from "astro:transitions";
 import { SEO } from "astro-seo";
+import { SimpleAnalytics } from "astro-simpleanalytics-plugin";
 
 interface Props {
   title: string;
@@ -106,5 +107,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
       <slot />
     </div>
     <Footer />
+    <SimpleAnalytics />
   </body>
 </html>
