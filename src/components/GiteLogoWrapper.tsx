@@ -1,7 +1,7 @@
 import { Link } from "@/components/Link";
 import { GiteLogo } from "@/components/logo";
 import { H2, Small } from "@/components/Typography";
-import { NAME, PHONE_NUMBER } from "@/data";
+import { NAME, PHONE_NUMBER } from "@/data.constants";
 import type { PropsWithChildren } from "react";
 import { PhoneIcon } from "./icons";
 import { ROUTES } from "@/routes";

@@ -1,4 +1,4 @@
-import { EMAIL } from "@/data";
+import { EMAIL } from "@/data.constants";
 import { defineAction } from "astro:actions";
 import { z } from "astro:schema";
 import { Resend } from "resend";

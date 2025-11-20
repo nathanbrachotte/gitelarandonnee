@@ -6,6 +6,7 @@ import {
   PhoneNumberButton,
   AddressButton,
   MailButton,
+  LaRandonneeLink,
 } from "@/components/Buttons";
 import { Gallery } from "@/components/Gallery";
 import {
@@ -19,10 +20,10 @@ import {
   // DarkGreenLeaf,
   // LightGreenPlan,
 } from "@/components/icons";
-import { IMAGES, SEO_META } from "@/data";
+import { IMAGES, SEO_META } from "@/data.constants";
 import { cn } from "@/lib/utils";
 import { Link } from "@/components/Link";
-import { LINKS } from "@/data";
+import { LINKS } from "@/data.constants";
 import ContactForm from "@/components/ContactForm.astro";
 import Container from "@/components/Container.astro";
 ---
@@ -57,10 +58,13 @@ import Container from "@/components/Container.astro";
         Idéal pour les vacances en famille ou entre amis, notre gîte convivial
         et familial peut accueillir jusqu'à 14 personnes.
       </Text>
-      <div class="flex flex-row gap-4 justify-center mt-6">
-        <PhoneNumberButton />
-        <MailButton />
-        <AddressButton />
+      <div class="flex flex-col items-center gap-4 mt-6">
+        <LaRandonneeLink client:load />
+        <div class="flex flex-row gap-4 justify-center">
+          <PhoneNumberButton />
+          <MailButton />
+          <AddressButton />
+        </div>
       </div>
     </div>
   </section>

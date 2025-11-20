@@ -5,13 +5,14 @@ import {
   PhoneIcon,
 } from "@/components/icons";
 import { Button } from "@/components/ui/button";
-import { ADDRESS, EMAIL, LINKS, PHONE_NUMBER } from "@/data";
+import { ADDRESS, EMAIL, LINKS, PHONE_NUMBER } from "@/data.constants";
 import { cn } from "@/lib/utils";
 import { ROUTES } from "@/routes";
 import { useState } from "react";
-import { CheckIcon, CopyIcon } from "@radix-ui/react-icons";
+import { ArrowRightIcon, CheckIcon, CopyIcon } from "@radix-ui/react-icons";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "@/components/Link";
+import { Label } from "@radix-ui/react-label";
 
 export const CGLButton = () => {
   return (
@@ -339,5 +340,28 @@ export const FacebookLink = () => {
         Suivez notre page Facebook
       </a>
     </Button>
+  );
+};
+
+export const LaRandonneeLink = () => {
+  return (
+    <div className="flex flex-col gap-1 justify-center items-center">
+      <Label>Trop grand pour vous?</Label>
+      <Button
+        asChild
+        variant={"default"}
+        className="bg-green-800 hover:bg-green-800 text-white group"
+      >
+        <a
+          href={LINKS.LA_HAUT.url}
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="Découvrir le Gîte La Randonnée"
+        >
+          Gîte La Haut (6 personnes)
+          <ArrowRightIcon className="group-hover:translate-x-1 transition-transform duration-300 w-4 h-4 ml-2" />
+        </a>
+      </Button>
+    </div>
   );
 };

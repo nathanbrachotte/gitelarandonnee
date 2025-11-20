@@ -170,6 +170,10 @@ export const GALLERY = [
 ];
 
 export const LINKS = {
+  LA_HAUT: {
+    url: "https://www.gitelahaut.com/",
+    // maps: "https://maps.app.goo.gl/YNhS2GD18NEDYzoy6",
+  },
   LES_RANGS: {
     url: "https://station-lesfourgs.fr/",
     maps: "https://maps.app.goo.gl/YV13tJYWUpUH9V1x7",

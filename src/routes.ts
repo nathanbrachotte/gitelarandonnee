@@ -1,4 +1,4 @@
-import { WEBSITE_ADDRESS } from "./data";
+import { WEBSITE_ADDRESS } from "./data.constants";
 
 type ImplicitPathParams =
   | {

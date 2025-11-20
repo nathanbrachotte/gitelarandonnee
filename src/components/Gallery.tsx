@@ -1,7 +1,7 @@
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { LandingH2 } from "@/components/Typography";
 import { ZoomedImage } from "@/components/ZoomedImage";
-import { GALLERY } from "@/data";
+import { GALLERY } from "@/data.constants";
 import { cn } from "@/lib/utils";
 
 export function Gallery() {
