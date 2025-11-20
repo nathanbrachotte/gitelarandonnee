@@ -346,7 +346,9 @@ export const FacebookLink = () => {
 export const LaRandonneeLink = () => {
   return (
     <div className="flex flex-col gap-1 justify-center items-center">
-      <Label>Trop grand pour vous?</Label>
+      <Label className="font-semibold">
+        Trop grand pour vous ? Besoin d'encore plus de chambres ?
+      </Label>
       <Button
         asChild
         variant={"default"}
