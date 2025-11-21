@@ -46,6 +46,11 @@ export const IMAGES = {
     alt: "Extérieur neige",
     caption: "Le jardin enneigé",
   },
+  LA_RANDONNEE_EXTERIEUR_NEIGE: {
+    url: "/gite/la-randonnee-exterieur-neige.webp",
+    alt: "La Randonnée extérieur neige",
+    caption: "Le gîte La Randonnée en hiver",
+  },
   EXTERIEUR_PARKING: {
     url: "/gite/exterieur-parking.webp",
     alt: "Extérieur parking",
@@ -143,6 +148,7 @@ export const GALLERY = [
   IMAGES.EXTERIEUR_PARKING,
   IMAGES.EXTERIEUR_ETE,
   IMAGES.EXTERIEUR_NEIGE,
+  IMAGES.LA_RANDONNEE_EXTERIEUR_NEIGE,
   IMAGES.CHAMBRE_BEIGE,
   IMAGES.CHAMBRE_ORANGE,
   IMAGES.CHAMBRE_VIOLETTE,
