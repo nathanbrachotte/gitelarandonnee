@@ -19,7 +19,7 @@ export const MidWeekAlert = () => {
           </li>
         </ul>
         <div className="flex items-center mt-2">
-          Pour les location en milieu de semaine, nous contacter directement
+          Pour les locations en milieu de semaine, nous contacter directement
           <MailIcon
             className="h-4 w-4 ml-1 stroke-primary cursor-pointer hover:opacity-70 transition-opacity"
             onClick={() => {
