@@ -24,12 +24,22 @@ export const FeedbackForm = () => {
   const [state, setState] = React.useState<FeedbackState>("rating");
   const [countdown, setCountdown] = React.useState<number>(7);
 
-  const handleRatingChange = (selectedRating: number) => {
+  const handleRatingChange = async (selectedRating: number) => {
     setRating(selectedRating);
 
     // Only proceed if a rating was actually selected (not cleared)
     if (selectedRating > 0) {
       if (selectedRating === 5) {
+        // Submit 5-star feedback immediately (without comment)
+        try {
+          await actions.submitFeedback({
+            rating: 5,
+            comment: "5 étoiles - Aucun commentaire fourni",
+          });
+        } catch (error) {
+          console.error("Error submitting 5-star feedback:", error);
+          // Continue anyway to show redirect
+        }
         // Show thank you message and start countdown
         setState("redirecting");
         setCountdown(7);
