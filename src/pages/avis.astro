@@ -1,0 +1,20 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { FeedbackForm } from "@/components/FeedbackForm";
+import Container from "@/components/Container.astro";
+import { LandingH2 } from "@/components/Typography";
+---
+
+<Layout
+  title="Votre avis nous intéresse | Gîte La Randonnée"
+  description="Partagez votre expérience au Gîte La Randonnée. Votre avis nous aide à améliorer nos services."
+  withPadding={true}
+>
+  <Container>
+    <LandingH2 className="text-center">Votre avis nous intéresse</LandingH2>
+    <div class="mt-4 max-w-2xl mx-auto">
+      <FeedbackForm client:load />
+    </div>
+  </Container>
+</Layout>
+

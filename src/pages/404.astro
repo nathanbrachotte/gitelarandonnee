@@ -1,12 +1,13 @@
 ---
-import { H1 } from "@/components/Typography";
+import { LandingH1, Text } from "@/components/Typography";
 import { SEO_META } from "@/data.constants";
 import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout title={SEO_META.ERROR.title} description={SEO_META.ERROR.description}>
   <div class="flex flex-col items-center justify-center h-60">
-    <H1>404 - Page non trouvée</H1>
-    <p>La page que vous cherchez n'existe pas.</p>
+    <LandingH1>404 - Page non trouvée</LandingH1>
+    <Text className="mt-2">Désolé! La page que vous cherchez n'existe pas.</Text
+    >
   </div>
 </Layout>

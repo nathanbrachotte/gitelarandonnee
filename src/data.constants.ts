@@ -234,6 +234,10 @@ export const LINKS = {
   SINGLE_TRACK: {
     url: "https://www.destination-haut-doubs.com/pumptrack-singletrack.html",
   },
+  GITE_LA_RANDONNEE: {
+    reviewUrl:
+      "https://www.google.com/maps/place/G%C3%AEte+La+Randonn%C3%A9e/@46.8328788,6.410896,17.04z/data=!4m6!3m5!1s0x478dba293db6ff3f:0xff9bb7c345ee2191!8m2!3d46.8335498!4d6.411368!16s%2Fg%2F119tjs05b?entry=ttu&g_ep=EgoyMDI1MTEyMC4xIKXMDSoASAFQAw%3D%3D",
+  },
 } as const;
 
 export const SEO_META = {

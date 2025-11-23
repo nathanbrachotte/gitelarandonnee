@@ -145,9 +145,15 @@ export const Text = ({
   );
 };
 
-export const Quote = ({ children }: HTMLAttributes<HTMLHeadingElement>) => {
+export const Quote = ({
+  children,
+  className,
+  ...props
+}: HTMLAttributes<HTMLQuoteElement>) => {
   return (
-    <blockquote className="mt-6 border-l-2 pl-6 italic">{children}</blockquote>
+    <blockquote className={cn("border-l-2 pl-6 italic", className)} {...props}>
+      {children}
+    </blockquote>
   );
 };
 
