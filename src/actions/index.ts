@@ -15,10 +15,18 @@ export const server = {
       console.log("🚀 ~ handler ~ data:", data);
 
       // https://alexweberk.com/blog/astro-actions-on-cloudflare
-      const resend = new Resend(
+      // Support both local dev (import.meta.env) and Cloudflare (runtime.env)
+      const apiKey =
         // @ts-expect-error i ain't do this right now
-        context.locals.runtime.env.RESEND_API_KEY,
-      );
+        context.locals.runtime?.env?.RESEND_API_KEY ||
+        import.meta.env.RESEND_API_KEY;
+
+      if (!apiKey) {
+        console.error("RESEND_API_KEY is missing");
+        return { success: false, error: "Missing API key configuration" };
+      }
+
+      const resend = new Resend(apiKey);
 
       const { data: response, error } = await resend.emails.send({
         from: "nathan@n8js.com",
@@ -47,10 +55,18 @@ export const server = {
 
       try {
         // https://alexweberk.com/blog/astro-actions-on-cloudflare
-        const resend = new Resend(
+        // Support both local dev (import.meta.env) and Cloudflare (runtime.env)
+        const apiKey =
           // @ts-expect-error i ain't do this right now
-          context.locals.runtime.env.RESEND_API_KEY,
-        );
+          context.locals.runtime?.env?.RESEND_API_KEY ||
+          import.meta.env.RESEND_API_KEY;
+
+        if (!apiKey) {
+          console.error("RESEND_API_KEY is missing");
+          return { success: false, error: "Missing API key configuration" };
+        }
+
+        const resend = new Resend(apiKey);
 
         const { data: response, error } = await resend.emails.send({
           from: "nathan@n8js.com",
