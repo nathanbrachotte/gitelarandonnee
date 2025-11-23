@@ -32,7 +32,7 @@ export const FeedbackForm = () => {
       if (selectedRating === 5) {
         // Submit 5-star feedback immediately (without comment)
         try {
-          await actions.submitFeedback({
+          actions.submitFeedback({
             rating: 5,
             comment: "5 étoiles - Aucun commentaire fourni",
           });
