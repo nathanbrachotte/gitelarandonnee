@@ -80,9 +80,20 @@ export const FeedbackForm = () => {
         comment: comment.trim(),
       });
 
-      if (result.data?.success) {
+      console.log("🚀 ~ handleSubmit ~ result:", result);
+
+      // Check for errors first
+      if (result.error) {
+        console.error("Action error:", result.error);
+        setState("error");
+        return;
+      }
+
+      // Check if the action succeeded
+      if (result.data?.success === true) {
         setState("success");
       } else {
+        console.error("Action returned failure:", result.data);
         setState("error");
       }
     } catch (error) {
