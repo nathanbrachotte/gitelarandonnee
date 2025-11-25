@@ -352,7 +352,7 @@ export const LaRandonneeLink = () => {
       <Button
         asChild
         variant={"default"}
-        className="bg-green-800 hover:bg-green-800 text-white group"
+        className="bg-cyan-700 hover:bg-cyan-800 text-white group"
       >
         <a
           href={LINKS.LA_HAUT.url}
