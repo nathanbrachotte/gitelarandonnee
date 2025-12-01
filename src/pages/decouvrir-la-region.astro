@@ -101,10 +101,10 @@ import { Image } from "astro:assets";
         </DirectionAwareHover> -->
     <LandingH2 className="text-center mt-8">Découvrir les environs</LandingH2>
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mt-4">
-      <Card title="Métabief">
+      <Card title="Métabief - Station de ski">
         <Image
-          src={IMAGES.METABIEF_VIEW.url}
-          alt={IMAGES.METABIEF_VIEW.caption}
+          src={IMAGES.METABIEF_NEIGE.url}
+          alt={IMAGES.METABIEF_NEIGE.caption}
           width={2016}
           height={1515}
           class="w-full h-52 object-cover mt-2"
@@ -147,6 +147,23 @@ import { Image } from "astro:assets";
           dominant la vallée du Doubs, il est un témoin de l'histoire mouvementée
           de la région. Il est ouvert au public pour des visites guidées et offre
           une vue imprenable sur la vallée environnante.
+        </p>
+      </Card>
+      <Card title="Les Rasses - Station de ski">
+        <Image
+          src={IMAGES.LES_RASSES.url}
+          alt={IMAGES.LES_RASSES.alt}
+          width={800}
+          height={732}
+          class="w-full h-52 object-cover mt-2"
+        />
+        <p class="mt-2">
+          Située au cœur du Jura Vaudois à 1'100 m d'altitude, la station de ski
+          de
+          <Link href={LINKS.LES_RASSES.url}> Sainte-Croix – Les Rasses</Link> est
+          prisée notamment pour ses paysages et son domaine skiable idéal pour les
+          familles et les débutants. Le domaine s'étend entre 1'150 et 1'580 m d'altitude
+          avec 22 km de pistes.
         </p>
       </Card>
       <Card title="ExploreDoubs">

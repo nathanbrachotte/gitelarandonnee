@@ -142,6 +142,11 @@ export const IMAGES = {
     alt: "Vue sur les Alpes depuis Métabief",
     caption: "Les Alpes depuis Métabief",
   },
+  LES_RASSES: {
+    url: "/les-rasses.webp",
+    alt: "Les Rasses - Station de ski",
+    caption: "Les Rasses - Station de ski",
+  },
 };
 
 export const GALLERY = [
@@ -233,6 +238,9 @@ export const LINKS = {
   },
   SINGLE_TRACK: {
     url: "https://www.destination-haut-doubs.com/pumptrack-singletrack.html",
+  },
+  LES_RASSES: {
+    url: "https://www.stations-de-ski.ch/stations-de-ski-vaudoises/station-de-ski-sainte-croix-les-rasses/",
   },
   GITE_LA_RANDONNEE: {
     reviewUrl:
