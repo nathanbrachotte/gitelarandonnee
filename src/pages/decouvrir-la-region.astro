@@ -3,10 +3,9 @@ import Card from "@/components/Card.astro";
 import Container from "@/components/Container.astro";
 import { Link } from "@/components/Link";
 import { LandingH2 } from "@/components/Typography";
-import { IMAGES, SEO_META } from "@/data.constants";
+import { SEO_META } from "@/data.constants";
 import { LINKS } from "@/data.constants";
 import Layout from "@/layouts/Layout.astro";
-import { Image } from "astro:assets";
 ---
 
 <Layout
@@ -17,20 +16,14 @@ import { Image } from "astro:assets";
     <LandingH2 className="text-center">Aux Fourgs</LandingH2>
     <Card className="mt-4">
       <div class="flex flex-col gap-4 md:flex-row justify-center items-center">
-        <div class="flex-1">
-          <Image
-            src="/les-fourgs-plan.webp"
-            alt="Plan des Fourgs"
-            width={1100}
-            height={776}
-          />
-        </div>
         <div class="flex-1 flex">
           <ul class="space-y-4 flex flex-col">
             <li>
               <span class="font-bold">Ski alpin:</span> 7 remontées mécaniques et
               des pistes pour tous les niveaux, allant des pistes baby/vertes aux
-              pistes rouges. Certaines pistes sont équipées de canons à neige.
+              pistes rouges. Consultez le <Link
+                href={LINKS.PLAN_PISTES_LES_FOURGS.url}>plan des pistes</Link
+              >. Certaines pistes sont équipées de canons à neige.
             </li>
             <li>
               <span class="font-bold">Ski de fond:</span> discipline populaire dans
@@ -50,13 +43,6 @@ import { Image } from "astro:assets";
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
       <Card title="Single track">
-        <Image
-          src="/single-track.webp"
-          alt="Single track Les Fourgs"
-          width={504}
-          height={461}
-          class="w-full h-52 object-cover mt-2"
-        />
         <p class="mt-2">
           Le <Link href={LINKS.SINGLE_TRACK.url}>single track du village</Link>.
           Parfait pour les amateurs de VTT et de vélo tout terrain qui
@@ -65,13 +51,6 @@ import { Image } from "astro:assets";
       </Card>
 
       <Card title="Intramuros">
-        <Image
-          src="/les-fourgs-logo.webp"
-          alt="Intramuros Les Fourgs"
-          width={504}
-          height={461}
-          class="w-full h-52 object-contain mt-2"
-        />
         <p class="mt-2">
           Le site officiel de la commune <Link href={LINKS.INTRAMUROS.url}
             >Intramuros</Link
@@ -82,33 +61,9 @@ import { Image } from "astro:assets";
       </Card>
     </div>
 
-    <!-- <DirectionAwareHover client:load>
-    <div slot="img">
-      <Image
-      src="/meta-plan.webp"
-      class={"w-full h-full object-cover"}
-      alt="Plan de Métabief"
-      width={800}
-      height={732}
-      />
-      </div>
-      <p class="font-bold text-xl">Métabief</p>
-      <p>
-        En seulement 10 minutes en voiture, vous pourrez également accéder à
-        Métabief et skier sur ses 35 pistes allant de la verte à la noire.
-        </p>
-        <p>Une école de ski est également disponible sur place.</p>
-        </DirectionAwareHover> -->
     <LandingH2 className="text-center mt-8">Découvrir les environs</LandingH2>
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mt-4">
       <Card title="Métabief - Station de ski">
-        <Image
-          src={IMAGES.METABIEF_NEIGE.url}
-          alt={IMAGES.METABIEF_NEIGE.caption}
-          width={2016}
-          height={1515}
-          class="w-full h-52 object-cover mt-2"
-        />
         <p class="mt-2">
           En seulement 10 minutes en voiture, vous pourrez également accéder à
           <Link href={LINKS.METABIEF.maps}>Métabief</Link> et skier sur ses 35 pistes
@@ -117,13 +72,6 @@ import { Image } from "astro:assets";
         </p>
       </Card>
       <Card title="Le Lac de Saint Point">
-        <Image
-          src="/st-point.webp"
-          alt="Photo du lac Saint-Point"
-          width={800}
-          height={732}
-          class="w-full h-52 object-cover mt-2"
-        />
         <p class="mt-2">
           Le <Link href={LINKS.ST_POINT.maps}>lac Saint-Point</Link> offre un magnifique
           panorama entouré de forêts de sapins. Il est possible de pratiquer la baignade,
@@ -134,13 +82,6 @@ import { Image } from "astro:assets";
         </p>
       </Card>
       <Card title="Château de Joux">
-        <Image
-          src="/joux.webp"
-          alt="Photo du Château de Joux"
-          width={800}
-          height={732}
-          class="w-full h-52 object-cover mt-2"
-        />
         <p class="mt-2">
           <Link href={LINKS.JOUX.maps}>Le château de Joux</Link> est un incontournable
           pour les amateurs d'histoire et de culture. Il est situé sur une colline
@@ -150,13 +91,6 @@ import { Image } from "astro:assets";
         </p>
       </Card>
       <Card title="Les Rasses - Station de ski">
-        <Image
-          src={IMAGES.LES_RASSES.url}
-          alt={IMAGES.LES_RASSES.alt}
-          width={800}
-          height={732}
-          class="w-full h-52 object-cover mt-2"
-        />
         <p class="mt-2">
           Située au cœur du Jura Vaudois à 1'100 m d'altitude, la station de ski
           de
@@ -167,13 +101,6 @@ import { Image } from "astro:assets";
         </p>
       </Card>
       <Card title="ExploreDoubs">
-        <Image
-          src="/explore-doubs.webp"
-          alt="Application ExploreDoubs"
-          width={504}
-          height={461}
-          class="w-full h-52 object-cover mt-2"
-        />
         <p class="mt-2">
           Utilisez l'application <Link href={LINKS.EXPLORE_DOUBS.url}
             >ExploreDoubs</Link
@@ -183,13 +110,6 @@ import { Image } from "astro:assets";
         </p>
       </Card>
       <Card title="Encore plus d'activités">
-        <Image
-          src="/office-de-tourisme.webp"
-          alt="Photo du Château de Joux"
-          width={504}
-          height={461}
-          class="w-full h-52 object-cover mt-2"
-        />
         <p class="mt-2">
           Chien de traineaux, caves d'affinage, grottes, pêche, accro-branches,
           disc golf... Pour découvrir toutes les autres activités et les site

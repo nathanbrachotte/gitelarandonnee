@@ -189,6 +189,9 @@ export const LINKS = {
     url: "https://station-lesfourgs.fr/",
     maps: "https://maps.app.goo.gl/YV13tJYWUpUH9V1x7",
   },
+  PLAN_PISTES_LES_FOURGS: {
+    url: "http://www.skiinfo.fr/jura/les-fourgs/plans-des-pistes",
+  },
   VIE_FRANCIGENE: {
     url: "https://www.viefrancigene.org/fr/",
   },
