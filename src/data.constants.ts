@@ -268,7 +268,7 @@ export const SEO_META = {
       "Consultez les conditions générales de location du Gîte La Randonnée, hébergement pour 14 personnes aux Fourgs, dans le Doubs.",
   },
   DISPONIBILITES_TARIFS: {
-    title: "Reserver | Gîte La Randonnée aux Fourgs, Doubs",
+    title: "Réserver/Disponibilités | Gîte La Randonnée aux Fourgs, Doubs",
     description:
       "Réservez votre séjour au Gîte La Randonnée aux Fourgs. Consultez nos disponibilités et tarifs pour un hébergement de 14 personnes dans le Doubs.",
   },
