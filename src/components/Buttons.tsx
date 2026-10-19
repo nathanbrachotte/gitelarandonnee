@@ -274,7 +274,7 @@ export const DispoLink = ({ activePath }: { activePath: string }) => {
       })}
     >
       <a href={link} aria-label="Disponibilités et Tarifs">
-        Réserver
+        Réserver/Disponibilités
       </a>
     </Button>
   );
