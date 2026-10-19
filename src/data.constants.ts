@@ -128,11 +128,6 @@ export const IMAGES = {
     alt: "Les Rangs à 1km du Gîte",
     caption: "Les Rangs à 1km du Gîte",
   },
-  METABIEF_NEIGE: {
-    url: "/metabief-neige.webp",
-    alt: "Station de ski de Métabief",
-    caption: "Station de ski de Métabief",
-  },
   METABIEF_FONDUE: {
     url: "/metabief-fondue.webp",
     alt: "Fondue à Métabief",
@@ -175,7 +170,6 @@ export const GALLERY = [
   IMAGES.INTERIEUR_FONDUE,
   IMAGES.INTERIEUR_SALON_ENTIER,
   IMAGES.LES_FOURGS_LES_RANGS,
-  IMAGES.METABIEF_NEIGE,
   IMAGES.METABIEF_FONDUE,
   IMAGES.METABIEF_VIEW,
 ];
