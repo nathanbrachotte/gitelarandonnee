@@ -12,10 +12,13 @@ export const MidWeekAlert = () => {
       <AlertDescription>
         <ul className="list-disc list-inside">
           <li>
-            <span className="font-bold">En été :</span> 580€
+            <span className="font-bold">En été :</span> 560€
           </li>
           <li>
-            <span className="font-bold">En hiver :</span> 600€
+            <span className="font-bold">En hiver :</span> 580€
+          </li>
+          <li>
+            <span className="font-bold">Long weekend (3 nuits) :</span> 690€
           </li>
         </ul>
         <div className="flex items-center mt-2">
