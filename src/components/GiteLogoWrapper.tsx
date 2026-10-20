@@ -1,6 +1,6 @@
 import { Link } from "@/components/Link";
 import { GiteLogo } from "@/components/logo";
-import { H2, Small } from "@/components/Typography";
+import { Small } from "@/components/Typography";
 import { NAME, PHONE_NUMBER } from "@/data.constants";
 import type { PropsWithChildren } from "react";
 import { PhoneIcon } from "./icons";
@@ -23,7 +23,9 @@ export function GiteLogoWrapper({}: PropsWithChildren) {
           target="_self"
           className="no-underline"
         >
-          <H2 className="whitespace-nowrap font-logo -mb-3">{NAME}</H2>
+          <span className="block pb-2 text-2xl lg:text-3xl font-semibold tracking-tight text-primary whitespace-nowrap font-logo -mb-3">
+            {NAME}
+          </span>
         </Link>
         <Small className="text-xs flex flex-row gap-0.5 relative select-all">
           <PhoneIcon className="w-4 h-4" />

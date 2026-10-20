@@ -20,7 +20,7 @@ import {
   // DarkGreenLeaf,
   // LightGreenPlan,
 } from "@/components/icons";
-import { IMAGES, SEO_META } from "@/data.constants";
+import { IMAGES, LODGING_JSON_LD, SEO_META } from "@/data.constants";
 import { cn } from "@/lib/utils";
 import { Link } from "@/components/Link";
 import { LINKS } from "@/data.constants";
@@ -32,6 +32,7 @@ import Container from "@/components/Container.astro";
   title={SEO_META.INDEX.title}
   description={SEO_META.INDEX.description}
   withPadding={false}
+  jsonLd={[LODGING_JSON_LD]}
 >
   <section id="hero" class="relative w-full h-[36rem] sm:h-[46rem]">
     <Image
@@ -39,6 +40,8 @@ import Container from "@/components/Container.astro";
       alt={IMAGES.INTERIEUR_SALON_ENTIER.caption}
       width={911}
       height={684}
+      loading="eager"
+      fetchpriority="high"
       class="w-full h-full object-cover object-center"
     />
     <div
@@ -191,8 +194,8 @@ import Container from "@/components/Container.astro";
           <Diamond
             className="w-4 h-4 self-start shrink-0 text-primary mt-1 mr-1"
           /><p>
-            Visitez le Château de Joux, les fromageries et les caves Visitez le
-            Château de Joux, les fromageries et les caves d'affinage du Comté.
+            Visitez le Château de Joux, les fromageries et les caves d'affinage du
+            Comté.
           </p>
         </li>
         <li class="flex items-start space-x-1 mt-2">

@@ -112,27 +112,27 @@ export const ROUTES = {
   },
   DISPO_TARIFS: {
     getPath: (props: RouteParams) => {
-      return generateUrl("/disponibilites", props);
+      return generateUrl("/disponibilites/", props);
     },
   },
   PLAN_DU_GITE: {
     getPath: (props: RouteParams) => {
-      return generateUrl("/plan-du-gite", props);
+      return generateUrl("/plan-du-gite/", props);
     },
   },
   ACTIVITES: {
     getPath: (props: RouteParams) => {
-      return generateUrl("/decouvrir-la-region", props);
+      return generateUrl("/decouvrir-la-region/", props);
     },
   },
   CGL: {
     getPath: (props: RouteParams) => {
-      return generateUrl("/condition-generale-location", props);
+      return generateUrl("/condition-generale-location/", props);
     },
   },
   MENTIONS_LEGALES: {
     getPath: (props: RouteParams) => {
-      return generateUrl("/mentions-legales", props);
+      return generateUrl("/mentions-legales/", props);
     },
   },
 } as const satisfies Record<string, Routes>;

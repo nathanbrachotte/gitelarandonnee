@@ -10,7 +10,12 @@ export default defineConfig({
   site: "https://gitelarandonnee.fr",
   output: "hybrid",
   integrations: [
-    sitemap(),
+    sitemap({
+      filter: (page) =>
+        !["/activites/", "/avis/", "/404/"].some((path) =>
+          page.endsWith(path),
+        ),
+    }),
     react(),
     tailwind({
       applyBaseStyles: false,

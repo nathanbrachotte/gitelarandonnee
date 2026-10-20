@@ -2,7 +2,7 @@
 import Card from "@/components/Card.astro";
 import Container from "@/components/Container.astro";
 import { Link } from "@/components/Link";
-import { LandingH2 } from "@/components/Typography";
+import { LandingH1, LandingH2 } from "@/components/Typography";
 import { SEO_META } from "@/data.constants";
 import { LINKS } from "@/data.constants";
 import Layout from "@/layouts/Layout.astro";
@@ -13,6 +13,7 @@ import Layout from "@/layouts/Layout.astro";
   description={SEO_META.DECOUVRIR.description}
 >
   <Container>
+    <LandingH1 className="text-center mb-8">Activités aux Fourgs et dans le Haut-Doubs</LandingH1>
     <LandingH2 className="text-center">Aux Fourgs</LandingH2>
     <Card className="mt-4">
       <div class="flex flex-col gap-4 md:flex-row justify-center items-center">

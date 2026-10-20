@@ -1,4 +1,6 @@
 ---
-// Redirect from /activites to /decouvrir-la-region
-return Astro.redirect("/decouvrir-la-region", 301);
+// Rendered on demand so the redirect is a real HTTP 301, not a prerendered meta refresh
+export const prerender = false;
+
+return Astro.redirect("/decouvrir-la-region/", 301);
 ---

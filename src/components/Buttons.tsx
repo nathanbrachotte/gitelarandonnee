@@ -41,7 +41,7 @@ export const PhoneNumberButton = ({
       size={withLabel ? "default" : "icon"}
       aria-label="Téléphone"
     >
-      <a className="flex flex-row gap-2" href={"tel:" + PHONE_NUMBER}>
+      <a className="flex flex-row gap-2" href={"tel:" + PHONE_NUMBER.replaceAll(" ", "")}>
         <PhoneIcon />
         {withLabel ? PHONE_NUMBER : ""}
       </a>
@@ -64,7 +64,7 @@ export const PhoneNumberLink = ({
         variant={withLabel ? "link" : "default"}
         size={withLabel ? "default" : "icon"}
       >
-        <a className="flex flex-row gap-2" href={"tel:" + PHONE_NUMBER}>
+        <a className="flex flex-row gap-2" href={"tel:" + PHONE_NUMBER.replaceAll(" ", "")}>
           {withIcon ? <PhoneIcon /> : ""}
           {withLabel ? PHONE_NUMBER : ""}
         </a>

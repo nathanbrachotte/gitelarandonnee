@@ -250,7 +250,7 @@ export const SEO_META = {
     title:
       "Gîte La Randonnée | Les Fourgs, Doubs - Hébergement jusqu'à 14 personnes",
     description:
-      "Découvrez le Gîte La Randonnée aux Fourgs, un hébergement spacieux pour 14 personnes au cœur des montagnes du Jura dans le Doubs. Idéal pour les vacances en famille, la randonnée en été, le ski de fond et alpin en hiver.",
+      "Gîte pour 14 personnes aux Fourgs (Doubs), à 1200 m dans le Jura : randonnée l'été, ski de fond et alpin l'hiver, à 10 min de Métabief.",
   },
   ERROR: {
     title: "Page non trouvée | Gîte La Randonnée aux Fourgs",
@@ -282,4 +282,66 @@ export const SEO_META = {
     description:
       "Découvrez le plan détaillé du Gîte La Randonnée, un hébergement spacieux pour 14 personnes aux Fourgs, dans les montagnes du Jura (Doubs).",
   },
+};
+
+const GOOGLE_MAPS_CID = "18418517150381515153";
+
+/**
+ * Structured data for the home page. Only facts stated on the site are included:
+ * fill in rooms, beds, bathrooms and surface once confirmed.
+ */
+export const LODGING_JSON_LD = {
+  "@type": ["VacationRental", "LodgingBusiness"],
+  "@id": `${WEBSITE_ADDRESS}/#gite`,
+  name: NAME,
+  description:
+    "Gîte pour 14 personnes à 1200 m d'altitude, au cœur du village des Fourgs (Doubs). Jardin clôturé, accès aux pistes de ski de fond depuis le jardin, station de Métabief à 10 minutes.",
+  url: `${WEBSITE_ADDRESS}/`,
+  image: GALLERY.slice(0, 8).map((image) => `${WEBSITE_ADDRESS}${image.url}`),
+  telephone: PHONE_NUMBER.replaceAll(" ", ""),
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "102 Grande Rue",
+    postalCode: "25300",
+    addressLocality: "Les Fourgs",
+    addressRegion: "Bourgogne-Franche-Comté",
+    addressCountry: "FR",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 46.8335498,
+    longitude: 6.411368,
+  },
+  hasMap: `https://www.google.com/maps?cid=${GOOGLE_MAPS_CID}`,
+  priceRange: "750 € - 1600 € / semaine",
+  currenciesAccepted: "EUR",
+  checkinTime: "16:00",
+  checkoutTime: "10:00",
+  petsAllowed: "Sur demande",
+  smokingAllowed: false,
+  amenityFeature: [
+    "Jardin clôturé",
+    "Barbecue",
+    "Balançoire",
+    "Terrain de pétanque",
+    "Draps compris",
+    "Accès aux pistes de ski de fond",
+  ].map((name) => ({
+    "@type": "LocationFeatureSpecification",
+    name,
+    value: true,
+  })),
+  containsPlace: {
+    "@type": "Accommodation",
+    additionalType: "EntirePlace",
+    occupancy: {
+      "@type": "QuantitativeValue",
+      maxValue: 14,
+    },
+  },
+  sameAs: [
+    LINKS.FACEBOOK.url,
+    LINKS.OFFICE_TOURISME_GITE.url,
+    `https://www.google.com/maps?cid=${GOOGLE_MAPS_CID}`,
+  ],
 };

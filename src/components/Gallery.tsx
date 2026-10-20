@@ -34,6 +34,8 @@ export function Gallery() {
                   alt={image.alt}
                   width={911}
                   height={684}
+                  loading="lazy"
+                  decoding="async"
                 />
               </ZoomedImage>
             </BlurFade>
