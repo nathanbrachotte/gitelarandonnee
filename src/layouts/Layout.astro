@@ -29,7 +29,7 @@ const {
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
-const ogImage = new URL("/og.png", Astro.site).href;
+const ogImage = new URL("/og.jpg", Astro.site).href;
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
@@ -72,7 +72,7 @@ const structuredData = {
           siteName: NAME,
         },
         image: {
-          width: 1200,
+          width: 1600,
           height: 630,
           alt: NAME,
         },

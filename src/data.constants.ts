@@ -32,7 +32,7 @@ export const IMAGES = {
     // caption: "Extérieur apero",
   },
   EXTERIEUR_ARBRES: {
-    url: "/gite/exterieur-arbres.jpg",
+    url: "/gite/exterieur-arbres.webp",
     alt: "Extérieur arbres",
     // caption: "Extérieur arbres",
   },
@@ -349,7 +349,7 @@ export const LODGING_JSON_LD = {
       {
         "@type": "BedDetails",
         numberOfBeds: 2,
-        typeOfBed: "Lit double 140 x 200 cm (BZ, clic-clac)",
+        typeOfBed: "Lit double 140 cm (BZ 140 x 200, clic-clac 140 x 180)",
       },
       {
         "@type": "BedDetails",
