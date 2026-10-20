@@ -1,0 +1,5 @@
+name = "gitelarandonnee-www-redirect"
+main = "index.js"
+compatibility_date = "2026-10-01"
+workers_dev = false
+routes = [{ pattern = "www.gitelarandonnee.fr/*", zone_name = "gitelarandonnee.fr" }]
