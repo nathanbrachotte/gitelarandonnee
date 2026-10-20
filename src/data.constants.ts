@@ -8,68 +8,72 @@ export const EMAIL = "gite.larandonnee25+larando@gmail.com";
 export const IMAGES = {
   EXTERIEUR_ETE: {
     url: "/gite/exterieur-ete.webp",
-    alt: "Le jardin en été",
+    alt: "Jardin clôturé du gîte La Randonnée en été, aux Fourgs",
     caption: "Le jardin en été",
   },
   CHAMBRE_BEIGE: {
     url: "/gite/chambre-beige.webp",
-    alt: "Chambre beige",
+    alt: "Chambre beige avec quatre couchages",
     caption: "Chambre beige",
   },
   CHAMBRE_ORANGE: {
     url: "/gite/chambre-orange.webp",
-    alt: "Chambre orange",
+    alt: "Chambre orange avec quatre couchages",
     caption: "Chambre orange",
   },
   CHAMBRE_VIOLETTE: {
     url: "/gite/chambre-violette.webp",
-    alt: "Chambre violette",
+    alt: "Chambre violette avec trois couchages",
     caption: "Chambre violette",
   },
   EXTERIEUR_APERO: {
     url: "/gite/exterieur-apero.webp",
-    alt: "Extérieur apero",
+    alt: "Apéritif à l'extérieur du gîte",
     // caption: "Extérieur apero",
   },
   EXTERIEUR_ARBRES: {
     url: "/gite/exterieur-arbres.webp",
-    alt: "Extérieur arbres",
+    alt: "Arbres autour du gîte",
     // caption: "Extérieur arbres",
   },
   EXTERIEUR_LOIN: {
     url: "/gite/exterieur-loin.webp",
-    alt: "Extérieur loin",
+    alt: "Vue extérieure du gîte",
     // caption: "Extérieur loin",
   },
   EXTERIEUR_NEIGE: {
     url: "/gite/exterieur-neige.webp",
-    alt: "Extérieur neige",
+    alt: "Jardin du gîte sous la neige",
     caption: "Le jardin enneigé",
   },
   LA_RANDONNEE_EXTERIEUR_NEIGE: {
     url: "/gite/la-randonnee-exterieur-neige.webp",
-    alt: "La Randonnée extérieur neige",
+    alt: "Façade du gîte La Randonnée en hiver",
     caption: "Le gîte La Randonnée en hiver",
   },
   EXTERIEUR_PARKING: {
     url: "/gite/exterieur-parking.webp",
-    alt: "Extérieur parking",
+    alt: "Façade et parking du gîte La Randonnée",
     caption: "Extérieur",
   },
   EXTERIEUR_TABLE_ENTREE: {
     url: "/gite/exterieur-table-entree.webp",
-    alt: "Extérieur table d'entrée",
+    alt: "Table extérieure devant l'entrée du gîte",
     // caption: "Extérieur table d'entrée",
   },
-  FONDUE: { url: "/gite/fondue.webp", alt: "Fondue", caption: "Fondue" },
+  FONDUE: {
+    url: "/gite/fondue.webp",
+    alt: "Fondue au gîte",
+    caption: "Fondue",
+  },
   INTERIEUR_ENTREE: {
     url: "/gite/interieur-entree.webp",
-    alt: "Interieur entrée",
+    alt: "Entrée du gîte",
     caption: "Entrée",
   },
   PETANQUE: {
     url: "/gite/petanque.webp",
-    alt: "Pétanque",
+    alt: "Terrain de pétanque dans le jardin du gîte",
     caption: "Terrain de pétanque",
   },
   PETIT_SALON_COMPLET: {
@@ -79,38 +83,38 @@ export const IMAGES = {
   },
   PETIT_SALON: {
     url: "/gite/petit-salon.webp",
-    alt: "Petit salon",
+    alt: "Petit salon du gîte",
     caption: "Petit salon",
   },
   PETITE_SALLE_DE_BAIN: {
     url: "/gite/petite-salle-de-bain.webp",
-    alt: "Petite salle de bain",
+    alt: "Petite salle de bain avec baignoire",
     caption: "Petite salle de bain",
   },
-  SALON: { url: "/gite/salon.webp", alt: "Salon", caption: "Salon" },
+  SALON: { url: "/gite/salon.webp", alt: "Salon du gîte", caption: "Salon" },
   VACHES: {
     url: "/gite/vaches.webp",
-    alt: "Vaches",
+    alt: "Vaches dans les prés autour des Fourgs",
     // caption: "Vaches"
   },
   EXTERIEUR_SKI_DE_FOND: {
     url: "/gite/exterieur-ski-de-fond.webp",
-    alt: "Extérieur ski de fond",
+    alt: "Piste de ski de fond au départ du jardin",
     caption: "Piste de ski de fond",
   },
   INTERIEUR_CUISINE_2: {
     url: "/gite/interieur-cuisine-2.webp",
-    alt: "Interieur cuisine 2",
+    alt: "Cuisine équipée du gîte",
     caption: "Cuisine",
   },
   INTERIEUR_CUISINE_BAR: {
     url: "/gite/interieur-cuisine-bar.webp",
-    alt: "Interieur cuisine bar",
+    alt: "Bar de la cuisine ouverte sur la salle de vie",
     caption: "Salle de vie",
   },
   INTERIEUR_CUISINE_TOUT: {
     url: "/gite/interieur-cuisine-tout.webp",
-    alt: "Interieur cuisine",
+    alt: "Cuisine et salon du gîte",
     caption: "Cuisine et salon",
   },
   INTERIEUR_FONDUE: {
@@ -120,7 +124,7 @@ export const IMAGES = {
   },
   INTERIEUR_SALON_ENTIER: {
     url: "/gite/interieur-salon-entier.webp",
-    alt: "Interieur salon entier",
+    alt: "Salle de vie du gîte avec sa grande table",
     caption: "Salle de vie",
   },
   LES_FOURGS_LES_RANGS: {
@@ -284,6 +288,176 @@ export const SEO_META = {
   },
 };
 
+export const MAX_PERSONS = 14;
+
+const SUMMER_WEEK = { period: "Vacances d'été", price: 1000 };
+
+const WEEKEND_ROWS = [
+  { period: "Week-end en été (2 nuits)", price: 560 },
+  { period: "Week-end en hiver (2 nuits)", price: 580 },
+  { period: "Long week-end (3 nuits)", price: 690 },
+];
+
+const WEEK_GROUPS = [
+  {
+    title: "Semaine, vacances scolaires",
+    rows: [
+      { period: "Vacances de Pâques", price: 800 },
+      SUMMER_WEEK,
+      { period: "Vacances de Toussaint", price: 800 },
+      { period: "Vacances de Noël", price: 1600 },
+      { period: "Vacances de février", price: 1600 },
+    ],
+  },
+  {
+    title: "Semaine, hors vacances scolaires",
+    rows: [
+      { period: "Janvier, février, mars", price: 1000 },
+      { period: "Mai, juin et septembre", price: 800 },
+      { period: "Octobre, novembre, décembre", price: 750 },
+    ],
+  },
+];
+
+/** Prices shown on /disponibilites/ */
+export const PRICE_GROUPS = [
+  ...WEEK_GROUPS,
+  { title: "Week-end", rows: WEEKEND_ROWS },
+];
+
+/** Worked example under the price table */
+export const PRICE_EXAMPLE = SUMMER_WEEK;
+
+const WEEK_PRICES = WEEK_GROUPS.flatMap((group) =>
+  group.rows.map((row) => row.price),
+);
+const WEEKEND_PRICES = WEEKEND_ROWS.map((row) => row.price);
+
+export const PRICES = {
+  WEEK_FROM: Math.min(...WEEK_PRICES),
+  WEEK_TO: Math.max(...WEEK_PRICES),
+  WEEKEND_FROM: Math.min(...WEEKEND_PRICES),
+};
+
+export const PRICE_EXTRAS = [
+  { label: "Charges et location de draps", value: "compris dans le prix" },
+  { label: "Taxe de séjour", value: "1,10 € par nuit et par adulte" },
+  { label: "Forfait ménage", value: "125 €" },
+];
+
+/** Driving distances from 102 Grande Rue (OpenStreetMap routing, October 2026) */
+export const DISTANCES = [
+  { name: "Station de ski des Fourgs", distance: "500 m", duration: "à pied" },
+  { name: "Château de Joux", distance: "10 km", duration: "15 min" },
+  {
+    name: "Métabief (station de ski)",
+    distance: "10 km",
+    duration: "15-20 min",
+  },
+  { name: "Pontarlier", distance: "12 km", duration: "15 min" },
+  {
+    name: "Sainte-Croix / Les Rasses (Suisse)",
+    distance: "14 km",
+    duration: "20 min",
+  },
+  {
+    name: "Lac de Saint-Point (Malbuisson)",
+    distance: "15 km",
+    duration: "20 min",
+  },
+  {
+    name: "Gare TGV de Frasne (Paris-Lausanne)",
+    distance: "30 km",
+    duration: "35 min",
+  },
+  { name: "Lausanne", distance: "56 km", duration: "1 h" },
+  { name: "Besançon", distance: "70 km", duration: "1 h 15" },
+  { name: "Aéroport de Genève", distance: "103 km", duration: "1 h 30" },
+];
+
+export const GITE_FACTS = [
+  { label: "Capacité", value: `${MAX_PERSONS} personnes, 17 couchages` },
+  {
+    label: "Chambres",
+    value: "4 chambres et un salon de détente avec lit double",
+  },
+  { label: "Salles d'eau", value: "1 salle de douches, 1 salle de bain, 3 WC" },
+  {
+    label: "Classement",
+    value: "Meublé de tourisme 3 étoiles, Gîtes de France 3 épis",
+  },
+  { label: "Altitude", value: "1200 m, au cœur du village des Fourgs" },
+  { label: "Inclus", value: "Charges et draps pour 14 personnes" },
+  { label: "Règles", value: "Non-fumeur, animaux sur demande" },
+  { label: "Arrivée / départ", value: "Semaine : samedi dès 16h, départ 10h" },
+  {
+    label: "Tarifs",
+    value: `Semaine dès ${PRICES.WEEK_FROM} €, week-end dès ${PRICES.WEEKEND_FROM} €`,
+  },
+  {
+    label: "Extérieur",
+    value: "Jardin clôturé, barbecue, balançoire, terrain de pétanque",
+  },
+  {
+    label: "À proximité",
+    value: "Station des Fourgs à 500 m, Métabief à 10 km, frontière suisse",
+  },
+  { label: "Ski de fond", value: "Pistes accessibles depuis le jardin" },
+];
+
+export const FAQ = [
+  {
+    question: "Combien de personnes peut accueillir le gîte ?",
+    answer:
+      "Jusqu'à 14 personnes. Le gîte compte 4 chambres, un salon de détente avec un lit double et 2 canapés-lits dans le salon, soit 17 couchages.",
+  },
+  {
+    question: "Les draps sont-ils fournis ?",
+    answer:
+      "Oui, la location des draps est comprise pour 14 personnes. Un kit literie supplémentaire coûte 8 € par lit de 90 et 16 € par lit de 140. Les sacs de couchage sont interdits.",
+  },
+  {
+    question: "Les animaux sont-ils acceptés ?",
+    answer:
+      "Sur demande, et en général oui, si l'animal est propre et ne cause ni dégâts ni bruit.",
+  },
+  {
+    question: "Quels sont les horaires d'arrivée et de départ ?",
+    answer:
+      "À la semaine : arrivée le samedi à partir de 16h, départ avant 10h. En week-end : arrivée le vendredi à partir de 16h, départ le dimanche avant 17h.",
+  },
+  {
+    question: "Le ménage est-il compris ?",
+    answer:
+      "Vous pouvez rendre le gîte propre ou réserver le forfait ménage à 125 €. Une taxe de séjour de 1,10 € par nuit et par adulte s'ajoute au prix.",
+  },
+  {
+    question: "Comment réserver ?",
+    answer:
+      "Par e-mail, sans frais ajoutés, ou en ligne via l'office de tourisme du Pays du Haut-Doubs (validation automatique, avec frais de gestion).",
+  },
+  {
+    question: "Peut-on skier depuis le gîte ?",
+    answer:
+      "Oui. Les pistes de ski de fond partent du jardin, la station de ski des Fourgs est à 500 m et la station de Métabief à 10 km.",
+  },
+  {
+    question: "Comment venir au gîte ?",
+    answer:
+      "Le gîte est au 102 Grande Rue aux Fourgs, à 12 km de Pontarlier. La gare TGV la plus proche est Frasne (ligne Paris-Lausanne), à 30 km. Lausanne est à environ 1 h et l'aéroport de Genève à 1 h 30.",
+  },
+  {
+    question: "Peut-on fumer dans le gîte ?",
+    answer:
+      "Non, le gîte est non-fumeur. Un espace fumeur est prévu à l'extérieur.",
+  },
+  {
+    question: "Nous sommes plus de 14, avez-vous une autre solution ?",
+    answer:
+      "Le Gîte Là-Haut, à la même adresse, accueille 6 personnes de plus. Contactez-nous pour réserver les deux.",
+  },
+];
+
 const GOOGLE_MAPS_CID = "18418517150381515153";
 
 /**
@@ -313,7 +487,7 @@ export const LODGING_JSON_LD = {
     longitude: 6.411368,
   },
   hasMap: `https://www.google.com/maps?cid=${GOOGLE_MAPS_CID}`,
-  priceRange: "750 € - 1600 € / semaine",
+  priceRange: `${PRICES.WEEK_FROM} € - ${PRICES.WEEK_TO} € / semaine`,
   currenciesAccepted: "EUR",
   checkinTime: "16:00",
   checkoutTime: "10:00",

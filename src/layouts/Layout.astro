@@ -8,6 +8,7 @@ import { ViewTransitions } from "astro:transitions";
 import { SEO } from "astro-seo";
 import { SimpleAnalytics } from "astro-simpleanalytics-plugin";
 import { NAME } from "@/data.constants";
+import { ROUTES } from "@/routes";
 
 interface Props {
   title: string;
@@ -29,6 +30,8 @@ const {
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const bookingPath = ROUTES.DISPO_TARIFS.getPath({});
+const showBookingCta = Astro.url.pathname !== bookingPath;
 const ogImage = new URL("/og.jpg", Astro.site).href;
 const structuredData = {
   "@context": "https://schema.org",
@@ -96,7 +99,11 @@ const structuredData = {
     />
     {ignoreViewTransitions ? null : <ViewTransitions />}
   </head>
-  <body class={cn("min-h-screen flex flex-col items-stretch min-w-full")}>
+  <body
+    class={cn("min-h-screen flex flex-col items-stretch min-w-full", {
+      "pb-20 lg:pb-0": showBookingCta,
+    })}
+  >
     <Header />
     <div
       class={cn(
@@ -110,6 +117,18 @@ const structuredData = {
       <slot />
     </div>
     <Footer />
+    {
+      showBookingCta && (
+        <div class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 border-t border-primary p-3 flex justify-center">
+          <a
+            href={bookingPath}
+            class="w-full max-w-md text-center rounded-md bg-primary text-primary-foreground font-semibold py-3 px-4 shadow"
+          >
+            Réserver / Voir les disponibilités
+          </a>
+        </div>
+      )
+    }
     <SimpleAnalytics />
   </body>
 </html>

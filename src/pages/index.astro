@@ -26,6 +26,9 @@ import { Link } from "@/components/Link";
 import { LINKS } from "@/data.constants";
 import ContactForm from "@/components/ContactForm.astro";
 import Container from "@/components/Container.astro";
+import GiteFacts from "@/components/GiteFacts.astro";
+import Faq from "@/components/Faq.astro";
+import { ROUTES } from "@/routes";
 ---
 
 <Layout
@@ -34,10 +37,10 @@ import Container from "@/components/Container.astro";
   withPadding={false}
   jsonLd={[LODGING_JSON_LD]}
 >
-  <section id="hero" class="relative w-full h-[36rem] sm:h-[46rem]">
+  <section id="hero" class="relative w-full h-[42rem] sm:h-[46rem]">
     <Image
       src={IMAGES.INTERIEUR_SALON_ENTIER.url}
-      alt={IMAGES.INTERIEUR_SALON_ENTIER.caption}
+      alt={IMAGES.INTERIEUR_SALON_ENTIER.alt}
       width={911}
       height={684}
       loading="eager"
@@ -62,12 +65,18 @@ import Container from "@/components/Container.astro";
         et familial peut accueillir jusqu'à 14 personnes.
       </Text>
       <div class="flex flex-col items-center gap-4 mt-6">
-        <LaRandonneeLink client:load />
+        <a
+          href={ROUTES.DISPO_TARIFS.getPath({})}
+          class="inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-base sm:text-lg leading-tight text-center py-3 px-6 sm:px-8 shadow"
+        >
+          Voir les disponibilités et réserver
+        </a>
         <div class="flex flex-row gap-4 justify-center">
           <PhoneNumberButton />
           <MailButton />
           <AddressButton />
         </div>
+        <LaRandonneeLink client:load />
       </div>
     </div>
   </section>
@@ -220,7 +229,9 @@ import Container from "@/components/Container.astro";
       </div>
     </div>
   </section>
+  <GiteFacts />
   <Gallery client:visible />
+  <Faq />
   <Container>
     <ContactForm />
   </Container>

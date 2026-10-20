@@ -1,0 +1,20 @@
+---
+import { LandingH2 } from "@/components/Typography";
+import { GITE_FACTS } from "@/data.constants";
+---
+
+<section id="en-bref" class="mt-12 flex justify-center px-4">
+  <div class="container">
+    <LandingH2 className="text-center mb-8">Le gîte en bref</LandingH2>
+    <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {
+        GITE_FACTS.map((fact) => (
+          <div class="bg-card border-2 rounded-lg p-4">
+            <dt class="font-bold text-primary">{fact.label}</dt>
+            <dd class="mt-1">{fact.value}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+</section>

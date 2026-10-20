@@ -15,7 +15,7 @@ export function GiteLogoWrapper({}: PropsWithChildren) {
         target="_self"
         className="no-underline"
       >
-        <GiteLogo className="w-14 h-14 rounded-lg" />
+        <GiteLogo className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg" />
       </Link>
       <div className="flex flex-col items-start">
         <Link

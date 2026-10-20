@@ -1,73 +1,74 @@
 ---
-import Card from "@/components/Card.astro";
-import { H2 } from "@/components/Typography";
+import { H2, H3 } from "@/components/Typography";
+import { ArrivalDepartureAlert } from "@/components/Alerts";
+import {
+  MAX_PERSONS,
+  PRICE_EXAMPLE,
+  PRICE_EXTRAS,
+  PRICE_GROUPS,
+} from "@/data.constants";
 
-import { MidWeekAlert, ArrivalDepartureAlert } from "@/components/Alerts";
+const perPerson = (price: number) => Math.round(price / MAX_PERSONS);
+const example = PRICE_EXAMPLE;
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-2">
-  <H2 className="col-span-3">Nos tarifs à la semaine</H2>
-  <Card
-    title="Vacances Scolaires"
-    className="col-span-3 md:col-span-1 relative bg-background"
-  >
-    <!-- <DarkGreenLeaf className="absolute right-4 top-4 w-8 h-8" /> -->
-    <div class="flex flex-col">
-      <p class="mt-2">
-        <span class="font-bold">Pâques : </span>800€
-      </p>
-      <p class="mt-2">
-        <span class="font-bold">Vacances d'été :</span> 1000€
-      </p>
-      <p class="mt-2">
-        <span class="font-bold">Vacances de Toussaint:</span> 800€
-      </p>
-      <p class="mt-2">
-        <span class="font-bold">Vacances de Noël :</span> 1600€
-      </p>
-      <p class="mt-2">
-        <span class="font-bold">Vacances de Février :</span> 1600€
-      </p>
-    </div>
-  </Card>
-  <Card
-    title="Hors saison"
-    className="col-span-3 md:col-span-1 relative bg-background"
-  >
-    <!-- <PinkFlower className="absolute right-4 top-4 w-8 h-8" /> -->
-    <div class="flex flex-col">
-      <p class="mt-2">
-        <span class="font-bold">Janvier, Février, Mars :</span> 1000€
-      </p>
-      <p class="mt-2">
-        <span class="font-bold">Mai, Juin et Septembre :</span> 800€
-      </p>
-      <p class="mt-2">
-        <span class="font-bold">Octobre, Novembre, Décembre :</span> 750€
-      </p>
-    </div>
-  </Card>
-  <Card
-    title="Options et taxes"
-    className="col-span-3 md:col-span-1 relative bg-background"
-  >
-    <!-- <DarkBluePlant className="absolute right-4 top-4 w-8 h-8" /> -->
-    <ul class="space-y-2 mt-2">
-      <li>
-        <span class="font-bold">Charges et location de draps :</span>
-        <span>Compris dans le prix</span>
-      </li>
-      <li>
-        <span class="font-bold">Taxe de séjour :</span>
-        <span>1,10 € par nuit par adulte</span>
-      </li>
-      <li>
-        <span class="font-bold">Forfait Ménage :</span>
-        <span>125€</span>
-      </li>
+<div class="flex flex-col gap-4">
+  <H2>Nos tarifs</H2>
+  <div class="overflow-x-auto">
+    <table class="w-full text-left">
+      <thead>
+        <tr class="border-b-2">
+          <th class="py-2 pr-4">Période</th>
+          <th class="py-2 pr-4">Prix du gîte</th>
+          <th class="py-2">
+            Par personne
+            <span class="block text-sm font-normal">
+              base {MAX_PERSONS} pers.
+            </span>
+          </th>
+        </tr>
+      </thead>
+      {
+        PRICE_GROUPS.map((group) => (
+          <tbody>
+            <tr>
+              <th colspan="3" class="pt-6 pb-2 text-primary text-lg">
+                {group.title}
+              </th>
+            </tr>
+            {group.rows.map((row) => (
+              <tr class="border-b">
+                <td class="py-2 pr-4">{row.period}</td>
+                <td class="py-2 pr-4 font-bold whitespace-nowrap">
+                  {row.price} €
+                </td>
+                <td class="py-2 whitespace-nowrap">{perPerson(row.price)} €</td>
+              </tr>
+            ))}
+          </tbody>
+        ))
+      }
+    </table>
+  </div>
+  <p>
+    Exemple : une semaine pendant les {example.period.toLowerCase()} à {
+      MAX_PERSONS
+    } personnes revient à {example.price} €, soit environ {
+      perPerson(example.price)
+    } € par personne, hors taxe de séjour.
+  </p>
+  <p>Pour une location en milieu de semaine, contactez-nous directement.</p>
+  <div>
+    <H3>Options et taxes</H3>
+    <ul class="mt-2 space-y-2">
+      {
+        PRICE_EXTRAS.map((extra) => (
+          <li>
+            <span class="font-bold">{extra.label} :</span> {extra.value}
+          </li>
+        ))
+      }
     </ul>
-  </Card>
-
-  <MidWeekAlert client:load />
+  </div>
   <ArrivalDepartureAlert />
 </div>

@@ -1,0 +1,30 @@
+---
+import Card from "@/components/Card.astro";
+import { H2, Text } from "@/components/Typography";
+import { DISTANCES } from "@/data.constants";
+---
+
+<Card className="mt-4">
+  <H2>Distances depuis le gîte</H2>
+  <Text>En voiture, temps indicatifs hors neige et trafic.</Text>
+  <table class="mt-4 w-full text-left">
+    <thead>
+      <tr class="border-b-2">
+        <th class="py-2 pr-4">Destination</th>
+        <th class="py-2 pr-4 whitespace-nowrap">Distance</th>
+        <th class="py-2 whitespace-nowrap">Trajet</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        DISTANCES.map((place) => (
+          <tr class="border-b last:border-b-0">
+            <td class="py-2 pr-4">{place.name}</td>
+            <td class="py-2 pr-4 whitespace-nowrap">{place.distance}</td>
+            <td class="py-2 whitespace-nowrap">{place.duration}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</Card>

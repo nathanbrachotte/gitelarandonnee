@@ -6,6 +6,7 @@ import { LandingH1, LandingH2 } from "@/components/Typography";
 import { SEO_META } from "@/data.constants";
 import { LINKS } from "@/data.constants";
 import Layout from "@/layouts/Layout.astro";
+import Distances from "@/components/Distances.astro";
 ---
 
 <Layout
@@ -31,7 +32,7 @@ import Layout from "@/layouts/Layout.astro";
             <li>
               <span class="font-bold">Ski de fond:</span> discipline populaire dans
               la région, avec plus de 100 kilomètres de pistes dans des espaces naturels
-              entre les collines et les forêts. La piste multi-activté passe directement
+              entre les collines et les forêts. La piste multi-activité passe directement
               derrière le jardin! Une piste de ski nocturne est ouverte le mardi
               et jeudi à <Link href={LINKS.LA_COUPE.url}>la Coupe</Link>.
             </li>
@@ -64,6 +65,7 @@ import Layout from "@/layouts/Layout.astro";
       </Card>
     </div>
 
+    <Distances />
     <LandingH2 className="text-center mt-8">Découvrir les environs</LandingH2>
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mt-4">
       <Card title="Métabief - Station de ski">
@@ -80,7 +82,7 @@ import Layout from "@/layouts/Layout.astro";
           panorama entouré de forêts de sapins. Il est possible de pratiquer la baignade,
           la pêche, la randonnée, le vélo, les activités nautiques comme la voile
           ou le canoë. Il y a aussi des aires de pique- nique et des terrains de
-          jeux pour les entants. Il est également connu pour être un spot populaire
+          jeux pour les enfants. Il est également connu pour être un spot populaire
           pour les activités nautiques comme le pédalo, le kayak et le stand-up paddle.
         </p>
       </Card>
