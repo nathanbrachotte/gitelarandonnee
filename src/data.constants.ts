@@ -344,17 +344,17 @@ export const LODGING_JSON_LD = {
       {
         "@type": "BedDetails",
         numberOfBeds: 11,
-        typeOfBed: "Lit simple 90 x 200 cm",
+        typeOfBed: "Lit simple 90 x 190 cm",
       },
       {
         "@type": "BedDetails",
         numberOfBeds: 2,
-        typeOfBed: "Lit double 140 cm (BZ 140 x 200, clic-clac 140 x 180)",
+        typeOfBed: "Lit double 140 x 190 cm (BZ, clic-clac)",
       },
       {
         "@type": "BedDetails",
         numberOfBeds: 2,
-        typeOfBed: "Canapé-lit 90 x 200 cm",
+        typeOfBed: "Canapé-lit 90 x 190 cm",
       },
     ],
   },
