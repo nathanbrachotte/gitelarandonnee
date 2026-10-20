@@ -4,7 +4,11 @@ import { SEO_META } from "@/data.constants";
 import Layout from "@/layouts/Layout.astro";
 ---
 
-<Layout title={SEO_META.ERROR.title} description={SEO_META.ERROR.description} noindex>
+<Layout
+  title={SEO_META.ERROR.title}
+  description={SEO_META.ERROR.description}
+  noindex
+>
   <div class="flex flex-col items-center justify-center h-60">
     <LandingH1>404 - Page non trouvée</LandingH1>
     <Text className="mt-2">Désolé! La page que vous cherchez n'existe pas.</Text

@@ -287,8 +287,8 @@ export const SEO_META = {
 const GOOGLE_MAPS_CID = "18418517150381515153";
 
 /**
- * Structured data for the home page. Only facts stated on the site are included:
- * fill in rooms, beds, bathrooms and surface once confirmed.
+ * Structured data for the home page. Room and bed counts mirror the plan
+ * (public/plan.svg and src/pages/plan-du-gite.astro): keep them in sync.
  */
 export const LODGING_JSON_LD = {
   "@type": ["VacationRental", "LodgingBusiness"],
@@ -338,6 +338,25 @@ export const LODGING_JSON_LD = {
       "@type": "QuantitativeValue",
       maxValue: 14,
     },
+    numberOfBedrooms: 4,
+    numberOfBathroomsTotal: 2,
+    bed: [
+      {
+        "@type": "BedDetails",
+        numberOfBeds: 11,
+        typeOfBed: "Lit simple 90 x 200 cm",
+      },
+      {
+        "@type": "BedDetails",
+        numberOfBeds: 2,
+        typeOfBed: "Lit double 140 x 200 cm (BZ, clic-clac)",
+      },
+      {
+        "@type": "BedDetails",
+        numberOfBeds: 2,
+        typeOfBed: "Canapé-lit 90 x 200 cm",
+      },
+    ],
   },
   sameAs: [
     LINKS.FACEBOOK.url,

@@ -7,8 +7,13 @@ export type Props = {
 };
 ---
 
-<div class="relative h-[400px] sm:h-[400px] flex justify-center">
-  <div class="max-w-full absolute" id="widget-fiche-ingenie-dispo"></div>
+<!-- Fixed box: the widget renders after load, so it must not move or resize the layout -->
+<div class="relative h-[400px]">
+  <div
+    class="absolute inset-x-0 top-0 max-w-full invisible"
+    id="widget-fiche-ingenie-dispo"
+  >
+  </div>
 </div>
 
 <script
@@ -40,4 +45,19 @@ export type Props = {
   });
 
   widget_dispo.init();
+
+  // The widget re-lays itself out while loading (months stacked, then a slider):
+  // keep it hidden until its height settles so it causes no layout shift
+  const widgetElement = document.getElementById("widget-fiche-ingenie-dispo");
+  let lastHeight = -1;
+  let checks = 0;
+  const revealWhenStable = setInterval(() => {
+    const height = widgetElement.offsetHeight;
+    checks += 1;
+    if ((height > 0 && height === lastHeight) || checks > 40) {
+      clearInterval(revealWhenStable);
+      widgetElement.classList.remove("invisible");
+    }
+    lastHeight = height;
+  }, 150);
 </script>

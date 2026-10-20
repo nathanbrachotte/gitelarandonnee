@@ -12,9 +12,7 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: (page) =>
-        !["/activites/", "/avis/", "/404/"].some((path) =>
-          page.endsWith(path),
-        ),
+        !["/activites/", "/avis/", "/404/"].some((path) => page.endsWith(path)),
     }),
     react(),
     tailwind({
