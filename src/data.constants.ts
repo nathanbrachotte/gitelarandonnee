@@ -472,8 +472,9 @@ export const GITE_FACTS: {
   {
     label: "Inclus",
     icon: "sparkles",
-    value: "Charges et draps pour 14 personnes",
+    value: "Wifi, charges et draps pour 14 personnes",
   },
+  { label: "Parking", icon: "car", value: "Parking pour 4 voitures" },
   {
     label: "Règles",
     icon: "noSmoking",
@@ -591,6 +592,11 @@ export const FAQ = [
     link: { href: "/disponibilites/", label: "Réserver par e-mail" },
   },
   {
+    question: "Y a-t-il le wifi et un parking ?",
+    answer:
+      "Oui, le wifi est inclus et le gîte dispose d'un parking pour 4 voitures.",
+  },
+  {
     question: "Peut-on skier depuis le gîte ?",
     answer:
       "Oui. Les pistes de ski de fond partent du jardin, la station de ski des Fourgs est à 500 m et la station de Métabief à 10 km.",
@@ -653,6 +659,8 @@ export const LODGING_JSON_LD = {
   petsAllowed: "Sur demande",
   smokingAllowed: false,
   amenityFeature: [
+    "Wifi gratuit",
+    "Parking (4 voitures)",
     "Jardin clôturé",
     "Barbecue",
     "Balançoire",
