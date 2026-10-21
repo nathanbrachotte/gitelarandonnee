@@ -10,7 +10,7 @@ export const IMAGES = {
     url: "/gite/exterieur-ete.webp",
     width: 1130,
     height: 847,
-    alt: "Jardin clôturé du gîte La Randonnée en été, aux Fourgs",
+    alt: "Jardin semi-clos du gîte La Randonnée en été, aux Fourgs",
     caption: "Le jardin en été",
   },
   CHAMBRE_BEIGE: {
@@ -498,7 +498,7 @@ export const GITE_FACTS: {
   {
     label: "Extérieur",
     icon: "trees",
-    value: "Jardin clôturé, barbecue, balançoire, terrain de pétanque",
+    value: "Jardin semi-clos, barbecue, balançoire, terrain de pétanque",
   },
   {
     label: "À proximité",
@@ -651,7 +651,7 @@ export const LODGING_JSON_LD = {
   "@id": `${WEBSITE_ADDRESS}/#gite`,
   name: NAME,
   description:
-    "Gîte pour 13 personnes à 1200 m d'altitude, au cœur du village des Fourgs (Doubs). Jardin clôturé, accès aux pistes de ski de fond depuis le jardin, station de Métabief à 10 minutes.",
+    "Gîte pour 13 personnes à 1200 m d'altitude, au cœur du village des Fourgs (Doubs). Jardin semi-clos, accès aux pistes de ski de fond depuis le jardin, station de Métabief à 10 minutes.",
   url: `${WEBSITE_ADDRESS}/`,
   image: GALLERY.slice(0, 8).map((image) => `${WEBSITE_ADDRESS}${image.url}`),
   telephone: PHONE_NUMBER.replaceAll(" ", ""),
@@ -679,7 +679,7 @@ export const LODGING_JSON_LD = {
   amenityFeature: [
     "Wifi gratuit",
     "Parking (4 voitures)",
-    "Jardin clôturé",
+    "Jardin semi-clos",
     "Barbecue",
     "Balançoire",
     "Terrain de pétanque",
