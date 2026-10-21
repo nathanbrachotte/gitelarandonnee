@@ -1,20 +1,113 @@
 ---
 import { LandingH2 } from "@/components/Typography";
 import { GITE_FACTS } from "@/data.constants";
+import {
+  ArrowRight,
+  Bath,
+  BedDouble,
+  CigaretteOff,
+  Clock,
+  DoorOpen,
+  Euro,
+  MapPin,
+  Mountain,
+  Snowflake,
+  Sparkles,
+  Star,
+  Trees,
+  Users,
+} from "lucide-react";
+
+const ICONS = {
+  users: Users,
+  bed: BedDouble,
+  bath: Bath,
+  door: DoorOpen,
+  star: Star,
+  mountain: Mountain,
+  sparkles: Sparkles,
+  noSmoking: CigaretteOff,
+  clock: Clock,
+  euro: Euro,
+  trees: Trees,
+  pin: MapPin,
+  snow: Snowflake,
+};
+
+// Literal class names so Tailwind keeps them
+const TONES = [
+  {
+    card: "bg-primary/5 border-primary/30",
+    icon: "bg-primary text-primary-foreground",
+    title: "text-primary",
+  },
+  {
+    card: "bg-highlight/10 border-highlight/40",
+    icon: "bg-highlight text-highlight-foreground",
+    title: "text-highlight",
+  },
+  {
+    card: "bg-leaf/10 border-leaf/40",
+    icon: "bg-leaf text-white",
+    title: "text-leaf",
+  },
+  {
+    card: "bg-sky/10 border-sky/40",
+    icon: "bg-sky text-white",
+    title: "text-sky",
+  },
+];
 ---
 
 <section id="en-bref" class="mt-12 flex justify-center px-4">
   <div class="container">
     <LandingH2 className="text-center mb-8">Le gîte en bref</LandingH2>
-    <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {
-        GITE_FACTS.map((fact) => (
-          <div class="bg-card border-2 rounded-lg p-4">
-            <dt class="font-bold text-primary">{fact.label}</dt>
-            <dd class="mt-1">{fact.value}</dd>
-          </div>
-        ))
+        GITE_FACTS.map((fact, index) => {
+          const tone = TONES[index % TONES.length]!;
+          const Icon = ICONS[fact.icon as keyof typeof ICONS] ?? Sparkles;
+          const content = (
+            <>
+              <span
+                class={`flex size-11 shrink-0 items-center justify-center rounded-full transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-110 ${tone.icon}`}
+              >
+                <Icon className="size-5" aria-hidden="true" />
+              </span>
+              <div>
+                <p class={`font-bold ${tone.title}`}>{fact.label}</p>
+                <p class="mt-1">{fact.value}</p>
+                {fact.href && (
+                  <p
+                    class={`mt-2 inline-flex items-center gap-1 text-sm font-semibold underline underline-offset-2 ${tone.title}`}
+                  >
+                    {fact.linkLabel}
+                    <ArrowRight
+                      className="size-4 transition-transform group-hover:translate-x-1"
+                      aria-hidden="true"
+                    />
+                  </p>
+                )}
+              </div>
+            </>
+          );
+          const classes = `group flex items-start gap-4 border-2 rounded-xl p-4 transition duration-300 hover:-translate-y-0.5 hover:shadow-md ${tone.card}`;
+          return (
+            <li class="flex">
+              {fact.href ? (
+                <a
+                  href={fact.href}
+                  class={`${classes} w-full no-underline text-inherit`}
+                >
+                  {content}
+                </a>
+              ) : (
+                <div class={`${classes} w-full`}>{content}</div>
+              )}
+            </li>
+          );
+        })
       }
-    </dl>
+    </ul>
   </div>
 </section>

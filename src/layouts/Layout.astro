@@ -6,6 +6,7 @@ import "../styles/fonts.css";
 import { cn } from "@/lib/utils";
 import { ViewTransitions } from "astro:transitions";
 import { SEO } from "astro-seo";
+import { CalendarCheck } from "lucide-react";
 import { SimpleAnalytics } from "astro-simpleanalytics-plugin";
 import { NAME } from "@/data.constants";
 import { ROUTES } from "@/routes";
@@ -101,7 +102,7 @@ const structuredData = {
   </head>
   <body
     class={cn("min-h-screen flex flex-col items-stretch min-w-full", {
-      "pb-20 lg:pb-0": showBookingCta,
+      "pb-16 lg:pb-0": showBookingCta,
     })}
   >
     <Header />
@@ -119,11 +120,12 @@ const structuredData = {
     <Footer />
     {
       showBookingCta && (
-        <div class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 border-t border-primary p-3 flex justify-center">
+        <div class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 border-t border-highlight p-2 flex justify-center">
           <a
             href={bookingPath}
-            class="w-full max-w-md text-center rounded-md bg-primary text-primary-foreground font-semibold py-3 px-4 shadow"
+            class="w-full max-w-sm inline-flex items-center justify-center gap-2 rounded-md bg-highlight text-highlight-foreground font-semibold text-sm py-2.5 px-4 shadow"
           >
+            <CalendarCheck className="size-4" aria-hidden="true" />
             Réserver / Voir les disponibilités
           </a>
         </div>

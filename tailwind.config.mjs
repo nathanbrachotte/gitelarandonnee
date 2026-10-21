@@ -53,6 +53,13 @@ export default {
           4: "hsl(var(--chart-4))",
           5: "hsl(var(--chart-5))",
         },
+        // Accent colors (see "Accent colors" in globals.css to revert)
+        highlight: {
+          DEFAULT: "hsl(var(--highlight) / <alpha-value>)",
+          foreground: "hsl(var(--highlight-foreground) / <alpha-value>)",
+        },
+        leaf: "hsl(var(--leaf) / <alpha-value>)",
+        sky: "hsl(var(--sky) / <alpha-value>)",
         pastel: {
           blue: "hsl(var(--pastel-blue))",
           green: "hsl(var(--pastel-green))",

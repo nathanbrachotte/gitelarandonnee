@@ -1,0 +1,31 @@
+---
+import ContactFormLarge from "@/components/ContactFormLarge.astro";
+import { H3, Text } from "@/components/Typography";
+import { BadgeEuro, Mail } from "lucide-react";
+---
+
+<!-- Booking by e-mail is free: it is the option we want guests to pick -->
+<div class="rounded-xl border-2 border-highlight bg-highlight/10 p-4 sm:p-6">
+  <div class="flex flex-wrap items-center gap-3">
+    <span
+      class="flex size-11 items-center justify-center rounded-full bg-highlight text-highlight-foreground"
+    >
+      <Mail className="size-5" aria-hidden="true" />
+    </span>
+    <H3 className="text-highlight">Par e-mail, sans frais ajoutés</H3>
+    <span
+      class="inline-flex items-center gap-1 rounded-full bg-highlight px-3 py-1 text-sm font-semibold text-highlight-foreground"
+    >
+      <BadgeEuro className="size-4" aria-hidden="true" />
+      Recommandé
+    </span>
+  </div>
+  <Text className="mt-3 block">
+    Vous réservez directement auprès de nous, au meilleur prix. Indiquez vos
+    dates et le nombre de personnes : nous vous répondons dans les plus brefs
+    délais.
+  </Text>
+  <div class="mt-4">
+    <ContactFormLarge />
+  </div>
+</div>

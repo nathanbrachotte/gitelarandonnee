@@ -29,6 +29,7 @@ import Container from "@/components/Container.astro";
 import GiteFacts from "@/components/GiteFacts.astro";
 import Faq from "@/components/Faq.astro";
 import { ROUTES } from "@/routes";
+import { CalendarCheck } from "lucide-react";
 ---
 
 <Layout
@@ -67,8 +68,9 @@ import { ROUTES } from "@/routes";
       <div class="flex flex-col items-center gap-4 mt-6">
         <a
           href={ROUTES.DISPO_TARIFS.getPath({})}
-          class="inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-base sm:text-lg leading-tight text-center py-3 px-6 sm:px-8 shadow"
+          class="inline-flex items-center justify-center gap-2 rounded-md bg-highlight text-highlight-foreground hover:bg-highlight/90 font-semibold text-base sm:text-lg leading-tight text-center py-3 px-6 sm:px-8 shadow"
         >
+          <CalendarCheck className="size-5" aria-hidden="true" />
           Voir les disponibilités et réserver
         </a>
         <div class="flex flex-row gap-4 justify-center">

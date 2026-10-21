@@ -342,7 +342,7 @@ export const PRICES = {
 export const PRICE_EXTRAS = [
   { label: "Charges et location de draps", value: "compris dans le prix" },
   { label: "Taxe de séjour", value: "1,10 € par nuit et par adulte" },
-  { label: "Forfait ménage", value: "125 €" },
+  { label: "Forfait ménage", value: "125 €, ajouté au contrat" },
 ];
 
 /** Driving distances from 102 Grande Rue (OpenStreetMap routing, October 2026) */
@@ -375,34 +375,77 @@ export const DISTANCES = [
   { name: "Aéroport de Genève", distance: "103 km", duration: "1 h 30" },
 ];
 
-export const GITE_FACTS = [
-  { label: "Capacité", value: `${MAX_PERSONS} personnes, 17 couchages` },
+export const GITE_FACTS: {
+  label: string;
+  value: string;
+  icon: string;
+  href?: string;
+  linkLabel?: string;
+}[] = [
+  {
+    label: "Capacité",
+    icon: "users",
+    value: `${MAX_PERSONS} personnes, 17 couchages`,
+  },
   {
     label: "Chambres",
+    icon: "bed",
     value: "4 chambres et un salon de détente avec lit double",
   },
-  { label: "Salles d'eau", value: "1 salle de douches, 1 salle de bain, 3 WC" },
+  {
+    label: "Salles d'eau",
+    icon: "bath",
+    value: "1 salle de douches, 1 salle de bain, 3 WC",
+  },
   {
     label: "Classement",
+    icon: "star",
     value: "Meublé de tourisme 3 étoiles, Gîtes de France 3 épis",
   },
-  { label: "Altitude", value: "1200 m, au cœur du village des Fourgs" },
-  { label: "Inclus", value: "Charges et draps pour 14 personnes" },
-  { label: "Règles", value: "Non-fumeur, animaux sur demande" },
-  { label: "Arrivée / départ", value: "Semaine : samedi dès 16h, départ 10h" },
+  {
+    label: "Altitude",
+    icon: "mountain",
+    value: "1200 m, au cœur du village des Fourgs",
+  },
+  {
+    label: "Inclus",
+    icon: "sparkles",
+    value: "Charges et draps pour 14 personnes",
+  },
+  {
+    label: "Règles",
+    icon: "noSmoking",
+    value: "Non-fumeur, animaux sur demande",
+  },
+  {
+    label: "Arrivée / départ",
+    icon: "clock",
+    href: "/disponibilites/#horaires",
+    linkLabel: "Horaires week-end",
+    value: "Semaine : samedi dès 16h, départ 10h",
+  },
   {
     label: "Tarifs",
+    icon: "euro",
+    href: "/disponibilites/#tarifs",
+    linkLabel: "Voir tous les tarifs",
     value: `Semaine dès ${PRICES.WEEK_FROM} €, week-end dès ${PRICES.WEEKEND_FROM} €`,
   },
   {
     label: "Extérieur",
+    icon: "trees",
     value: "Jardin clôturé, barbecue, balançoire, terrain de pétanque",
   },
   {
     label: "À proximité",
+    icon: "pin",
     value: "Station des Fourgs à 500 m, Métabief à 10 km, frontière suisse",
   },
-  { label: "Ski de fond", value: "Pistes accessibles depuis le jardin" },
+  {
+    label: "Ski de fond",
+    icon: "snow",
+    value: "Pistes accessibles depuis le jardin",
+  },
 ];
 
 export const FAQ = [
@@ -429,12 +472,13 @@ export const FAQ = [
   {
     question: "Le ménage est-il compris ?",
     answer:
-      "Vous pouvez rendre le gîte propre ou réserver le forfait ménage à 125 €. Une taxe de séjour de 1,10 € par nuit et par adulte s'ajoute au prix.",
+      "Le forfait ménage de fin de séjour est de 125 € et sera ajouté au contrat. Merci de rendre le gîte rangé à votre départ. Une taxe de séjour de 1,10 € par nuit et par adulte s'ajoute au prix.",
   },
   {
     question: "Comment réserver ?",
     answer:
       "Par e-mail, sans frais ajoutés, ou en ligne via l'office de tourisme du Pays du Haut-Doubs (validation automatique, avec frais de gestion).",
+    link: { href: "/disponibilites/", label: "Réserver par e-mail" },
   },
   {
     question: "Peut-on skier depuis le gîte ?",
@@ -455,6 +499,10 @@ export const FAQ = [
     question: "Nous sommes plus de 14, avez-vous une autre solution ?",
     answer:
       "Le Gîte Là-Haut, à la même adresse, accueille 6 personnes de plus. Contactez-nous pour réserver les deux.",
+    link: {
+      href: "https://gitelahaut.com/",
+      label: "Découvrir le Gîte Là-Haut",
+    },
   },
 ];
 

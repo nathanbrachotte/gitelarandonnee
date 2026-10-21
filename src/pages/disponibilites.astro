@@ -3,11 +3,10 @@ import Card from "@/components/Card.astro";
 import { H2, H3, LandingH1, Text } from "@/components/Typography";
 import Layout from "@/layouts/Layout.astro";
 import CalendarDirect from "@/components/CalendarDirect.astro";
-import ContactFormLarge from "@/components/ContactFormLarge.astro";
+import EmailBooking from "@/components/EmailBooking.astro";
 import PricesSection from "@/components/PricesSection.astro";
 import { SEO_META, LINKS } from "@/data.constants";
 import Container from "@/components/Container.astro";
-import { PinkFlower } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/components/Link";
 ---
@@ -26,19 +25,14 @@ import { Link } from "@/components/Link";
     </Card>
     <Card className="mt-3">
       <H2>Réserver</H2>
-      <div class="flex flex-col">
-        <H3>Via l'office du tourisme du Pays du Haut-Doubs</H3>
+      <EmailBooking />
+      <div class="mt-8 flex flex-col">
+        <H3>Ou via l'office du tourisme du Pays du Haut-Doubs</H3>
         <Text>Validation automatique mais inclut des frais de gestion.</Text>
         <Link href={LINKS.OFFICE_TOURISME_GITE.url} className="mt-3">
-          <Button>Réserver via l'office du tourisme</Button>
+          <Button variant="outline">Réserver via l'office du tourisme</Button>
         </Link>
       </div>
-
-      <H3 className="flex items-center justify-start gap-2 mt-10 mb-2">
-        Par e-mail (sans frais ajoutés)
-        <PinkFlower className="h-7 w-7" />
-      </H3>
-      <ContactFormLarge />
     </Card>
     <Card className="mt-3">
       <PricesSection />
