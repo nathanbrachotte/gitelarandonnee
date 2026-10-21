@@ -25,10 +25,10 @@
     --ring: 300 36% 34.3%;
     --radius: 0.5rem;
 
-    /* Accent colors: warm orange for calls to action, green and blue for
+    /* Accent colors: wine red for calls to action, green and blue for
        variety. To go back to a single color, set all three to var(--primary)
        values and --highlight-foreground to --primary-foreground. */
-    --highlight: 14 65% 40%;
+    --highlight: 345 55% 33%;
     --highlight-foreground: 0 0% 100%;
     --leaf: 145 45% 32%;
     --sky: 205 65% 40%;
