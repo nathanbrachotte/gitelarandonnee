@@ -342,9 +342,9 @@ export const SEO_META = {
       "Informations légales concernant le Gîte La Randonnée, hébergement de vacances pour 13 personnes aux Fourgs, dans le Doubs.",
   },
   PLAN_DU_GITE: {
-    title: "Plan du Gîte La Randonnée | 4 chambres, 13 personnes aux Fourgs",
+    title: "Plan du Gîte La Randonnée | 5 chambres, 13 personnes aux Fourgs",
     description:
-      "Plan du Gîte La Randonnée aux Fourgs : 4 chambres, un salon de détente, 17 couchages, une salle de douches, une salle de bain et 3 WC.",
+      "Plan du Gîte La Randonnée aux Fourgs : 5 chambres, 17 couchages, une salle d'eau avec 4 douches, une salle de bain et 3 WC.",
   },
   AVIS: {
     title: "Votre avis nous intéresse | Gîte La Randonnée",
@@ -452,12 +452,12 @@ export const GITE_FACTS: {
   {
     label: "Chambres",
     icon: "bed",
-    value: "4 chambres et un salon de détente avec lit double",
+    value: "5 chambres, dont 2 avec lit double",
   },
   {
     label: "Salles d'eau",
     icon: "bath",
-    value: "1 salle de douches, 1 salle de bain, 3 WC",
+    value: "1 salle d'eau avec 4 douches, 1 salle de bain, 3 WC",
   },
   {
     label: "Classement",
@@ -478,7 +478,7 @@ export const GITE_FACTS: {
   {
     label: "Règles",
     icon: "noSmoking",
-    value: "Non-fumeur, animaux sur demande",
+    value: "Non-fumeur, animaux acceptés",
   },
   {
     label: "Arrivée / départ",
@@ -514,7 +514,7 @@ export const GITE_FACTS: {
 /** Room-by-room description shown on /plan-du-gite/ (from public/plan.svg) */
 export const ROOM_DETAILS = {
   intro:
-    "Le gîte La Randonnée accueille jusqu'à 13 personnes, avec 4 chambres, un salon de détente et 17 couchages au total.",
+    "Le gîte La Randonnée accueille jusqu'à 13 personnes, avec 5 chambres et 17 couchages au total.",
   sections: [
     {
       title: "Chambres et couchages",
@@ -548,8 +548,8 @@ export const ROOM_DETAILS = {
       title: "Salles d'eau et rangements",
       items: [
         {
-          name: "Salle de douches",
-          detail: "plusieurs douches et deux lavabos",
+          name: "Salle d'eau",
+          detail: "4 douches et deux lavabos",
         },
         { name: "Petite salle de bain", detail: "baignoire et lavabo" },
         { name: "3 WC séparés" },
@@ -563,7 +563,7 @@ export const FAQ = [
   {
     question: "Combien de personnes peut accueillir le gîte ?",
     answer:
-      "Jusqu'à 13 personnes. Le gîte compte 4 chambres, un salon de détente avec un lit double et 2 canapés-lits dans le salon, soit 17 couchages.",
+      "Jusqu'à 13 personnes. Le gîte compte 5 chambres, dont 2 avec lit double, et 2 canapés-lits dans le salon, soit 17 couchages.",
   },
   {
     question: "Les draps sont-ils fournis ?",
@@ -573,7 +573,7 @@ export const FAQ = [
   {
     question: "Les animaux sont-ils acceptés ?",
     answer:
-      "Sur demande, et en général oui, si l'animal est propre et ne cause ni dégâts ni bruit.",
+      "Oui, les animaux sont acceptés, à condition qu'ils soient propres et ne causent ni dégâts ni bruit.",
   },
   {
     question: "Quels sont les horaires d'arrivée et de départ ?",
@@ -656,7 +656,7 @@ export const LODGING_JSON_LD = {
   starRating: { "@type": "Rating", ratingValue: 3 },
   checkinTime: "16:00",
   checkoutTime: "10:00",
-  petsAllowed: "Sur demande",
+  petsAllowed: true,
   smokingAllowed: false,
   amenityFeature: [
     "Wifi gratuit",
@@ -679,7 +679,7 @@ export const LODGING_JSON_LD = {
       "@type": "QuantitativeValue",
       maxValue: MAX_PERSONS,
     },
-    numberOfBedrooms: 4,
+    numberOfBedrooms: 5,
     numberOfBathroomsTotal: 2,
     bed: [
       {
