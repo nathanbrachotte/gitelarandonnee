@@ -23,7 +23,7 @@ export function GiteLogoWrapper({}: PropsWithChildren) {
           target="_self"
           className="no-underline"
         >
-          <span className="block pb-2 text-2xl lg:text-3xl font-semibold tracking-tight text-primary whitespace-nowrap font-logo -mb-3">
+          <span className="block pb-2 text-2xl xl:text-3xl font-semibold tracking-tight text-primary whitespace-nowrap font-logo -mb-3">
             {NAME}
           </span>
         </Link>
