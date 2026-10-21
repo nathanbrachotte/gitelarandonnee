@@ -1,15 +1,7 @@
 ---
 import { H2, H3 } from "@/components/Typography";
 import { ArrivalDepartureAlert } from "@/components/Alerts";
-import {
-  MAX_PERSONS,
-  PRICE_EXAMPLE,
-  PRICE_EXTRAS,
-  PRICE_GROUPS,
-} from "@/data.constants";
-
-const perPerson = (price: number) => Math.round(price / MAX_PERSONS);
-const example = PRICE_EXAMPLE;
+import { PRICE_EXTRAS, PRICE_GROUPS } from "@/data.constants";
 ---
 
 <div class="flex flex-col gap-4">
@@ -19,30 +11,21 @@ const example = PRICE_EXAMPLE;
       <thead>
         <tr class="border-b-2">
           <th class="py-2 pr-4">Période</th>
-          <th class="py-2 pr-4">Prix du gîte</th>
-          <th class="py-2">
-            Par personne
-            <span class="block text-sm font-normal">
-              base {MAX_PERSONS} pers.
-            </span>
-          </th>
+          <th class="py-2">Prix du gîte</th>
         </tr>
       </thead>
       {
         PRICE_GROUPS.map((group) => (
           <tbody>
             <tr>
-              <th colspan="3" class="pt-6 pb-2 text-primary text-lg">
+              <th colspan="2" class="pt-6 pb-2 text-primary text-lg">
                 {group.title}
               </th>
             </tr>
             {group.rows.map((row) => (
               <tr class="border-b">
                 <td class="py-2 pr-4">{row.period}</td>
-                <td class="py-2 pr-4 font-bold whitespace-nowrap">
-                  {row.price} €
-                </td>
-                <td class="py-2 whitespace-nowrap">{perPerson(row.price)} €</td>
+                <td class="py-2 font-bold whitespace-nowrap">{row.price} €</td>
               </tr>
             ))}
           </tbody>
@@ -50,13 +33,6 @@ const example = PRICE_EXAMPLE;
       }
     </table>
   </div>
-  <p>
-    Exemple : une semaine pendant les {example.period.toLowerCase()} à {
-      MAX_PERSONS
-    } personnes revient à {example.price} €, soit environ {
-      perPerson(example.price)
-    } € par personne, hors taxe de séjour.
-  </p>
   <p>Pour une location en milieu de semaine, contactez-nous directement.</p>
   <div>
     <H3>Options et taxes</H3>

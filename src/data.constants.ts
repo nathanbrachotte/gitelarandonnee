@@ -325,9 +325,6 @@ export const PRICE_GROUPS = [
   { title: "Week-end", rows: WEEKEND_ROWS },
 ];
 
-/** Worked example under the price table */
-export const PRICE_EXAMPLE = SUMMER_WEEK;
-
 const WEEK_PRICES = WEEK_GROUPS.flatMap((group) =>
   group.rows.map((row) => row.price),
 );
