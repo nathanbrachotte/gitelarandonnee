@@ -312,9 +312,9 @@ export const LINKS = {
 export const SEO_META = {
   INDEX: {
     title:
-      "Gîte La Randonnée | Gîte de groupe 14 personnes aux Fourgs, près de Métabief",
+      "Gîte La Randonnée | Gîte de groupe 13 personnes aux Fourgs, près de Métabief",
     description:
-      "Gîte de groupe 3 étoiles pour 14 personnes aux Fourgs (Doubs), près de Métabief. Ski de fond depuis le jardin, randonnée en été. Réservation directe sans frais.",
+      "Gîte de groupe 3 étoiles pour 13 personnes aux Fourgs (Doubs), près de Métabief. Ski de fond depuis le jardin, randonnée en été. Réservation directe sans frais.",
   },
   ERROR: {
     title: "Page non trouvée | Gîte La Randonnée aux Fourgs",
@@ -329,20 +329,20 @@ export const SEO_META = {
   CONDITION_GENERALE_LOCATION: {
     title: "Conditions générales de location | Gîte La Randonnée aux Fourgs",
     description:
-      "Consultez les conditions générales de location du Gîte La Randonnée, hébergement pour 14 personnes aux Fourgs, dans le Doubs.",
+      "Consultez les conditions générales de location du Gîte La Randonnée, hébergement pour 13 personnes aux Fourgs, dans le Doubs.",
   },
   DISPONIBILITES_TARIFS: {
     title: "Réserver/Disponibilités | Gîte La Randonnée aux Fourgs, Doubs",
     description:
-      "Tarifs et disponibilités du Gîte La Randonnée aux Fourgs (14 personnes). Semaine dès 750 €, week-end dès 560 €. Réservation directe par e-mail, sans frais.",
+      "Tarifs et disponibilités du Gîte La Randonnée aux Fourgs (13 personnes). Semaine dès 750 €, week-end dès 560 €. Réservation directe par e-mail, sans frais.",
   },
   MENTIONS_LEGALES: {
     title: "Mentions légales | Gîte La Randonnée aux Fourgs, Doubs",
     description:
-      "Informations légales concernant le Gîte La Randonnée, hébergement de vacances pour 14 personnes aux Fourgs, dans le Doubs.",
+      "Informations légales concernant le Gîte La Randonnée, hébergement de vacances pour 13 personnes aux Fourgs, dans le Doubs.",
   },
   PLAN_DU_GITE: {
-    title: "Plan du Gîte La Randonnée | 4 chambres, 14 personnes aux Fourgs",
+    title: "Plan du Gîte La Randonnée | 4 chambres, 13 personnes aux Fourgs",
     description:
       "Plan du Gîte La Randonnée aux Fourgs : 4 chambres, un salon de détente, 17 couchages, une salle de douches, une salle de bain et 3 WC.",
   },
@@ -353,7 +353,7 @@ export const SEO_META = {
   },
 };
 
-export const MAX_PERSONS = 14;
+export const MAX_PERSONS = 13;
 
 const SUMMER_WEEK = { period: "Vacances d'été", price: 1000 };
 
@@ -472,7 +472,7 @@ export const GITE_FACTS: {
   {
     label: "Inclus",
     icon: "sparkles",
-    value: "Wifi, charges et draps pour 14 personnes",
+    value: "Wifi, charges et draps pour 13 personnes",
   },
   { label: "Parking", icon: "car", value: "Parking pour 4 voitures" },
   {
@@ -514,7 +514,7 @@ export const GITE_FACTS: {
 /** Room-by-room description shown on /plan-du-gite/ (from public/plan.svg) */
 export const ROOM_DETAILS = {
   intro:
-    "Le gîte La Randonnée accueille jusqu'à 14 personnes, avec 4 chambres, un salon de détente et 17 couchages au total.",
+    "Le gîte La Randonnée accueille jusqu'à 13 personnes, avec 4 chambres, un salon de détente et 17 couchages au total.",
   sections: [
     {
       title: "Chambres et couchages",
@@ -563,12 +563,12 @@ export const FAQ = [
   {
     question: "Combien de personnes peut accueillir le gîte ?",
     answer:
-      "Jusqu'à 14 personnes. Le gîte compte 4 chambres, un salon de détente avec un lit double et 2 canapés-lits dans le salon, soit 17 couchages.",
+      "Jusqu'à 13 personnes. Le gîte compte 4 chambres, un salon de détente avec un lit double et 2 canapés-lits dans le salon, soit 17 couchages.",
   },
   {
     question: "Les draps sont-ils fournis ?",
     answer:
-      "Oui, la location des draps est comprise pour 14 personnes. Un kit literie supplémentaire coûte 8 € par lit de 90 et 16 € par lit de 140. Les sacs de couchage sont interdits.",
+      "Oui, la location des draps est comprise pour 13 personnes. Un kit literie supplémentaire coûte 8 € par lit de 90 et 16 € par lit de 140. Les sacs de couchage sont interdits.",
   },
   {
     question: "Les animaux sont-ils acceptés ?",
@@ -612,7 +612,7 @@ export const FAQ = [
       "Non, le gîte est non-fumeur. Un espace fumeur est prévu à l'extérieur.",
   },
   {
-    question: "Nous sommes plus de 14, avez-vous une autre solution ?",
+    question: "Nous sommes plus de 13, avez-vous une autre solution ?",
     answer:
       "Le Gîte Là-Haut, à la même adresse, accueille 6 personnes de plus. Contactez-nous pour réserver les deux.",
     link: {
@@ -633,7 +633,7 @@ export const LODGING_JSON_LD = {
   "@id": `${WEBSITE_ADDRESS}/#gite`,
   name: NAME,
   description:
-    "Gîte pour 14 personnes à 1200 m d'altitude, au cœur du village des Fourgs (Doubs). Jardin clôturé, accès aux pistes de ski de fond depuis le jardin, station de Métabief à 10 minutes.",
+    "Gîte pour 13 personnes à 1200 m d'altitude, au cœur du village des Fourgs (Doubs). Jardin clôturé, accès aux pistes de ski de fond depuis le jardin, station de Métabief à 10 minutes.",
   url: `${WEBSITE_ADDRESS}/`,
   image: GALLERY.slice(0, 8).map((image) => `${WEBSITE_ADDRESS}${image.url}`),
   telephone: PHONE_NUMBER.replaceAll(" ", ""),
@@ -677,7 +677,7 @@ export const LODGING_JSON_LD = {
     additionalType: "EntirePlace",
     occupancy: {
       "@type": "QuantitativeValue",
-      maxValue: 14,
+      maxValue: MAX_PERSONS,
     },
     numberOfBedrooms: 4,
     numberOfBathroomsTotal: 2,
