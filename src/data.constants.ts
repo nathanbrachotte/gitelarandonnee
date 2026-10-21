@@ -548,7 +548,7 @@ export const ROOM_DETAILS = {
           name: "Salon de détente",
           detail: "1 BZ 140 x 190 cm, avec WC et lavabo attenants",
         },
-        { name: "Salon", detail: "2 canapés-lits 90 x 190 cm" },
+        { name: "Salon", detail: "2 lits 90 x 190 cm" },
       ],
     },
     {
@@ -581,7 +581,7 @@ export const FAQ = [
   {
     question: "Combien de personnes peut accueillir le gîte ?",
     answer:
-      "Jusqu'à 13 personnes. Le gîte compte 5 chambres, dont 2 avec lit double, et 2 canapés-lits dans le salon, soit 17 couchages.",
+      "Jusqu'à 13 personnes. Le gîte compte 5 chambres, dont 2 avec lit double, et 2 lits dans le salon, soit 17 couchages.",
   },
   {
     question: "Les draps sont-ils fournis ?",
@@ -702,18 +702,13 @@ export const LODGING_JSON_LD = {
     bed: [
       {
         "@type": "BedDetails",
-        numberOfBeds: 11,
+        numberOfBeds: 13,
         typeOfBed: "Lit simple 90 x 190 cm",
       },
       {
         "@type": "BedDetails",
         numberOfBeds: 2,
         typeOfBed: "Lit double 140 x 190 cm (BZ, clic-clac)",
-      },
-      {
-        "@type": "BedDetails",
-        numberOfBeds: 2,
-        typeOfBed: "Canapé-lit 90 x 190 cm",
       },
     ],
   },
