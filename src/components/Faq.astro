@@ -22,11 +22,11 @@ const faqJsonLd = {
     <div class="space-y-3">
       {
         FAQ.map((item) => (
-          <details class="faq-item group bg-card border-2 rounded-lg transition-colors open:border-highlight">
+          <details class="faq-item group bg-card border-2 rounded-lg transition-colors duration-300 data-[expanded=true]:border-highlight">
             <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-4 font-semibold text-primary [&::-webkit-details-marker]:hidden">
               <h3>{item.question}</h3>
               <span
-                class="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition duration-300 ease-out group-open:rotate-[135deg] group-open:bg-highlight group-open:text-highlight-foreground"
+                class="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition duration-300 ease-out group-data-[expanded=true]:rotate-[135deg] group-data-[expanded=true]:bg-highlight group-data-[expanded=true]:text-highlight-foreground"
                 aria-hidden="true"
               >
                 <svg
@@ -41,17 +41,19 @@ const faqJsonLd = {
                 </svg>
               </span>
             </summary>
-            <div class="px-4 pb-4">
-              <p>{item.answer}</p>
-              {"link" in item && item.link && (
-                <a
-                  href={item.link.href}
-                  class="mt-3 inline-flex items-center gap-1 font-semibold text-highlight underline underline-offset-2"
-                >
-                  {item.link.label}
-                  <ArrowRight className="size-4" aria-hidden="true" />
-                </a>
-              )}
+            <div class="faq-answer overflow-hidden">
+              <div class="px-4 pb-4">
+                <p>{item.answer}</p>
+                {"link" in item && item.link && (
+                  <a
+                    href={item.link.href}
+                    class="mt-3 inline-flex items-center gap-1 font-semibold text-highlight underline underline-offset-2"
+                  >
+                    {item.link.label}
+                    <ArrowRight className="size-4" aria-hidden="true" />
+                  </a>
+                )}
+              </div>
             </div>
           </details>
         ))
@@ -60,3 +62,66 @@ const faqJsonLd = {
   </div>
   <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
 </section>
+
+<script>
+  // Animate open/close in every browser (CSS-only height animation is
+  // Chrome-only). The browser's find still opens <details> natively.
+  const DURATION = 300;
+  const reducedMotion = () =>
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const setupFaq = () => {
+    document
+      .querySelectorAll<HTMLDetailsElement>(".faq-item:not([data-ready])")
+      .forEach((details) => {
+        details.dataset.ready = "true";
+        details.dataset.expanded = String(details.open);
+        const summary = details.querySelector("summary");
+        const answer = details.querySelector<HTMLElement>(".faq-answer");
+        if (summary == null || answer == null) return;
+
+        // Opened or closed without a click (e.g. find in page)
+        details.addEventListener("toggle", () => {
+          if (details.dataset.animating == null) {
+            details.dataset.expanded = String(details.open);
+          }
+        });
+
+        summary.addEventListener("click", (event) => {
+          if (reducedMotion()) {
+            details.dataset.expanded = String(!details.open);
+            return;
+          }
+          event.preventDefault();
+          if (details.dataset.animating != null) return;
+          details.dataset.animating = "true";
+
+          const opening = !details.open;
+          details.dataset.expanded = String(opening);
+          if (opening) details.open = true;
+          const height = `${answer.scrollHeight}px`;
+          const animation = answer.animate(
+            opening
+              ? [
+                  { height: "0px", opacity: 0 },
+                  { height, opacity: 1 },
+                ]
+              : [
+                  { height, opacity: 1 },
+                  { height: "0px", opacity: 0 },
+                ],
+            { duration: DURATION, easing: "ease-out", fill: "forwards" },
+          );
+          animation.onfinish = () => {
+            if (!opening) details.open = false;
+            // Drop the fill so the answer goes back to its natural height
+            animation.cancel();
+            delete details.dataset.animating;
+          };
+        });
+      });
+  };
+
+  setupFaq();
+  document.addEventListener("astro:page-load", setupFaq);
+</script>

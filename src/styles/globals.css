@@ -69,23 +69,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-/* FAQ accordion: animated open/close where supported (falls back to instant) */
-:root {
-  interpolate-size: allow-keywords;
-}
-.faq-item::details-content {
-  block-size: 0;
-  overflow: hidden;
-  transition:
-    block-size 300ms ease,
-    content-visibility 300ms allow-discrete;
-}
-.faq-item[open]::details-content {
-  block-size: auto;
-}
-@media (prefers-reduced-motion: reduce) {
-  .faq-item::details-content {
-    transition: none;
-  }
-}
