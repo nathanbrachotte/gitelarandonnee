@@ -28,7 +28,7 @@
     /* Accent colors: warm orange for calls to action, green and blue for
        variety. To go back to a single color, set all three to var(--primary)
        values and --highlight-foreground to --primary-foreground. */
-    --highlight: 20 80% 44%;
+    --highlight: 14 65% 40%;
     --highlight-foreground: 0 0% 100%;
     --leaf: 145 45% 32%;
     --sky: 205 65% 40%;
