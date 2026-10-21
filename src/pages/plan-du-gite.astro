@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { H2, H3, LandingH1, Text } from "@/components/Typography";
+import { LandingH1 } from "@/components/Typography";
+import RoomDetails from "@/components/RoomDetails.astro";
 import { Image } from "astro:assets";
 import { ZoomedImage } from "@/components/ZoomedImage";
 import { SEO_META } from "@/data.constants";
@@ -9,26 +10,12 @@ import ContactForm from "@/components/ContactForm.astro";
 import Card from "@/components/Card.astro";
 
 const LABEL = "Plan du Gîte";
-
-const ROOMS = [
-  { name: "Chambre Beige", beds: "4 couchages en 90 x 190 cm" },
-  { name: "Chambre Orange", beds: "4 couchages en 90 x 190 cm" },
-  { name: "Chambre Violette", beds: "3 couchages en 90 x 190 cm" },
-  {
-    name: "Chambre Bleue",
-    beds: "1 clic-clac 140 x 190 cm et un petit coin cuisine",
-  },
-  {
-    name: "Salon de détente",
-    beds: "1 BZ 140 x 190 cm, avec WC et lavabo attenants",
-  },
-  { name: "Salon", beds: "2 canapés-lits 90 x 190 cm" },
-];
 ---
 
 <Layout
   title={SEO_META.PLAN_DU_GITE.title}
   description={SEO_META.PLAN_DU_GITE.description}
+  breadcrumb="Plan du Gîte"
 >
   <Container>
     <LandingH1 className="text-center">{LABEL}</LandingH1>
@@ -49,47 +36,7 @@ const ROOMS = [
         </div>
       </div>
     </Card>
-    <Card className="mt-8">
-      <H2>Le gîte en détail</H2>
-      <Text>
-        Le gîte La Randonnée accueille jusqu'à 14 personnes, avec 4 chambres, un
-        salon de détente et 17 couchages au total.
-      </Text>
-      <H3 className="mt-6">Chambres et couchages</H3>
-      <ul class="mt-2 space-y-2 list-disc pl-6">
-        {
-          ROOMS.map((room) => (
-            <li>
-              <span class="font-bold">{room.name} :</span> {room.beds}
-            </li>
-          ))
-        }
-      </ul>
-      <H3 className="mt-6">Pièces de vie</H3>
-      <ul class="mt-2 space-y-2 list-disc pl-6">
-        <li>
-          <span class="font-bold">Cuisine et séjour :</span> cuisine équipée ouverte
-          sur la salle à manger, avec une grande table pour tout le groupe
-        </li>
-        <li>
-          <span class="font-bold">Salon :</span> espace canapés attenant au séjour
-        </li>
-      </ul>
-      <H3 className="mt-6">Salles d'eau et rangements</H3>
-      <ul class="mt-2 space-y-2 list-disc pl-6">
-        <li>
-          <span class="font-bold">Salle de douches :</span> plusieurs douches et
-          deux lavabos
-        </li>
-        <li>
-          <span class="font-bold">Petite salle de bain :</span> baignoire et lavabo
-        </li>
-        <li><span class="font-bold">3 WC</span> séparés</li>
-        <li>
-          <span class="font-bold">Séchoir, lingerie et placards</span>
-        </li>
-      </ul>
-    </Card>
+    <RoomDetails />
   </Container>
   <Container>
     <ContactForm />

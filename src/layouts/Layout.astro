@@ -19,6 +19,8 @@ interface Props {
   ignoreViewTransitions?: boolean;
   noindex?: boolean;
   jsonLd?: Record<string, unknown>[];
+  /** Page name used in the BreadcrumbList structured data */
+  breadcrumb?: string;
 }
 const {
   title,
@@ -28,6 +30,7 @@ const {
   className = {},
   noindex = false,
   jsonLd = [],
+  breadcrumb,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
@@ -45,6 +48,27 @@ const structuredData = {
       inLanguage: "fr-FR",
     },
     ...jsonLd,
+    ...(breadcrumb
+      ? [
+          {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Accueil",
+                item: Astro.site?.href,
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: breadcrumb,
+                item: canonical,
+              },
+            ],
+          },
+        ]
+      : []),
   ],
 };
 ---
@@ -52,7 +76,6 @@ const structuredData = {
 <!doctype html>
 <html lang="fr">
   <head>
-    <!-- Is this needed? -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -90,7 +113,6 @@ const structuredData = {
         image: ogImage,
       }}
       extend={{
-        link: [{ rel: "icon", href: "/favicon.ico" }],
         meta: [{ name: "author", content: "Nathan Brachotte" }],
       }}
     />

@@ -8,136 +8,196 @@ export const EMAIL = "gite.larandonnee25+larando@gmail.com";
 export const IMAGES = {
   EXTERIEUR_ETE: {
     url: "/gite/exterieur-ete.webp",
+    width: 1130,
+    height: 847,
     alt: "Jardin clôturé du gîte La Randonnée en été, aux Fourgs",
     caption: "Le jardin en été",
   },
   CHAMBRE_BEIGE: {
     url: "/gite/chambre-beige.webp",
+    width: 807,
+    height: 577,
     alt: "Chambre beige avec quatre couchages",
     caption: "Chambre beige",
   },
   CHAMBRE_ORANGE: {
     url: "/gite/chambre-orange.webp",
+    width: 779,
+    height: 519,
     alt: "Chambre orange avec quatre couchages",
     caption: "Chambre orange",
   },
   CHAMBRE_VIOLETTE: {
     url: "/gite/chambre-violette.webp",
+    width: 798,
+    height: 553,
     alt: "Chambre violette avec trois couchages",
     caption: "Chambre violette",
   },
   EXTERIEUR_APERO: {
     url: "/gite/exterieur-apero.webp",
+    width: 1120,
+    height: 746,
     alt: "Apéritif à l'extérieur du gîte",
     // caption: "Extérieur apero",
   },
   EXTERIEUR_ARBRES: {
     url: "/gite/exterieur-arbres.webp",
+    width: 800,
+    height: 450,
     alt: "Arbres autour du gîte",
     // caption: "Extérieur arbres",
   },
   EXTERIEUR_LOIN: {
     url: "/gite/exterieur-loin.webp",
+    width: 1130,
+    height: 753,
     alt: "Vue extérieure du gîte",
     // caption: "Extérieur loin",
   },
   EXTERIEUR_NEIGE: {
     url: "/gite/exterieur-neige.webp",
+    width: 675,
+    height: 1200,
     alt: "Jardin du gîte sous la neige",
     caption: "Le jardin enneigé",
   },
   LA_RANDONNEE_EXTERIEUR_NEIGE: {
     url: "/gite/la-randonnee-exterieur-neige.webp",
+    width: 1200,
+    height: 675,
     alt: "Façade du gîte La Randonnée en hiver",
     caption: "Le gîte La Randonnée en hiver",
   },
   EXTERIEUR_PARKING: {
     url: "/gite/exterieur-parking.webp",
+    width: 889,
+    height: 592,
     alt: "Façade et parking du gîte La Randonnée",
     caption: "Extérieur",
   },
   EXTERIEUR_TABLE_ENTREE: {
     url: "/gite/exterieur-table-entree.webp",
+    width: 1130,
+    height: 753,
     alt: "Table extérieure devant l'entrée du gîte",
     // caption: "Extérieur table d'entrée",
   },
   FONDUE: {
     url: "/gite/fondue.webp",
+    width: 1200,
+    height: 675,
     alt: "Fondue au gîte",
     caption: "Fondue",
   },
   INTERIEUR_ENTREE: {
     url: "/gite/interieur-entree.webp",
+    width: 899,
+    height: 1200,
     alt: "Entrée du gîte",
     caption: "Entrée",
   },
   PETANQUE: {
     url: "/gite/petanque.webp",
+    width: 1200,
+    height: 800,
     alt: "Terrain de pétanque dans le jardin du gîte",
     caption: "Terrain de pétanque",
   },
   PETIT_SALON_COMPLET: {
     url: "/gite/petit-salon-complet.webp",
+    width: 1130,
+    height: 636,
     alt: "Salle de détente avec lit double",
     caption: "Salon détente",
   },
   PETIT_SALON: {
     url: "/gite/petit-salon.webp",
+    width: 1200,
+    height: 800,
     alt: "Petit salon du gîte",
     caption: "Petit salon",
   },
   PETITE_SALLE_DE_BAIN: {
     url: "/gite/petite-salle-de-bain.webp",
+    width: 1130,
+    height: 847,
     alt: "Petite salle de bain avec baignoire",
     caption: "Petite salle de bain",
   },
-  SALON: { url: "/gite/salon.webp", alt: "Salon du gîte", caption: "Salon" },
+  SALON: {
+    url: "/gite/salon.webp",
+    width: 1200,
+    height: 800,
+    alt: "Salon du gîte",
+    caption: "Salon",
+  },
   VACHES: {
     url: "/gite/vaches.webp",
+    width: 1130,
+    height: 635,
     alt: "Vaches dans les prés autour des Fourgs",
     // caption: "Vaches"
   },
   EXTERIEUR_SKI_DE_FOND: {
     url: "/gite/exterieur-ski-de-fond.webp",
+    width: 900,
+    height: 1200,
     alt: "Piste de ski de fond au départ du jardin",
     caption: "Piste de ski de fond",
   },
   INTERIEUR_CUISINE_2: {
     url: "/gite/interieur-cuisine-2.webp",
+    width: 1200,
+    height: 900,
     alt: "Cuisine équipée du gîte",
     caption: "Cuisine",
   },
   INTERIEUR_CUISINE_BAR: {
     url: "/gite/interieur-cuisine-bar.webp",
+    width: 1200,
+    height: 900,
     alt: "Bar de la cuisine ouverte sur la salle de vie",
     caption: "Salle de vie",
   },
   INTERIEUR_CUISINE_TOUT: {
     url: "/gite/interieur-cuisine-tout.webp",
+    width: 1200,
+    height: 900,
     alt: "Cuisine et salon du gîte",
     caption: "Cuisine et salon",
   },
   INTERIEUR_FONDUE: {
     url: "/gite/interieur-fondue.webp",
+    width: 1200,
+    height: 900,
     alt: "Fondue entre amis",
     // caption: "Grande table",
   },
   INTERIEUR_SALON_ENTIER: {
     url: "/gite/interieur-salon-entier.webp",
+    width: 1600,
+    height: 1200,
     alt: "Salle de vie du gîte avec sa grande table",
     caption: "Salle de vie",
   },
   LES_FOURGS_LES_RANGS: {
     url: "/les-fourgs-les-rangs.webp",
+    width: 1200,
+    height: 900,
     alt: "Les Rangs à 1km du Gîte",
     caption: "Les Rangs à 1km du Gîte",
   },
   METABIEF_FONDUE: {
     url: "/metabief-fondue.webp",
+    width: 1200,
+    height: 971,
     alt: "Fondue à Métabief",
   },
   METABIEF_VIEW: {
     url: "/metabief-view.webp",
+    width: 1200,
+    height: 900,
     alt: "Vue sur les Alpes depuis Métabief",
     caption: "Les Alpes depuis Métabief",
   },
@@ -252,9 +312,9 @@ export const LINKS = {
 export const SEO_META = {
   INDEX: {
     title:
-      "Gîte La Randonnée | Les Fourgs, Doubs - Hébergement jusqu'à 14 personnes",
+      "Gîte La Randonnée | Gîte de groupe 14 personnes aux Fourgs, près de Métabief",
     description:
-      "Gîte pour 14 personnes aux Fourgs (Doubs), à 1200 m dans le Jura : randonnée l'été, ski de fond et alpin l'hiver, à 10 min de Métabief.",
+      "Gîte de groupe 3 étoiles pour 14 personnes aux Fourgs (Doubs), près de Métabief. Ski de fond depuis le jardin, randonnée en été. Réservation directe sans frais.",
   },
   ERROR: {
     title: "Page non trouvée | Gîte La Randonnée aux Fourgs",
@@ -262,29 +322,34 @@ export const SEO_META = {
       "La page que vous cherchez n'existe pas. Retournez à l'accueil pour découvrir notre gîte dans le Doubs.",
   },
   DECOUVRIR: {
-    title: "Activités été et hiver | Gîte La Randonnée aux Fourgs, Doubs",
+    title: "Activités aux Fourgs et à Métabief | Gîte La Randonnée, Doubs",
     description:
-      "Découvrez les activités variées autour du Gîte La Randonnée aux Fourgs : randonnée, ski de fond, ski alpin, raquettes, escalade et lacs en été. Un paradis pour les sportifs en toute saison dans le Doubs.",
+      "Ski alpin et de fond, raquettes, VTT, lac Saint-Point, château de Joux : que faire autour du Gîte La Randonnée aux Fourgs, été comme hiver.",
   },
   CONDITION_GENERALE_LOCATION: {
-    title: "Conditions Générales de Location | Gîte La Randonnée aux Fourgs",
+    title: "Conditions générales de location | Gîte La Randonnée aux Fourgs",
     description:
       "Consultez les conditions générales de location du Gîte La Randonnée, hébergement pour 14 personnes aux Fourgs, dans le Doubs.",
   },
   DISPONIBILITES_TARIFS: {
     title: "Réserver/Disponibilités | Gîte La Randonnée aux Fourgs, Doubs",
     description:
-      "Réservez votre séjour au Gîte La Randonnée aux Fourgs. Consultez nos disponibilités et tarifs pour un hébergement de 14 personnes dans le Doubs.",
+      "Tarifs et disponibilités du Gîte La Randonnée aux Fourgs (14 personnes). Semaine dès 750 €, week-end dès 560 €. Réservation directe par e-mail, sans frais.",
   },
   MENTIONS_LEGALES: {
-    title: "Mentions Légales | Gîte La Randonnée aux Fourgs, Doubs",
+    title: "Mentions légales | Gîte La Randonnée aux Fourgs, Doubs",
     description:
       "Informations légales concernant le Gîte La Randonnée, hébergement de vacances pour 14 personnes aux Fourgs, dans le Doubs.",
   },
   PLAN_DU_GITE: {
-    title: "Plan du Gîte | La Randonnée aux Fourgs - Hébergement 14 personnes",
+    title: "Plan du Gîte La Randonnée | 4 chambres, 14 personnes aux Fourgs",
     description:
-      "Découvrez le plan détaillé du Gîte La Randonnée, un hébergement spacieux pour 14 personnes aux Fourgs, dans les montagnes du Jura (Doubs).",
+      "Plan du Gîte La Randonnée aux Fourgs : 4 chambres, un salon de détente, 17 couchages, une salle de douches, une salle de bain et 3 WC.",
+  },
+  AVIS: {
+    title: "Votre avis nous intéresse | Gîte La Randonnée",
+    description:
+      "Partagez votre expérience au Gîte La Randonnée. Votre avis nous aide à améliorer nos services.",
   },
 };
 
@@ -445,6 +510,54 @@ export const GITE_FACTS: {
   },
 ];
 
+/** Room-by-room description shown on /plan-du-gite/ (from public/plan.svg) */
+export const ROOM_DETAILS = {
+  intro:
+    "Le gîte La Randonnée accueille jusqu'à 14 personnes, avec 4 chambres, un salon de détente et 17 couchages au total.",
+  sections: [
+    {
+      title: "Chambres et couchages",
+      items: [
+        { name: "Chambre Beige", detail: "4 couchages en 90 x 190 cm" },
+        { name: "Chambre Orange", detail: "4 couchages en 90 x 190 cm" },
+        { name: "Chambre Violette", detail: "3 couchages en 90 x 190 cm" },
+        {
+          name: "Chambre Bleue",
+          detail: "1 clic-clac 140 x 190 cm et un petit coin cuisine",
+        },
+        {
+          name: "Salon de détente",
+          detail: "1 BZ 140 x 190 cm, avec WC et lavabo attenants",
+        },
+        { name: "Salon", detail: "2 canapés-lits 90 x 190 cm" },
+      ],
+    },
+    {
+      title: "Pièces de vie",
+      items: [
+        {
+          name: "Cuisine et séjour",
+          detail:
+            "cuisine équipée ouverte sur la salle à manger, avec une grande table pour tout le groupe",
+        },
+        { name: "Salon", detail: "espace canapés attenant au séjour" },
+      ],
+    },
+    {
+      title: "Salles d'eau et rangements",
+      items: [
+        {
+          name: "Salle de douches",
+          detail: "plusieurs douches et deux lavabos",
+        },
+        { name: "Petite salle de bain", detail: "baignoire et lavabo" },
+        { name: "3 WC séparés" },
+        { name: "Séchoir, lingerie et placards" },
+      ],
+    },
+  ],
+};
+
 export const FAQ = [
   {
     question: "Combien de personnes peut accueillir le gîte ?",
@@ -534,6 +647,7 @@ export const LODGING_JSON_LD = {
   hasMap: `https://www.google.com/maps?cid=${GOOGLE_MAPS_CID}`,
   priceRange: `${PRICES.WEEK_FROM} € - ${PRICES.WEEK_TO} € / semaine`,
   currenciesAccepted: "EUR",
+  starRating: { "@type": "Rating", ratingValue: 3 },
   checkinTime: "16:00",
   checkoutTime: "10:00",
   petsAllowed: "Sur demande",

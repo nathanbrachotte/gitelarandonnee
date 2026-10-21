@@ -32,8 +32,8 @@ export function Gallery() {
                   className="mb-4 size-full rounded-lg object-contain"
                   src={image.url}
                   alt={image.alt}
-                  width={911}
-                  height={684}
+                  width={image.width}
+                  height={image.height}
                   loading="lazy"
                   decoding="async"
                 />

@@ -1,0 +1,25 @@
+---
+import Card from "@/components/Card.astro";
+import { H2, H3, Text } from "@/components/Typography";
+import { ROOM_DETAILS } from "@/data.constants";
+---
+
+<Card className="mt-8">
+  <H2>Le gîte en détail</H2>
+  <Text>{ROOM_DETAILS.intro}</Text>
+  {
+    ROOM_DETAILS.sections.map((section) => (
+      <>
+        <H3 className="mt-6">{section.title}</H3>
+        <ul class="mt-2 space-y-2 list-disc pl-6">
+          {section.items.map((item) => (
+            <li>
+              <span class="font-bold">{item.name}</span>
+              {item.detail && <> : {item.detail}</>}
+            </li>
+          ))}
+        </ul>
+      </>
+    ))
+  }
+</Card>

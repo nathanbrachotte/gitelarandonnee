@@ -39,11 +39,15 @@ import { CalendarCheck } from "lucide-react";
   jsonLd={[LODGING_JSON_LD]}
 >
   <section id="hero" class="relative w-full h-[42rem] sm:h-[46rem]">
-    <Image
+    <img
+      id="hero-image"
       src={IMAGES.INTERIEUR_SALON_ENTIER.url}
+      srcset={`/gite/interieur-salon-entier-800.webp 800w, ${IMAGES.INTERIEUR_SALON_ENTIER.url} ${IMAGES.INTERIEUR_SALON_ENTIER.width}w`}
+      sizes="100vw"
       alt={IMAGES.INTERIEUR_SALON_ENTIER.alt}
-      width={911}
-      height={684}
+      width={IMAGES.INTERIEUR_SALON_ENTIER.width}
+      height={IMAGES.INTERIEUR_SALON_ENTIER.height}
+      decoding="async"
       loading="eager"
       fetchpriority="high"
       class="w-full h-full object-cover object-center"
@@ -158,7 +162,7 @@ import { CalendarCheck } from "lucide-react";
       <div class="flex-1 w-full block lg:hidden">
         <Image
           src={IMAGES.EXTERIEUR_PARKING.url}
-          alt={IMAGES.EXTERIEUR_PARKING.caption}
+          alt={IMAGES.EXTERIEUR_PARKING.alt}
           class="sm:rounded-lg"
           width={911}
           height={684}
@@ -223,7 +227,7 @@ import { CalendarCheck } from "lucide-react";
       <div class="flex-1 w-full lg:w-1/2 hidden lg:block">
         <Image
           src={IMAGES.EXTERIEUR_PARKING.url}
-          alt={IMAGES.EXTERIEUR_PARKING.caption}
+          alt={IMAGES.EXTERIEUR_PARKING.alt}
           class="sm:rounded-lg"
           width={911}
           height={684}

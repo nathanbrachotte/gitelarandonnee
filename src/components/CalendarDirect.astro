@@ -7,13 +7,13 @@ export type Props = {
 };
 ---
 
-<!-- Fixed box: the widget renders after load, so it must not move or resize the layout -->
-<div class="relative h-[400px]">
-  <div
-    class="absolute inset-x-0 top-0 max-w-full invisible"
-    id="widget-fiche-ingenie-dispo"
-  >
-  </div>
+<!-- Reserve the widget height up front so it does not shift the layout when injected -->
+<div
+  id="widget-fiche-ingenie-dispo-wrapper"
+  class="min-h-[460px] lg:min-h-[420px] max-h-[460px] lg:max-h-[420px] overflow-hidden w-full"
+  style="visibility: hidden"
+>
+  <div class="w-full" id="widget-fiche-ingenie-dispo"></div>
 </div>
 
 <script
@@ -27,11 +27,11 @@ export type Props = {
 <script is:inline define:vars={{ ingenieCode, siteUrl }}>
   // Widget pour les disponibilités uniquement
   const widget_dispo = new IngenieWidgetDispoResa.Client({
-    code: "HLOBFC025334000496",
-    url: "https://www.destination-haut-doubs.com",
-    elementHtml: "widget-fiche-ingenie-dispo",
-    enable_dispo: true,
-    enable_resa: false,
+    code: "HLOBFC025334000496", // Code de la prestation
+    url: "https://www.destination-haut-doubs.com", //(string) Url du site (dynamique)
+    elementHtml: "widget-fiche-ingenie-dispo", //(string) Identifiant destination HTML du widget
+    enable_dispo: true, // Active dispo
+    enable_resa: false, // Désactive résa
     styles: {
       direction: "horizontal",
       responsiveAt: "900",
@@ -46,18 +46,30 @@ export type Props = {
 
   widget_dispo.init();
 
-  // The widget re-lays itself out while loading (months stacked, then a slider):
-  // keep it hidden until its height settles so it causes no layout shift
-  const widgetElement = document.getElementById("widget-fiche-ingenie-dispo");
-  let lastHeight = -1;
-  let checks = 0;
-  const revealWhenStable = setInterval(() => {
-    const height = widgetElement.offsetHeight;
-    checks += 1;
-    if ((height > 0 && height === lastHeight) || checks > 40) {
-      clearInterval(revealWhenStable);
-      widgetElement.classList.remove("invisible");
+  // The widget re-renders several times while loading. Keep it hidden until
+  // its final render (the "last updated" footer) so those re-renders don't
+  // count as layout shifts.
+  const widgetWrapper = document.getElementById(
+    "widget-fiche-ingenie-dispo-wrapper",
+  );
+  let revealTimeout;
+  const reveal = () => {
+    observer.disconnect();
+    widgetWrapper.classList.remove(
+      "max-h-[460px]",
+      "lg:max-h-[420px]",
+      "overflow-hidden",
+    );
+    widgetWrapper.classList.add("overflow-x-auto");
+    widgetWrapper.style.visibility = "visible";
+  };
+  const observer = new MutationObserver(() => {
+    if (widgetWrapper.querySelector(".dateMajPlanning") == null) {
+      return;
     }
-    lastHeight = height;
-  }, 150);
+    clearTimeout(revealTimeout);
+    revealTimeout = setTimeout(reveal, 150);
+  });
+  observer.observe(widgetWrapper, { childList: true, subtree: true });
+  setTimeout(reveal, 5000);
 </script>
