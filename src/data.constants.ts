@@ -443,6 +443,7 @@ export const GITE_FACTS: {
   icon: string;
   href?: string;
   linkLabel?: string;
+  places?: { label: string; href?: string }[];
 }[] = [
   {
     label: "Capacité",
@@ -502,7 +503,24 @@ export const GITE_FACTS: {
   {
     label: "À proximité",
     icon: "pin",
-    value: "Station des Fourgs à 500 m, Métabief à 10 km, frontière suisse",
+    value:
+      "Station des Fourgs, Métabief, station des Rasses, lac de Malbuisson, frontière suisse",
+    places: [
+      {
+        label: "Station de ski des Fourgs (500 m)",
+        href: "https://station-lesfourgs.fr/",
+      },
+      { label: "Métabief (10 km)", href: "https://g.co/kgs/zn23rn5" },
+      {
+        label: "Station des Rasses (14 km)",
+        href: "https://www.stations-de-ski.ch/stations-de-ski-vaudoises/station-de-ski-sainte-croix-les-rasses/",
+      },
+      {
+        label: "Lac de Malbuisson (15 km)",
+        href: "https://maps.app.goo.gl/FfjS1SdSeWn4Uq9HA",
+      },
+      { label: "frontière suisse" },
+    ],
   },
   {
     label: "Ski de fond",

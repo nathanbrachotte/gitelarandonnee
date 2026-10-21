@@ -78,7 +78,26 @@ const TONES = [
               </span>
               <div>
                 <p class={`font-bold ${tone.title}`}>{fact.label}</p>
-                <p class="mt-1">{fact.value}</p>
+                {fact.places ? (
+                  <p class="mt-1">
+                    {fact.places.map((place, placeIndex) => [
+                      placeIndex > 0 ? ", " : "",
+                      place.href ? (
+                        <a
+                          href={place.href}
+                          target="_blank"
+                          rel="noopener"
+                          class={`underline underline-offset-2 hover:opacity-80 ${tone.title}`}
+                          set:text={place.label}
+                        />
+                      ) : (
+                        place.label
+                      ),
+                    ])}
+                  </p>
+                ) : (
+                  <p class="mt-1">{fact.value}</p>
+                )}
                 {fact.href && (
                   <p
                     class={`mt-2 inline-flex items-center gap-1 text-sm font-semibold underline underline-offset-2 ${tone.title}`}
