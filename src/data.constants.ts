@@ -311,10 +311,9 @@ export const LINKS = {
 
 export const SEO_META = {
   INDEX: {
-    title:
-      "Gîte La Randonnée | Gîte de groupe 13 personnes aux Fourgs, près de Métabief",
+    title: "Gîte La Randonnée | Hébergement 13 pers. aux Fourgs, Doubs",
     description:
-      "Gîte de groupe 3 étoiles pour 13 personnes aux Fourgs (Doubs), près de Métabief. Ski de fond depuis le jardin, randonnée en été. Réservation directe sans frais.",
+      "Gîte de groupe 3 étoiles pour 13 personnes aux Fourgs, entre Métabief et Pontarlier. Week-end dès 580 €, semaine dès 750 €. Réservation directe sans frais.",
   },
   ERROR: {
     title: "Page non trouvée | Gîte La Randonnée aux Fourgs",
@@ -647,8 +646,9 @@ const GOOGLE_MAPS_CID = "18418517150381515153";
  * (public/plan.svg and src/pages/plan-du-gite.astro): keep them in sync.
  */
 export const LODGING_JSON_LD = {
-  "@type": ["VacationRental", "LodgingBusiness"],
+  "@type": "VacationRental",
   "@id": `${WEBSITE_ADDRESS}/#gite`,
+  identifier: "gite-la-randonnee",
   name: NAME,
   description:
     "Gîte pour 13 personnes à 1200 m d'altitude, au cœur du village des Fourgs (Doubs). Jardin semi-clos, accès aux pistes de ski de fond depuis le jardin, station de Métabief à 10 minutes.",
@@ -672,31 +672,31 @@ export const LODGING_JSON_LD = {
   priceRange: `${PRICES.WEEK_FROM} € - ${PRICES.WEEK_TO} € / semaine`,
   currenciesAccepted: "EUR",
   starRating: { "@type": "Rating", ratingValue: 3 },
-  checkinTime: "16:00",
-  checkoutTime: "10:00",
+  checkinTime: "16:00:00",
+  checkoutTime: "10:00:00",
   petsAllowed: true,
   smokingAllowed: false,
-  amenityFeature: [
-    "Wifi gratuit",
-    "Parking (4 voitures)",
-    "Jardin semi-clos",
-    "Barbecue",
-    "Balançoire",
-    "Terrain de pétanque",
-    "Draps compris",
-    "Accès aux pistes de ski de fond",
-  ].map((name) => ({
-    "@type": "LocationFeatureSpecification",
-    name,
-    value: true,
-  })),
   containsPlace: {
     "@type": "Accommodation",
     additionalType: "EntirePlace",
     occupancy: {
       "@type": "QuantitativeValue",
-      maxValue: MAX_PERSONS,
+      value: MAX_PERSONS,
     },
+    amenityFeature: [
+      "Wifi gratuit",
+      "Parking (4 voitures)",
+      "Jardin semi-clos",
+      "Barbecue",
+      "Balançoire",
+      "Terrain de pétanque",
+      "Draps compris",
+      "Accès aux pistes de ski de fond",
+    ].map((name) => ({
+      "@type": "LocationFeatureSpecification",
+      name,
+      value: true,
+    })),
     numberOfBedrooms: 5,
     numberOfBathroomsTotal: 2,
     bed: [
@@ -708,7 +708,7 @@ export const LODGING_JSON_LD = {
       {
         "@type": "BedDetails",
         numberOfBeds: 2,
-        typeOfBed: "Lit double 140 x 190 cm (BZ, clic-clac)",
+        typeOfBed: "Canapé-lit 140 x 190 cm (BZ, clic-clac)",
       },
     ],
   },
