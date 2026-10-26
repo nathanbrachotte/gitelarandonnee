@@ -17,7 +17,7 @@ import {
 export function MobileMenu({ activePath }: { activePath: string }) {
   return (
     <Sheet>
-      <SheetTrigger className="lg:hidden">
+      <SheetTrigger className="lg:hidden flex size-11 items-center justify-center -mr-2.5">
         <HamburgerMenuIcon className="w-6 h-6 shrink-0" />
         <span className="sr-only">Menu</span>
       </SheetTrigger>

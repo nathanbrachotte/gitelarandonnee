@@ -360,9 +360,9 @@ export const LaRandonneeLink = () => {
           href={LINKS.LA_HAUT.url}
           target="_blank"
           rel="noreferrer noopener"
-          aria-label="Découvrir le Gîte La Randonnée"
+          aria-label="Découvrir le Gîte Là-Haut"
         >
-          Gîte La Haut (6 personnes)
+          Gîte Là-Haut (6 personnes)
           <ArrowRightIcon className="group-hover:translate-x-1 transition-transform duration-300 w-4 h-4 ml-2" />
         </a>
       </Button>

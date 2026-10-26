@@ -331,7 +331,7 @@ export const SEO_META = {
       "Consultez les conditions générales de location du Gîte La Randonnée, hébergement pour 13 personnes aux Fourgs, dans le Doubs.",
   },
   DISPONIBILITES_TARIFS: {
-    title: "Réserver/Disponibilités | Gîte La Randonnée aux Fourgs, Doubs",
+    title: "Tarifs et disponibilités | Gîte La Randonnée aux Fourgs",
     description:
       "Tarifs et disponibilités du Gîte La Randonnée aux Fourgs (13 personnes). Semaine dès 750 €, week-end dès 580 €. Réservation directe par e-mail, sans frais.",
   },

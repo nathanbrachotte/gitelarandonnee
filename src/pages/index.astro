@@ -20,7 +20,7 @@ import {
   // DarkGreenLeaf,
   // LightGreenPlan,
 } from "@/components/icons";
-import { IMAGES, LODGING_JSON_LD, SEO_META } from "@/data.constants";
+import { IMAGES, LODGING_JSON_LD, PRICES, SEO_META } from "@/data.constants";
 import { cn } from "@/lib/utils";
 import { Link } from "@/components/Link";
 import { LINKS } from "@/data.constants";
@@ -68,6 +68,9 @@ import { CalendarCheck } from "lucide-react";
       <Text>
         Idéal pour les vacances en famille ou entre amis, notre gîte convivial
         et familial peut accueillir jusqu'à 13 personnes.
+      </Text>
+      <Text className="mt-2 font-semibold">
+        Week-end dès {PRICES.WEEKEND_FROM} €, semaine dès {PRICES.WEEK_FROM} €
       </Text>
       <div class="flex flex-col items-center gap-4 mt-6">
         <a

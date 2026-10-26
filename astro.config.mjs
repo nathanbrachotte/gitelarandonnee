@@ -13,7 +13,6 @@ export default defineConfig({
     sitemap({
       filter: (page) =>
         !["/activites/", "/avis/", "/404/"].some((path) => page.endsWith(path)),
-      lastmod: new Date(),
     }),
     react(),
     tailwind({
