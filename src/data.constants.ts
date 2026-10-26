@@ -651,6 +651,7 @@ export const LODGING_JSON_LD = {
   "@type": "VacationRental",
   "@id": `${WEBSITE_ADDRESS}/#gite`,
   identifier: "gite-la-randonnee",
+  additionalType: "Gite",
   name: NAME,
   description:
     "Gîte pour 13 personnes à 1200 m d'altitude, au cœur du village des Fourgs (Doubs). Jardin semi-clos, accès aux pistes de ski de fond depuis le jardin, station de Métabief à 10 minutes.",
