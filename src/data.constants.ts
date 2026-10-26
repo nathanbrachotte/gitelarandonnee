@@ -547,7 +547,10 @@ export const ROOM_DETAILS = {
           name: "Salon de détente",
           detail: "1 BZ 140 x 190 cm, avec WC et lavabo attenants",
         },
-        { name: "Salon", detail: "2 lits 90 x 190 cm" },
+        {
+          name: "Salon",
+          detail: "2 lits 90 x 190 cm et espace canapés, attenant au séjour",
+        },
       ],
     },
     {
@@ -558,7 +561,6 @@ export const ROOM_DETAILS = {
           detail:
             "cuisine équipée ouverte sur la salle à manger, avec une grande table pour tout le groupe",
         },
-        { name: "Salon", detail: "espace canapés attenant au séjour" },
       ],
     },
     {
